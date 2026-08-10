@@ -15,7 +15,7 @@ if (!Array.isArray(catalog)) errors.push("catalog.js must define window.APP_CATA
 
 if (Array.isArray(catalog)) {
   const ids = new Set();
-  const expectedStatuses = new Set(["available", "testing", "coming"]);
+  const expectedStatuses = new Set(["available", "coming"]);
 
   for (const app of catalog) {
     for (const key of ["id", "name", "category", "description", "icon", "status", "statusLabel"]) {
@@ -32,13 +32,26 @@ if (Array.isArray(catalog)) {
       if (!String(action.href || "").startsWith("https://")) {
         errors.push(`${app.id}: action must use an HTTPS URL`);
       }
+      if (!/^https:\/\/(apps\.apple\.com\/|play\.google\.com\/store\/apps\/details)/.test(action.href)) {
+        errors.push(`${app.id}: action must link to a public App Store or Google Play production page`);
+      }
+    }
+
+    if (app.status !== "available" && (app.actions || []).length) {
+      errors.push(`${app.id}: unreleased products cannot expose installation or testing links`);
+    }
+    if (app.status === "available" && !(app.actions || []).length) {
+      errors.push(`${app.id}: available products must include a verified public store link`);
+    }
+    if (JSON.stringify(app).match(/TestFlight|Closed test|apps\/testing/i)) {
+      errors.push(`${app.id}: testing language or links are not allowed on the public website`);
     }
   }
 
   const counts = Object.fromEntries(
-    ["available", "testing", "coming"].map((status) => [status, catalog.filter((app) => app.status === status).length])
+    ["available", "coming"].map((status) => [status, catalog.filter((app) => app.status === status).length])
   );
-  const expected = { available: 1, testing: 11, coming: 1 };
+  const expected = { available: 1, coming: 12 };
   for (const [status, count] of Object.entries(expected)) {
     if (counts[status] !== count) errors.push(`expected ${count} ${status} apps, found ${counts[status]}`);
   }
@@ -51,4 +64,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("Catalog verified: 13 unique apps, 13 icons, 1 available, 11 public betas, 1 coming soon.");
+console.log("Catalog verified: 13 unique apps, 13 icons, 1 store release, 12 release updates coming soon, no testing links.");
