@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f7f8f5" />
+    <meta name="theme-color" content="#ffc53d" />
     <meta
       name="description"
-      content="Italian Bros is an independent app studio making focused mobile tools and original games."
+      content="Italian Bros is an independent studio creating focused mobile apps and original games."
     />
     <meta property="og:title" content="Italian Bros — Independent app studio" />
     <meta
       property="og:description"
-      content="Useful apps for real life, made thoughtfully by Italian Bros."
+      content="Independent apps, made with care by Italian Bros."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://italianbrosco.com/" />
@@ -33,156 +33,91 @@
 
     <header class="site-header" aria-label="Primary navigation">
       <a class="brand" href="/" aria-label="Italian Bros home">
-        <span class="brand-mark" aria-hidden="true"><span>I</span><span>B</span></span>
+        <svg class="brand-mark" viewBox="0 0 56 48" aria-hidden="true" focusable="false">
+          <path d="M28 2c5.9 0 10.1 5.2 8.2 10.8-1.6 4.8-5 8.7-8.2 11.7-3.2-3-6.6-6.9-8.2-11.7C17.9 7.2 22.1 2 28 2Z" />
+          <path d="M23.8 28.2c-2.7 8.7-8.1 16.2-15.3 16.2-5.9 0-8.5-5.6-5.6-10.5 3-5.1 9.5-8.7 16.3-10.8l4.6 5.1Z" />
+          <path d="M32.2 28.2c2.7 8.7 8.1 16.2 15.3 16.2 5.9 0 8.5-5.6 5.6-10.5-3-5.1-9.5-8.7-16.3-10.8l-4.6 5.1Z" />
+        </svg>
         <span>Italian Bros</span>
       </a>
+
       <nav class="site-nav" aria-label="Page links">
         <a href="#apps">Apps</a>
         <a href="#about">About</a>
-        <a class="nav-contact" href="mailto:ciminillo@italianbrosco.com">Contact</a>
+        <a class="nav-support" href="mailto:ciminillo@italianbrosco.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3.2c5 0 9 3.6 9 8 0 2.1-.9 4-2.5 5.4l.6 3.1-3.4-1.5c-1.1.4-2.4.7-3.7.7-5 0-9-3.5-9-7.8s4-7.9 9-7.9Z" />
+            <circle cx="9" cy="11" r="1.1" />
+            <circle cx="15" cy="11" r="1.1" />
+          </svg>
+          Support
+        </a>
       </nav>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow"><span aria-hidden="true"></span> Independent app studio</p>
-          <h1 id="hero-title"><span>Useful apps.</span><span>Made thoughtfully.</span></h1>
-          <p class="hero-lede">
-            Focused mobile tools and original games, designed to feel simple from the very first tap.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#apps">Explore our apps <span aria-hidden="true">↓</span></a>
-            <a class="button button-secondary" href="mailto:ciminillo@italianbrosco.com">Get in touch</a>
-          </div>
-          <div class="hero-note">
-            <span class="availability-dot" aria-hidden="true"></span>
-            <p><strong>CalcSpace is available now.</strong> More releases are on the way.</p>
-          </div>
+    <main class="showcase-shell">
+      <section class="studio-intro" id="about" aria-labelledby="hero-title">
+        <div class="scribble scribble-top" aria-hidden="true"><i></i><i></i></div>
+        <span class="spark" aria-hidden="true">✦</span>
+        <h1 id="hero-title">Independent<br />apps, made<br />with care.</h1>
+        <svg class="scribble-underline" viewBox="0 0 230 24" aria-hidden="true" focusable="false">
+          <path d="M3 15c29-11 47-9 76-4 27 5 51 1 74 1 26 0 48 6 74-1" />
+          <path d="M4 19c31-8 52-6 78-2 30 4 54-1 79 0 24 0 42 4 65-2" />
+        </svg>
+
+        <p class="intro-copy">
+          We’re Italian Bros, an independent studio creating focused mobile apps and games that help
+          you think clearly, play more, and make the most of every day.
+        </p>
+
+        <div class="support-card">
+          <span class="support-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M12 3.4c5.1 0 9.2 3.6 9.2 8.1 0 2.2-1 4.1-2.7 5.6l.5 3-3.3-1.4c-1.1.4-2.4.7-3.7.7-5.1 0-9.2-3.6-9.2-8S6.9 3.4 12 3.4Z" />
+              <circle cx="9" cy="11.5" r="1.1" />
+              <circle cx="15" cy="11.5" r="1.1" />
+            </svg>
+          </span>
+          <span>
+            <strong>Support</strong>
+            <small>Questions, feedback, or help?<br />We’re here for you.</small>
+            <a href="mailto:ciminillo@italianbrosco.com">Go to Support <b aria-hidden="true">→</b></a>
+          </span>
         </div>
 
-        <div class="hero-visual" aria-label="A selection of Italian Bros app icons">
-          <div class="visual-orbit" aria-hidden="true"></div>
-          <div class="visual-card visual-card-main">
-            <img src="/assets/icons/calcspace.png" alt="CalcSpace app icon" width="384" height="384" />
-            <div><span>Available now</span><strong>CalcSpace</strong></div>
-          </div>
-          <div class="floating-app floating-app-one">
-            <img src="/assets/icons/mortgage-calculator.png" alt="Mortgage Calculator Suite app icon" width="384" height="384" />
-          </div>
-          <div class="floating-app floating-app-two">
-            <img src="/assets/icons/dream-journal.png" alt="Dream Journal app icon" width="384" height="384" />
-          </div>
-          <div class="floating-app floating-app-three">
-            <img src="/assets/icons/echobeat.png" alt="EchoBeat app icon" width="384" height="384" />
-          </div>
-          <div class="floating-app floating-app-four">
-            <img src="/assets/icons/tin-wings.png" alt="Tin Wings app icon" width="384" height="384" />
-          </div>
-          <p class="visual-caption"><strong data-total-count>13</strong> products across tools, learning, and play</p>
+        <div class="release-card" aria-label="Release updates">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
+              <path d="m5 7 7 5 7-5" />
+            </svg>
+          </span>
+          <p><strong data-total-count>13</strong> apps in our workshop.<br />Release updates coming soon.</p>
         </div>
       </section>
 
-      <section class="available-section" id="apps" aria-labelledby="available-title">
-        <div class="section-intro">
-          <p class="eyebrow"><span aria-hidden="true"></span> Available today</p>
-          <h2 id="available-title">Meet CalcSpace.</h2>
-          <p>Everyday calculations, gathered into one calm and focused app.</p>
-        </div>
-
-        <article class="available-card" aria-label="CalcSpace">
-          <div class="available-copy">
-            <div class="available-icon-row">
-              <img src="/assets/icons/calcspace.png" alt="CalcSpace app icon" width="384" height="384" />
-              <span><i aria-hidden="true"></i> On the App Store</span>
-            </div>
-            <h3>Fast answers.<br />Less clutter.</h3>
-            <p>
-              A focused collection of everyday calculators built for quick answers on iPhone and iPad.
-            </p>
-            <div class="feature-list" aria-label="CalcSpace highlights">
-              <span>Everyday calculators</span>
-              <span>Clean, focused design</span>
-              <span>iPhone &amp; iPad</span>
-            </div>
-            <a
-              class="app-store-button"
-              href="https://apps.apple.com/us/app/calcspace/id6789995674"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="store-bag" aria-hidden="true">
-                <svg viewBox="0 0 20 20" focusable="false">
-                  <path d="M5.4 8.2h9.2l.8 8H4.6l.8-8ZM7.6 8.2V7a2.4 2.4 0 0 1 4.8 0v1.2" />
-                </svg>
-              </span>
-              <span><small>Download on the</small>App Store</span>
-              <b aria-hidden="true">↗</b>
-            </a>
-          </div>
-
-          <div class="available-art" aria-hidden="true">
-            <span class="math-symbol symbol-plus">+</span>
-            <span class="math-symbol symbol-percent">%</span>
-            <span class="math-symbol symbol-equals">=</span>
-            <span class="math-symbol symbol-divide">÷</span>
-            <div class="icon-stage">
-              <img src="/assets/icons/calcspace.png" alt="" width="384" height="384" />
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section class="collection-section" aria-labelledby="collection-title">
-        <div class="collection-heading">
+      <section class="apps-showcase" id="apps" aria-labelledby="apps-title">
+        <div class="apps-heading">
           <div>
-            <p class="eyebrow"><span aria-hidden="true"></span> In the works</p>
-            <h2 id="collection-title">More ideas, taking shape.</h2>
+            <p>From our workshop</p>
+            <h2 id="apps-title">Meet the apps.</h2>
           </div>
-          <p>
-            A growing collection of useful tools and original games. We share each one when it is ready.
-          </p>
-        </div>
-
-        <div class="collection-meta">
-          <span><strong data-upcoming-count>12</strong> upcoming products</span>
-          <span>Release updates coming soon</span>
+          <p class="apps-count"><strong data-total-count>13</strong> products · scroll to explore</p>
         </div>
         <div class="app-grid" id="app-grid"></div>
-        <noscript><p class="noscript-note">Turn on JavaScript to view the upcoming app collection.</p></noscript>
-      </section>
-
-      <section class="about-section" id="about" aria-labelledby="about-title">
-        <div class="about-copy">
-          <p class="eyebrow eyebrow-light"><span aria-hidden="true"></span> About the studio</p>
-          <h2 id="about-title">Small team.<br />High standards.</h2>
-          <p>
-            Italian Bros is an independent studio building practical, distinctive apps with close attention to how they feel in everyday use.
-          </p>
-        </div>
-        <div class="values" aria-label="Studio values">
-          <article><span>01</span><h3>Focused</h3><p>Each app begins with one clear job worth doing well.</p></article>
-          <article><span>02</span><h3>Considered</h3><p>Useful details, calm interfaces, and fewer unnecessary steps.</p></article>
-          <article><span>03</span><h3>Improving</h3><p>We keep listening and refining after every release.</p></article>
-        </div>
+        <noscript><p class="noscript-note">Turn on JavaScript to view the app collection.</p></noscript>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div>
-        <a class="brand" href="/" aria-label="Italian Bros home">
-          <span class="brand-mark" aria-hidden="true"><span>I</span><span>B</span></span>
-          <span>Italian Bros</span>
-        </a>
-        <p>Independent apps, made thoughtfully.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#apps">Apps</a>
-        <a href="#about">About</a>
-        <a href="mailto:ciminillo@italianbrosco.com">Contact</a>
-      </div>
-      <p class="copyright">© <span id="year">2026</span> Italian Bros Co.</p>
-    </footer>
+    <dialog class="app-dialog" id="app-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close app details">×</button>
+      <img id="dialog-icon" alt="" width="384" height="384" />
+      <p id="dialog-category"></p>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-description"></p>
+      <div class="dialog-status"><i aria-hidden="true"></i>Release updates coming soon</div>
+      <button class="dialog-done" type="button">Done</button>
+    </dialog>
 
     <script src="/catalog.js"></script>
     <script src="/app.js"></script>
