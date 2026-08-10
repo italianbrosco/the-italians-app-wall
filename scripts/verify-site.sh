@@ -7,9 +7,12 @@ trap 'rm -rf "$TMP_DIR"' EXIT HUP INT TERM
 
 curl -fsSL "$BASE_URL/" -o "$TMP_DIR/home.html"
 curl -fsSL "$BASE_URL/catalog.js" -o "$TMP_DIR/catalog.js"
+curl -fsSL "$BASE_URL/assets/favicon.svg" -o "$TMP_DIR/favicon.svg"
 curl -fsSL "$BASE_URL/debug/apps/" -o "$TMP_DIR/debug-apps.html"
 
 grep -q '<title>Italian Bros — Useful apps, thoughtfully made</title>' "$TMP_DIR/home.html"
+grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
+grep -q '<svg' "$TMP_DIR/favicon.svg"
 grep -q 'window.APP_CATALOG' "$TMP_DIR/catalog.js"
 grep -q '<title>Italianbros Co. — Digital Officina</title>' "$TMP_DIR/debug-apps.html"
 
