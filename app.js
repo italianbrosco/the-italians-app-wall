@@ -18,6 +18,7 @@
     "super-game",
     "tin-wings"
   ];
+  const priorityIds = new Set(featuredOrder.slice(0, 6));
 
   const byId = new Map(catalog.map((app) => [app.id, app]));
   const orderedCatalog = featuredOrder.map((id) => byId.get(id)).filter(Boolean);
@@ -144,10 +145,13 @@
     const status = app.status === "available" ? "Available on the App Store" : "Release updates coming soon";
     const panelName = panelNames[app.id] || app.name;
     const panelDescription = panelDescriptions[app.id] || app.description;
+    const imagePriority = priorityIds.has(app.id)
+      ? 'loading="eager" fetchpriority="high"'
+      : 'loading="lazy"';
     return `
       <article class="app-panel accent-${escapeHtml(app.accent)}">
         <div class="app-summary">
-          <img class="app-icon" src="${escapeHtml(app.icon)}" alt="${escapeHtml(app.name)} app icon" loading="lazy" width="384" height="384" />
+          <img class="app-icon" src="${escapeHtml(app.icon)}" alt="${escapeHtml(app.name)} app icon" ${imagePriority} width="384" height="384" />
           <div class="app-copy">
             <h3>${escapeHtml(panelName)}</h3>
             <p>${escapeHtml(panelDescription)}</p>
