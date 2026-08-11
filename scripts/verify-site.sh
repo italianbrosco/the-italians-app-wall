@@ -23,8 +23,8 @@ fi
 grep -q '<title>Italianbros Co. — Digital Officina</title>' "$TMP_DIR/debug-apps.html"
 
 for icon in abc-smash calcspace deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred mortgage-calculator pollwar real-or-ai super-game tin-wings; do
-  curl -fsSL "$BASE_URL/assets/icons/$icon.png" -o "$TMP_DIR/$icon.png"
-  test -s "$TMP_DIR/$icon.png"
+  curl -fsSL "$BASE_URL/assets/icons/$icon.webp" -o "$TMP_DIR/$icon.webp"
+  test -s "$TMP_DIR/$icon.webp"
 done
 
 printf 'Verified %s: showcase, catalog, 13 icons, and preserved /debug/apps page.\n' "$BASE_URL"
