@@ -53,6 +53,7 @@
         <div class="app-summary">
           <img class="app-icon" src="${escapeHtml(app.icon)}" alt="${escapeHtml(app.name)} app icon" ${imagePriority} width="384" height="384" />
           <div class="app-copy">
+            <span class="app-category">${escapeHtml(app.category)}</span>
             <h3>${escapeHtml(app.name)}</h3>
             <p>${escapeHtml(app.description)}</p>
             <small><i aria-hidden="true"></i>${escapeHtml(status)}</small>
@@ -74,9 +75,9 @@
 
   const supportMarkup = () => `
     <article class="support-panel" aria-labelledby="support-title">
-      <img src="/assets/brand/three-brothers-ink.webp" alt="" width="760" height="418" loading="lazy" />
+      <img src="/assets/brand/three-brothers-fountain.webp" alt="" width="900" height="600" loading="lazy" />
       <div>
-        <p>From the studio</p>
+        <p>Direct from our workshop</p>
         <h3 id="support-title">Need a hand?</h3>
         <p>Questions, feedback, or help with one of our apps? You’ll reach the brothers who build them.</p>
         <a href="mailto:ciminillo@italianbrosco.com">Email support <span aria-hidden="true">→</span></a>
