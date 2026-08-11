@@ -12,6 +12,8 @@ curl -fsSL "$BASE_URL/assets/favicon.svg" -o "$TMP_DIR/favicon.svg"
 curl -fsSL "$BASE_URL/debug/apps/" -o "$TMP_DIR/debug-apps.html"
 curl -fsSL "$BASE_URL/clay-scorecard/privacy/" -o "$TMP_DIR/clay-privacy.html"
 curl -fsSL "$BASE_URL/clay-scorecard/support/" -o "$TMP_DIR/clay-support.html"
+curl -fsSL "$BASE_URL/road-trip-arcade/privacy/" -o "$TMP_DIR/road-trip-privacy.html"
+curl -fsSL "$BASE_URL/road-trip-arcade/support/" -o "$TMP_DIR/road-trip-support.html"
 curl -fsSL "$BASE_URL/dealanalyzer/deal/" -o "$TMP_DIR/deal-viewer.html"
 
 grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/home.html"
@@ -28,12 +30,16 @@ grep -q '<title>Clay Scorecard Privacy Policy' "$TMP_DIR/clay-privacy.html"
 grep -q 'does not collect or transmit personal data' "$TMP_DIR/clay-privacy.html"
 grep -q '<title>Clay Scorecard Support' "$TMP_DIR/clay-support.html"
 grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/clay-support.html"
+grep -q '<title>Road Trip Arcade Privacy Policy' "$TMP_DIR/road-trip-privacy.html"
+grep -q 'does not collect or transmit personal data' "$TMP_DIR/road-trip-privacy.html"
+grep -q '<title>Road Trip Arcade Support' "$TMP_DIR/road-trip-support.html"
+grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/road-trip-support.html"
 grep -q '<title>Shared Deal — Deal Analyzer</title>' "$TMP_DIR/deal-viewer.html"
 grep -q 'Open in app' "$TMP_DIR/deal-viewer.html"
 
-for icon in abc-smash calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred mortgage-calculator pollwar real-or-ai super-game tin-wings; do
+for icon in abc-smash calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred mortgage-calculator pollwar real-or-ai road-trip-arcade super-game tin-wings; do
   curl -fsSL "$BASE_URL/assets/icons/$icon.webp" -o "$TMP_DIR/$icon.webp"
   test -s "$TMP_DIR/$icon.webp"
 done
 
-printf 'Verified %s: showcase, catalog, 14 icons, shared Deal Analyzer viewer, Clay Scorecard legal pages, and preserved /debug/apps page.\n' "$BASE_URL"
+printf 'Verified %s: showcase, catalog, 15 icons, shared Deal Analyzer viewer, Road Trip Arcade and Clay Scorecard legal pages, and preserved /debug/apps page.\n' "$BASE_URL"

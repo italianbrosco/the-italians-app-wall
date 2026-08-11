@@ -709,6 +709,7 @@ button:focus-visible {
 .accent-amber { --accent: #9c7625; --accent-soft: #faf3e3; }
 .accent-purple { --accent: #655c91; --accent-soft: #efedf6; }
 .accent-steel { --accent: #606e79; --accent-soft: #ebeff1; }
+.accent-arcade { --accent: #3158a5; --accent-soft: #e8efff; }
 
 .app-dialog {
   width: min(440px, calc(100% - 32px));

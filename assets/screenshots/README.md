@@ -18,6 +18,7 @@ Imported and verified on August 10, 2026:
 | `mortgage-calculator.webp` | App Store Connect, Apple ID `6790174039`, en-US iPhone screenshot `01-iphone-home.png` |
 | `pollwar.webp` | App Store Connect, Apple ID `6798080422`, en-US iPhone screenshot `pollwar-store-home-1242x2688.png` |
 | `real-or-ai.webp` | App Store Connect, Apple ID `6799536279`, en-US iPhone screenshot `03-answer-reveal.png` |
+| `road-trip-arcade.webp` | Real Road Trip Arcade native iOS simulator capture at `1179×2556`, showing the verified final home screen |
 | `super-game.webp` | App Store Connect, Apple ID `6798083095`, en-US iPhone screenshot `01-home.png` |
 | `tin-wings.webp` | Real Tin Wings native iOS simulator capture, rotated to the app’s landscape orientation without altering the screen content |
 
