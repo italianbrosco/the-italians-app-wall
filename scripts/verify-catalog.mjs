@@ -18,7 +18,7 @@ if (Array.isArray(catalog)) {
   const expectedStatuses = new Set(["available", "coming"]);
 
   for (const app of catalog) {
-    for (const key of ["id", "name", "category", "description", "icon", "status", "statusLabel"]) {
+    for (const key of ["id", "name", "category", "description", "icon", "screenshot", "screenshotAlt", "status", "statusLabel"]) {
       if (!app[key]) errors.push(`${app.id || "unknown app"}: missing ${key}`);
     }
     if (ids.has(app.id)) errors.push(`${app.id}: duplicate id`);
@@ -27,6 +27,8 @@ if (Array.isArray(catalog)) {
 
     const iconPath = path.join(root, app.icon.replace(/^\//, ""));
     if (!fs.existsSync(iconPath)) errors.push(`${app.id}: missing icon ${app.icon}`);
+    const screenshotPath = path.join(root, app.screenshot.replace(/^\//, ""));
+    if (!fs.existsSync(screenshotPath)) errors.push(`${app.id}: missing screenshot ${app.screenshot}`);
 
     for (const action of app.actions || []) {
       if (!String(action.href || "").startsWith("https://")) {
@@ -64,4 +66,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("Catalog verified: 14 unique apps, 14 icons, 1 store release, 13 release updates coming soon, no testing links.");
+console.log("Catalog verified: 14 unique apps, 14 icons, 14 authentic screenshots, 1 store release, 13 release updates coming soon, no testing links.");
