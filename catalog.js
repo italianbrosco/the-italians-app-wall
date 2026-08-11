@@ -14,6 +14,18 @@ window.APP_CATALOG = [
     ]
   },
   {
+    id: "clay-scorecard",
+    name: "Clay Scorecard: Five Dice",
+    category: "Scorecard",
+    description: "A cheerful, tactile score sheet for keeping real five-dice games moving with friends and family.",
+    icon: "/assets/icons/clay-scorecard.webp",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "clay",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "mortgage-calculator",
     name: "Mortgage Calculator Suite",
     category: "Real estate",

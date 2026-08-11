@@ -10,6 +10,8 @@ curl -fsSL "$BASE_URL/catalog.js" -o "$TMP_DIR/catalog.js"
 curl -fsSL "$BASE_URL/app.js" -o "$TMP_DIR/app.js"
 curl -fsSL "$BASE_URL/assets/favicon.svg" -o "$TMP_DIR/favicon.svg"
 curl -fsSL "$BASE_URL/debug/apps/" -o "$TMP_DIR/debug-apps.html"
+curl -fsSL "$BASE_URL/clay-scorecard/privacy/" -o "$TMP_DIR/clay-privacy.html"
+curl -fsSL "$BASE_URL/clay-scorecard/support/" -o "$TMP_DIR/clay-support.html"
 
 grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/home.html"
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
@@ -21,10 +23,14 @@ if grep -Eqi 'testflight\.apple\.com|play\.google\.com/apps/testing|public beta|
   exit 1
 fi
 grep -q '<title>Italianbros Co. — Digital Officina</title>' "$TMP_DIR/debug-apps.html"
+grep -q '<title>Clay Scorecard Privacy Policy' "$TMP_DIR/clay-privacy.html"
+grep -q 'does not collect or transmit personal data' "$TMP_DIR/clay-privacy.html"
+grep -q '<title>Clay Scorecard Support' "$TMP_DIR/clay-support.html"
+grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/clay-support.html"
 
-for icon in abc-smash calcspace deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred mortgage-calculator pollwar real-or-ai super-game tin-wings; do
+for icon in abc-smash calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred mortgage-calculator pollwar real-or-ai super-game tin-wings; do
   curl -fsSL "$BASE_URL/assets/icons/$icon.webp" -o "$TMP_DIR/$icon.webp"
   test -s "$TMP_DIR/$icon.webp"
 done
 
-printf 'Verified %s: showcase, catalog, 13 icons, and preserved /debug/apps page.\n' "$BASE_URL"
+printf 'Verified %s: showcase, catalog, 14 icons, Clay Scorecard legal pages, and preserved /debug/apps page.\n' "$BASE_URL"

@@ -51,12 +51,12 @@ if (Array.isArray(catalog)) {
   const counts = Object.fromEntries(
     ["available", "coming"].map((status) => [status, catalog.filter((app) => app.status === status).length])
   );
-  const expected = { available: 1, coming: 12 };
+  const expected = { available: 1, coming: 13 };
   for (const [status, count] of Object.entries(expected)) {
     if (counts[status] !== count) errors.push(`expected ${count} ${status} apps, found ${counts[status]}`);
   }
 
-  if (catalog.length !== 13) errors.push(`expected 13 apps, found ${catalog.length}`);
+  if (catalog.length !== 14) errors.push(`expected 14 apps, found ${catalog.length}`);
 }
 
 if (errors.length) {
@@ -64,4 +64,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("Catalog verified: 13 unique apps, 13 icons, 1 store release, 12 release updates coming soon, no testing links.");
+console.log("Catalog verified: 14 unique apps, 14 icons, 1 store release, 13 release updates coming soon, no testing links.");

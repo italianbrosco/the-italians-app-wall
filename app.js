@@ -4,6 +4,7 @@
   const catalog = Array.isArray(window.APP_CATALOG) ? window.APP_CATALOG : [];
   const grid = document.querySelector("#app-grid");
   const featuredOrder = [
+    "clay-scorecard",
     "dream-journal",
     "easy-audio-notes",
     "echobeat",
@@ -23,6 +24,7 @@
   const byId = new Map(catalog.map((app) => [app.id, app]));
   const orderedCatalog = featuredOrder.map((id) => byId.get(id)).filter(Boolean);
   const panelNames = {
+    "clay-scorecard": "Clay Scorecard",
     "dream-journal": "Dreamwise AI",
     "easy-audio-notes": "Easy Audio Notes",
     echobeat: "EchoBeat",
@@ -31,6 +33,7 @@
     hundred: "Hundred"
   };
   const panelDescriptions = {
+    "clay-scorecard": "A colorful score sheet for real dice, shared tables, and family game night.",
     "dream-journal": "Your private space for dreams, insights, and patterns.",
     "easy-audio-notes": "Capture speech, get clear transcripts, and stay organized.",
     echobeat: "A daily rhythm challenge to keep your streak alive.",
@@ -49,6 +52,13 @@
 
   const previewMarkup = (id) => {
     const previews = {
+      "clay-scorecard": `
+        <div class="screen-top light"><b>9:41</b><span>•••</span></div>
+        <div class="clay-heading"><span>Game night</span><strong>Round 6 of 13</strong></div>
+        <div class="clay-players"><b>Maya</b><span>128</span><b>Leo</b><span>104</span></div>
+        <div class="clay-score-row"><i>⚄</i><span>Fives</span><strong>20</strong></div>
+        <div class="clay-score-row"><i>◆</i><span>Full House</span><strong>25</strong></div>
+        <div class="clay-turn">Maya’s turn</div>`,
       "dream-journal": `
         <div class="screen-top"><b>9:41</b><span>•••</span></div>
         <div class="dream-greeting"><b>Good night</b><span>☾</span></div>
