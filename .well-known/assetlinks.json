@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.theitalians.dealanalyzer",
+      "sha256_cert_fingerprints": [
+        "E6:D8:41:08:AD:57:1D:DE:4C:6A:AD:D4:B7:AB:DE:27:57:F0:CB:91:53:81:A3:02:02:C7:3D:B3:22:D8:65:75"
+      ]
+    }
+  }
+]

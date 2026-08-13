@@ -4,11 +4,29 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const [html, css, script] = await Promise.all([
+const [html, css, script, appleAssociation, androidAssociation] = await Promise.all([
   readFile(resolve(root, 'dealanalyzer/deal/index.html'), 'utf8'),
   readFile(resolve(root, 'dealanalyzer/deal/styles.css'), 'utf8'),
   readFile(resolve(root, 'dealanalyzer/deal/viewer.js'), 'utf8'),
+  readFile(resolve(root, '.well-known/apple-app-site-association'), 'utf8'),
+  readFile(resolve(root, '.well-known/assetlinks.json'), 'utf8'),
 ]);
+
+const apple = JSON.parse(appleAssociation);
+assert.deepEqual(apple.applinks.details, [{
+  appID: '257M5TM5Z8.com.theitalians.dealanalyzer',
+  paths: ['/dealanalyzer/deal/', '/dealanalyzer/deal/*'],
+}]);
+
+const android = JSON.parse(androidAssociation);
+assert.deepEqual(android, [{
+  relation: ['delegate_permission/common.handle_all_urls'],
+  target: {
+    namespace: 'android_app',
+    package_name: 'com.theitalians.dealanalyzer',
+    sha256_cert_fingerprints: ['E6:D8:41:08:AD:57:1D:DE:4C:6A:AD:D4:B7:AB:DE:27:57:F0:CB:91:53:81:A3:02:02:C7:3D:B3:22:D8:65:75'],
+  },
+}]);
 
 const requiredHtml = [
   'class="app-header"',

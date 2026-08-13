@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "257M5TM5Z8.com.theitalians.dealanalyzer",
+        "paths": [
+          "/dealanalyzer/deal/",
+          "/dealanalyzer/deal/*"
+        ]
+      }
+    ]
+  }
+}
