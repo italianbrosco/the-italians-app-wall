@@ -8,6 +8,13 @@
           "/dealanalyzer/deal/",
           "/dealanalyzer/deal/*"
         ]
+      },
+      {
+        "appID": "257M5TM5Z8.com.theitalians.mortgagecalculator",
+        "paths": [
+          "/mortgagecalc/estimate",
+          "/mortgagecalc/estimate/*"
+        ]
       }
     ]
   }
