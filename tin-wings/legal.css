@@ -1,0 +1,58 @@
+:root {
+  color-scheme: light;
+  --ink: #12335e;
+  --muted: #506782;
+  --cream: #fff7df;
+  --red: #df3c32;
+  --blue: #1d66a7;
+  --yellow: #f5b723;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--cream); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 7% 6%, rgba(47, 183, 235, .24), transparent 24rem),
+    radial-gradient(circle at 93% 18%, rgba(245, 183, 35, .20), transparent 22rem),
+    var(--cream);
+  font-family: ui-rounded, "SF Pro Rounded", "Avenir Next", system-ui, sans-serif;
+  line-height: 1.65;
+}
+
+a { color: var(--blue); }
+.shell { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 56px; }
+.back { display: inline-flex; min-height: 44px; align-items: center; font-weight: 900; text-decoration: none; }
+.hero, .card {
+  border: 2px solid rgba(18, 51, 94, .10);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 12px 0 rgba(18, 51, 94, .07), 0 24px 60px rgba(18, 51, 94, .11);
+}
+.hero { margin: 14px 0 22px; padding: clamp(26px, 6vw, 52px); border-top: 6px solid var(--red); }
+.eyebrow { margin: 0; color: var(--blue); font-size: .78rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+h1 { margin: 10px 0 8px; font-size: clamp(2.2rem, 8vw, 4.2rem); line-height: .98; letter-spacing: -.05em; }
+.lede { margin: 16px 0 0; color: var(--muted); font-size: 1.08rem; }
+.dots { display: flex; gap: 10px; margin-top: 26px; }
+.dots i { width: 22px; height: 22px; clip-path: polygon(50% 0, 61% 36%, 100% 50%, 61% 64%, 50% 100%, 39% 64%, 0 50%, 39% 36%); }
+.dots i:nth-child(1) { background: var(--red); }
+.dots i:nth-child(2) { background: var(--blue); }
+.dots i:nth-child(3) { background: var(--yellow); }
+.card { padding: clamp(22px, 5vw, 38px); }
+h2 { margin: 28px 0 6px; font-size: 1.25rem; }
+h2:first-child { margin-top: 0; }
+p, li { color: var(--muted); }
+ul { padding-left: 1.2rem; }
+.card a { display: inline-flex; min-height: 44px; align-items: center; }
+.contact { margin-top: 28px; padding: 18px 20px; border-radius: 16px; background: #eaf5ff; }
+.contact a { min-height: 44px; display: inline-flex; align-items: center; overflow-wrap: anywhere; }
+footer { padding: 28px 10px 0; color: var(--muted); text-align: center; font-size: .9rem; }
+
+@media (max-width: 420px) {
+  .shell { width: min(100% - 22px, 760px); padding-top: 12px; }
+  .hero, .card { border-radius: 20px; }
+  .hero { padding: 26px 22px; }
+  .card { padding: 24px 20px; }
+}

@@ -27,11 +27,11 @@ esac
 
 rsync -az \
   index.html styles.css catalog.js app.js \
-  assets debug clay-scorecard road-trip-arcade dealanalyzer \
+  assets debug clay-scorecard road-trip-arcade tin-wings dealanalyzer \
   "$REMOTE:$REMOTE_STAGE/"
 
 ssh "$REMOTE" "set -eu
-  sudo install -d -m 755 '$TARGET' '$TARGET/assets' '$TARGET/assets/icons' '$TARGET/debug' '$TARGET/debug/apps' '$TARGET/clay-scorecard' '$TARGET/road-trip-arcade' '$TARGET/dealanalyzer' '$BACKUP_ROOT/$STAMP'
+  sudo install -d -m 755 '$TARGET' '$TARGET/assets' '$TARGET/assets/icons' '$TARGET/debug' '$TARGET/debug/apps' '$TARGET/clay-scorecard' '$TARGET/road-trip-arcade' '$TARGET/tin-wings' '$TARGET/dealanalyzer' '$BACKUP_ROOT/$STAMP'
   if [ ! -f '$TARGET/debug/apps/index.html' ]; then
     sudo install -m 644 '$TARGET/index.html' '$TARGET/debug/apps/index.html'
   fi
@@ -46,8 +46,9 @@ ssh "$REMOTE" "set -eu
   sudo cp -R '$REMOTE_STAGE/debug/.' '$TARGET/debug/'
   sudo cp -R '$REMOTE_STAGE/clay-scorecard/.' '$TARGET/clay-scorecard/'
   sudo cp -R '$REMOTE_STAGE/road-trip-arcade/.' '$TARGET/road-trip-arcade/'
+  sudo cp -R '$REMOTE_STAGE/tin-wings/.' '$TARGET/tin-wings/'
   sudo cp -R '$REMOTE_STAGE/dealanalyzer/.' '$TARGET/dealanalyzer/'
-  sudo chmod -R a+rX '$TARGET/assets' '$TARGET/debug' '$TARGET/clay-scorecard' '$TARGET/road-trip-arcade' '$TARGET/dealanalyzer'
+  sudo chmod -R a+rX '$TARGET/assets' '$TARGET/debug' '$TARGET/clay-scorecard' '$TARGET/road-trip-arcade' '$TARGET/tin-wings' '$TARGET/dealanalyzer'
 "
 
 printf 'Deployed Italian Bros showcase to %s:%s (backup %s/%s).\n' "$REMOTE" "$TARGET" "$BACKUP_ROOT" "$STAMP"

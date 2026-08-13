@@ -14,6 +14,8 @@ curl -fsSL "$BASE_URL/clay-scorecard/privacy/" -o "$TMP_DIR/clay-privacy.html"
 curl -fsSL "$BASE_URL/clay-scorecard/support/" -o "$TMP_DIR/clay-support.html"
 curl -fsSL "$BASE_URL/road-trip-arcade/privacy/" -o "$TMP_DIR/road-trip-privacy.html"
 curl -fsSL "$BASE_URL/road-trip-arcade/support/" -o "$TMP_DIR/road-trip-support.html"
+curl -fsSL "$BASE_URL/tin-wings/privacy/" -o "$TMP_DIR/tin-wings-privacy.html"
+curl -fsSL "$BASE_URL/tin-wings/support/" -o "$TMP_DIR/tin-wings-support.html"
 curl -fsSL "$BASE_URL/dealanalyzer/deal/" -o "$TMP_DIR/deal-viewer.html"
 
 grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/home.html"
@@ -34,6 +36,10 @@ grep -q '<title>Road Trip Arcade Privacy Policy' "$TMP_DIR/road-trip-privacy.htm
 grep -q 'does not collect or transmit personal data' "$TMP_DIR/road-trip-privacy.html"
 grep -q '<title>Road Trip Arcade Support' "$TMP_DIR/road-trip-support.html"
 grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/road-trip-support.html"
+grep -q '<title>Tin Wings Privacy Policy' "$TMP_DIR/tin-wings-privacy.html"
+grep -q 'temporary room and gameplay state' "$TMP_DIR/tin-wings-privacy.html"
+grep -q '<title>Tin Wings Support' "$TMP_DIR/tin-wings-support.html"
+grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/tin-wings-support.html"
 grep -q '<title>Shared Deal — Deal Analyzer</title>' "$TMP_DIR/deal-viewer.html"
 grep -q 'Open in app' "$TMP_DIR/deal-viewer.html"
 
@@ -42,4 +48,4 @@ for icon in abc-smash calcspace clay-scorecard deal-analyzer dream-journal easy-
   test -s "$TMP_DIR/$icon.webp"
 done
 
-printf 'Verified %s: showcase, catalog, 15 icons, shared Deal Analyzer viewer, Road Trip Arcade and Clay Scorecard legal pages, and preserved /debug/apps page.\n' "$BASE_URL"
+printf 'Verified %s: showcase, catalog, 15 icons, shared Deal Analyzer viewer, Tin Wings, Road Trip Arcade, and Clay Scorecard legal pages, and preserved /debug/apps page.\n' "$BASE_URL"
