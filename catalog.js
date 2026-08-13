@@ -51,11 +51,13 @@ window.APP_CATALOG = [
     icon: "/assets/icons/mortgage-calculator.webp",
     screenshot: "/assets/screenshots/mortgage-calculator.webp",
     screenshotAlt: "Mortgage Calculator Suite home screen with its real-estate estimate tools",
-    status: "coming",
-    statusLabel: "Coming soon",
+    status: "available",
+    statusLabel: "Available now",
     accent: "olive",
-    platforms: [],
-    actions: []
+    platforms: [{ label: "iPhone & iPad", kind: "ios" }],
+    actions: [
+      { label: "View on the App Store", href: "https://apps.apple.com/us/app/mortgage-calculator-suite/id6790174039", primary: true }
+    ]
   },
   {
     id: "deal-analyzer",
