@@ -3,49 +3,76 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#f4efe7" />
+    <meta name="theme-color" content="#f1ede6" />
     <meta name="description" content="View a shared Deal Analyzer real-estate evaluation." />
     <title>Shared Deal — Deal Analyzer</title>
-    <link rel="stylesheet" href="./styles.css?v=20260810.1" />
+    <link rel="stylesheet" href="./styles.css?v=20260813.1" />
   </head>
   <body>
-    <header class="nav">
-      <a class="brand" href="/" aria-label="Italian Bros home">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3.5 14.2 16 4l12.5 10.2M6.3 12.4v15.1h19.4V12.4M10.1 23.8v-4.5M15.9 23.8v-8M21.7 23.8V12.7M9.1 27.5h13.8" /></svg>
-        <span>Deal Analyzer</span>
-      </a>
-      <button id="open-app" type="button">Open in app</button>
+    <header class="app-header">
+      <div class="header-inner">
+        <a class="back" href="/" aria-label="Back to Italian Bros">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7M8 12h11" /></svg>
+        </a>
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <path d="M3.5 14.2 16 4l12.5 10.2M6.3 12.4v15.1h19.4V12.4M9.1 27.5h13.8" />
+            <path class="gold" d="M10.1 23.8v-4.5M15.9 23.8v-8M21.7 23.8V12.7" />
+          </svg>
+        </span>
+        <span class="header-title">Shared Deal</span>
+        <button class="header-action" id="open-app" type="button">OPEN APP</button>
+      </div>
     </header>
+
     <main>
       <section class="loading" id="loading" aria-live="polite"><span></span><p>Opening shared evaluation…</p></section>
       <section class="error" id="error" hidden>
-        <p class="eyebrow">SHARED EVALUATION</p>
+        <p class="analysis-label">SHARED EVALUATION</p>
         <h1>This deal link could not be opened.</h1>
         <p>Ask the sender to copy a new link from Deal Analyzer.</p>
       </section>
+
       <article id="deal" hidden>
-        <div class="hero">
-          <p class="eyebrow" id="strategy"></p>
-          <h1 id="name"></h1>
-          <a id="address" target="_blank" rel="noopener noreferrer"></a>
-        </div>
-        <section class="metrics" id="metrics" aria-label="Headline metrics"></section>
-        <section class="card">
-          <h2>Deal breakdown</h2>
-          <div class="rows" id="rows"></div>
+        <p class="analysis-label" id="strategy"></p>
+
+        <section class="app-card property-card" aria-labelledby="property-heading">
+          <h1 class="section-label" id="property-heading">PROPERTY</h1>
+          <div class="section-rule"></div>
+          <div class="property-field">
+            <span>Deal name</span>
+            <strong id="name"></strong>
+          </div>
+          <div class="property-field">
+            <span>Property address</span>
+            <a id="address" target="_blank" rel="noopener noreferrer"></a>
+          </div>
         </section>
-        <section class="card verdict" id="verdict"></section>
-        <section class="card">
-          <h2>Shared assumptions</h2>
+
+        <section class="results" aria-labelledby="results-heading">
+          <h2 class="section-label results-heading" id="results-heading">RESULTS</h2>
+          <div class="metrics" id="metrics" aria-label="Headline metrics"></div>
+          <div class="breakdown" id="rows"></div>
+          <p class="metric-note">Headline results from the shared evaluation.</p>
+          <section class="verdict" id="verdict"></section>
+        </section>
+
+        <section class="app-card assumptions-card" aria-labelledby="assumptions-heading">
+          <h2 class="section-label" id="assumptions-heading">SHARED ASSUMPTIONS</h2>
+          <div class="section-rule"></div>
           <div class="rows" id="inputs"></div>
         </section>
+
         <section class="next-step">
-          <div><strong>Continue in Deal Analyzer</strong><p>Edit the assumptions, save a copy, compare deals, and export a client-ready report.</p></div>
+          <div>
+            <strong>Continue in Deal Analyzer</strong>
+            <p>Edit the assumptions, save a copy, compare deals, and export a client-ready report.</p>
+          </div>
           <button id="open-app-bottom" type="button">Open this deal</button>
         </section>
       </article>
     </main>
     <footer>DEVELOPED BY ITALIAN BROS COMPANY</footer>
-    <script src="./viewer.js?v=20260810.1"></script>
+    <script src="./viewer.js?v=20260813.1"></script>
   </body>
 </html>

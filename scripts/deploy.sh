@@ -18,6 +18,7 @@ trap cleanup EXIT HUP INT TERM
 
 cd "$ROOT"
 node scripts/verify-catalog.mjs
+node scripts/verify-deal-viewer.mjs
 
 REMOTE_STAGE=$(ssh "$REMOTE" "mktemp -d /tmp/italianbros-site.XXXXXX")
 case "$REMOTE_STAGE" in

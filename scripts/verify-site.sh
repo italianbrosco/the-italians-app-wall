@@ -41,7 +41,9 @@ grep -q 'temporary room and gameplay state' "$TMP_DIR/tin-wings-privacy.html"
 grep -q '<title>Tin Wings Support' "$TMP_DIR/tin-wings-support.html"
 grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/tin-wings-support.html"
 grep -q '<title>Shared Deal — Deal Analyzer</title>' "$TMP_DIR/deal-viewer.html"
-grep -q 'Open in app' "$TMP_DIR/deal-viewer.html"
+grep -q 'class="header-title">Shared Deal' "$TMP_DIR/deal-viewer.html"
+grep -q 'styles.css?v=20260813.1' "$TMP_DIR/deal-viewer.html"
+grep -q 'id="results-heading">RESULTS' "$TMP_DIR/deal-viewer.html"
 
 for icon in abc-smash calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred mortgage-calculator pollwar real-or-ai road-trip-arcade super-game tin-wings; do
   curl -fsSL "$BASE_URL/assets/icons/$icon.webp" -o "$TMP_DIR/$icon.webp"
