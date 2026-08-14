@@ -16,6 +16,8 @@ curl -fsSL "$BASE_URL/road-trip-arcade/privacy/" -o "$TMP_DIR/road-trip-privacy.
 curl -fsSL "$BASE_URL/road-trip-arcade/support/" -o "$TMP_DIR/road-trip-support.html"
 curl -fsSL "$BASE_URL/tin-wings/privacy/" -o "$TMP_DIR/tin-wings-privacy.html"
 curl -fsSL "$BASE_URL/tin-wings/support/" -o "$TMP_DIR/tin-wings-support.html"
+curl -fsSL "$BASE_URL/underworld-21/privacy/" -o "$TMP_DIR/underworld-21-privacy.html"
+curl -fsSL "$BASE_URL/underworld-21/support/" -o "$TMP_DIR/underworld-21-support.html"
 curl -fsSL "$BASE_URL/dealanalyzer/deal/" -o "$TMP_DIR/deal-viewer.html"
 curl -fsSL "$BASE_URL/.well-known/apple-app-site-association" -o "$TMP_DIR/apple-app-site-association"
 curl -fsSL "$BASE_URL/.well-known/assetlinks.json" -o "$TMP_DIR/assetlinks.json"
@@ -42,6 +44,10 @@ grep -q '<title>Tin Wings Privacy Policy' "$TMP_DIR/tin-wings-privacy.html"
 grep -q 'temporary room and gameplay state' "$TMP_DIR/tin-wings-privacy.html"
 grep -q '<title>Tin Wings Support' "$TMP_DIR/tin-wings-support.html"
 grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/tin-wings-support.html"
+grep -q '<title>Underworld 21 Privacy Policy' "$TMP_DIR/underworld-21-privacy.html"
+grep -q 'does not collect or transmit personal data' "$TMP_DIR/underworld-21-privacy.html"
+grep -q '<title>Underworld 21 Support' "$TMP_DIR/underworld-21-support.html"
+grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/underworld-21-support.html"
 grep -q '<title>Shared Deal — Deal Analyzer</title>' "$TMP_DIR/deal-viewer.html"
 grep -q 'class="header-title">Shared Deal' "$TMP_DIR/deal-viewer.html"
 grep -q 'styles.css?v=20260813.1' "$TMP_DIR/deal-viewer.html"
@@ -55,9 +61,9 @@ grep -q 'E6:D8:41:08:AD:57:1D:DE:4C:6A:AD:D4:B7:AB:DE:27:57:F0:CB:91:53:81:A3:02
 grep -q 'com.theitalians.mortgagecalculator' "$TMP_DIR/assetlinks.json"
 grep -q 'D1:0E:59:B1:7F:CD:3F:EA:50:02:D8:84:9E:6A:DB:3A:D3:35:98:AD:3A:70:AC:FD:26:95:28:84:68:D4:B9:49' "$TMP_DIR/assetlinks.json"
 
-for icon in abc-smash calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred mortgage-calculator pollwar real-or-ai road-trip-arcade super-game tin-wings; do
+for icon in abc-smash calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred mortgage-calculator pollwar real-or-ai road-trip-arcade super-game tin-wings underworld-21; do
   curl -fsSL "$BASE_URL/assets/icons/$icon.webp" -o "$TMP_DIR/$icon.webp"
   test -s "$TMP_DIR/$icon.webp"
 done
 
-printf 'Verified %s: showcase, catalog, 15 icons, Deal Analyzer universal/app links and shared viewer, Tin Wings, Road Trip Arcade, and Clay Scorecard legal pages, and preserved /debug/apps page.\n' "$BASE_URL"
+printf 'Verified %s: showcase, catalog, 16 icons, Deal Analyzer universal/app links and shared viewer, Underworld 21, Tin Wings, Road Trip Arcade, and Clay Scorecard legal pages, and preserved /debug/apps page.\n' "$BASE_URL"

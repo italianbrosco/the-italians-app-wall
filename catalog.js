@@ -158,6 +158,20 @@ window.APP_CATALOG = [
     actions: []
   },
   {
+    id: "underworld-21",
+    name: "Underworld 21",
+    category: "Card game",
+    description: "Play a fast, focused round of blackjack against a dealer who stands on every 17—no bets, accounts, ads, or distractions.",
+    icon: "/assets/icons/underworld-21.webp",
+    screenshot: "/assets/screenshots/underworld-21.webp",
+    screenshotAlt: "Underworld 21 blackjack table showing the dealer, player hand, totals, and hit and stand actions",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "rose",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "pollwar",
     name: "PollWar",
     category: "Social game",

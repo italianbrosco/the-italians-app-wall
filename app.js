@@ -5,6 +5,7 @@
   const grid = document.querySelector("#app-grid");
   const featuredOrder = [
     "road-trip-arcade",
+    "underworld-21",
     "clay-scorecard",
     "dream-journal",
     "easy-audio-notes",
