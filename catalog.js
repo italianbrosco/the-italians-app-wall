@@ -1,5 +1,19 @@
 window.APP_CATALOG = [
   {
+    id: "are-you-human",
+    name: "Are You Human? Prove It",
+    category: "Comedy puzzle game",
+    description: "Survive suspicious CAPTCHA tests, strange human challenges, and a confidence meter that distrusts perfection.",
+    icon: "/assets/icons/are-you-human.png",
+    screenshot: "/assets/screenshots/are-you-human.png",
+    screenshotAlt: "Are You Human home screen with a suspicious checkbox mascot and Prove It button",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "lime",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "road-trip-arcade",
     name: "Road Trip Arcade",
     category: "Road trip games",

@@ -4,6 +4,7 @@
   const catalog = Array.isArray(window.APP_CATALOG) ? window.APP_CATALOG : [];
   const grid = document.querySelector("#app-grid");
   const featuredOrder = [
+    "are-you-human",
     "road-trip-arcade",
     "underworld-21",
     "clay-scorecard",
