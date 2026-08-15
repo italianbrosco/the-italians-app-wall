@@ -90,5 +90,11 @@ curl -fsSL "$BASE_URL/assets/icons/dont-touch-red.png" -o "$TMP_DIR/dont-touch-r
 test -s "$TMP_DIR/dont-touch-red.png"
 curl -fsSL "$BASE_URL/assets/screenshots/dont-touch-red.png" -o "$TMP_DIR/dont-touch-red-screen.png"
 test -s "$TMP_DIR/dont-touch-red-screen.png"
+curl -fsSL "$BASE_URL/assets/icons/one-more.png" -o "$TMP_DIR/one-more.png"
+test -s "$TMP_DIR/one-more.png"
+curl -fsSL "$BASE_URL/assets/screenshots/one-more.png" -o "$TMP_DIR/one-more-screen.png"
+test -s "$TMP_DIR/one-more-screen.png"
+grep -q 'id: "one-more"' "$TMP_DIR/catalog.js"
+grep -q 'name: "One More: Push Your Luck"' "$TMP_DIR/catalog.js"
 
-printf 'Verified %s: showcase, catalog, 18 icons, Don’t Touch Red and existing legal pages, Deal Analyzer universal/app links and shared viewer, and preserved /debug/apps page.\n' "$BASE_URL"
+printf 'Verified %s: showcase, catalog, 19 icons including One More, existing legal pages, Deal Analyzer universal/app links and shared viewer, and preserved /debug/apps page.\n' "$BASE_URL"
