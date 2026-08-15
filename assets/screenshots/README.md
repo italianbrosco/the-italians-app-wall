@@ -8,7 +8,7 @@ Imported and verified on August 10, 2026:
 | --- | --- |
 | `abc-smash.webp` | App Store Connect, Apple ID `6798801210`, en-US iPhone screenshot `app-store-child-1242x2688.png` |
 | `calcspace.webp` | App Store Connect, Apple ID `6789995674`, en-US iPhone screenshot `03-two.png` |
-| `clay-scorecard.webp` | Real Clay Scorecard web app captured at its verified `393×852` phone viewport |
+| `yawtzee-best-scorecard.webp` | Real Yawtzee: Best Scorecard native app captured at the App Store `1290×2796` iPhone 6.7-inch size, then resized for the showcase |
 | `deal-analyzer.webp` | App Store Connect, Apple ID `6790182110`, en-US iPhone screenshot `01-deal-analyzer-home-20260808.png` |
 | `dream-journal.webp` | App Store Connect, Apple ID `6798083909`, en-US iPhone screenshot `01-journal-history-current.png` |
 | `easy-audio-notes.webp` | App Store Connect, Apple ID `6798798592`, en-US iPhone screenshot `build2-record-iphone.png` |
