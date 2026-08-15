@@ -228,6 +228,20 @@ window.APP_CATALOG = [
     actions: []
   },
   {
+    id: "dont-touch-red",
+    name: "Don’t Touch Red",
+    category: "Reflex game",
+    description: "Guide a tiny white dot through moving hazards while color tricks, fake alerts, and changing controls try to make you panic.",
+    icon: "/assets/icons/dont-touch-red.png",
+    screenshot: "/assets/screenshots/dont-touch-red.png",
+    screenshotAlt: "Don’t Touch Red home screen with daily challenge, endless mode, and a tiny white dot surrounded by colorful hazards",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "red",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "tin-wings",
     name: "Tin Wings",
     category: "Arcade game",

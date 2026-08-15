@@ -712,6 +712,7 @@ button:focus-visible {
 .accent-steel { --accent: #606e79; --accent-soft: #ebeff1; }
 .accent-arcade { --accent: #3158a5; --accent-soft: #e8efff; }
 .accent-lime { --accent: #4d9200; --accent-soft: #efffdc; }
+.accent-red { --accent: #d94742; --accent-soft: #fdeae8; }
 
 .app-dialog {
   width: min(440px, calc(100% - 32px));

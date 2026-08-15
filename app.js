@@ -7,6 +7,7 @@
     "are-you-human",
     "road-trip-arcade",
     "underworld-21",
+    "dont-touch-red",
     "clay-scorecard",
     "dream-journal",
     "easy-audio-notes",
