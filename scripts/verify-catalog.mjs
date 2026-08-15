@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const source = fs.readFileSync(path.join(root, "catalog.js"), "utf8");
+const appSource = fs.readFileSync(path.join(root, "app.js"), "utf8");
 const sandbox = { window: {} };
 vm.runInNewContext(source, sandbox, { filename: "catalog.js" });
 
@@ -53,12 +54,23 @@ if (Array.isArray(catalog)) {
   const counts = Object.fromEntries(
     ["available", "coming"].map((status) => [status, catalog.filter((app) => app.status === status).length])
   );
-  const expected = { available: 2, coming: 16 };
+  const expected = { available: 2, coming: 17 };
   for (const [status, count] of Object.entries(expected)) {
     if (counts[status] !== count) errors.push(`expected ${count} ${status} apps, found ${counts[status]}`);
   }
 
-  if (catalog.length !== 18) errors.push(`expected 18 apps, found ${catalog.length}`);
+  if (catalog.length !== 19) errors.push(`expected 19 apps, found ${catalog.length}`);
+
+  const orderSource = appSource.match(/const featuredOrder = \[([\s\S]*?)\];/)?.[1] || "";
+  const renderedIds = [...orderSource.matchAll(/"([a-z0-9-]+)"/g)].map((match) => match[1]);
+  const renderedSet = new Set(renderedIds);
+  for (const id of ids) {
+    if (!renderedSet.has(id)) errors.push(`${id}: catalog entry is omitted from the rendered app order`);
+  }
+  for (const id of renderedSet) {
+    if (!ids.has(id)) errors.push(`${id}: rendered app order has no catalog entry`);
+  }
+  if (renderedIds.length !== renderedSet.size) errors.push("rendered app order contains a duplicate id");
 }
 
 if (errors.length) {
@@ -66,4 +78,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("Catalog verified: 18 unique apps, 18 icons, 18 authentic screenshots, 2 store releases, 16 release updates coming soon, no testing links.");
+console.log("Catalog verified: 19 unique apps, 19 icons, 19 authentic screenshots, 2 store releases, 17 release updates coming soon, no testing links.");

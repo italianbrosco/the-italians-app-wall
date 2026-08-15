@@ -242,6 +242,20 @@ window.APP_CATALOG = [
     actions: []
   },
   {
+    id: "one-more",
+    name: "One More: Push Your Luck",
+    category: "Push-your-luck game",
+    description: "Push a score one tap at a time, bank before the risk catches you, then see what would have happened.",
+    icon: "/assets/icons/one-more.png",
+    screenshot: "/assets/screenshots/one-more.png",
+    screenshotAlt: "One More game screen at score 37 with a red plus-one button, next-tap risk, bank action, and lifetime score",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "red",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "tin-wings",
     name: "Tin Wings",
     category: "Arcade game",

@@ -8,6 +8,7 @@
     "road-trip-arcade",
     "underworld-21",
     "dont-touch-red",
+    "one-more",
     "clay-scorecard",
     "dream-journal",
     "easy-audio-notes",
