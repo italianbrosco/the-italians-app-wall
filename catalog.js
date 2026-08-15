@@ -108,7 +108,7 @@ window.APP_CATALOG = [
     description: "A quick, kid-friendly early-literacy game with spoken letter sounds and playful bug-smashing rounds.",
     icon: "/assets/icons/abc-smash.webp",
     screenshot: "/assets/screenshots/abc-smash.webp",
-    screenshotAlt: "ABC Smash letter game with colorful bugs on a dirt playfield",
+    screenshotAlt: "ABC Smash letter game with a colorful storybook bug in a leafy garden",
     status: "coming",
     statusLabel: "Coming soon",
     accent: "sky",
