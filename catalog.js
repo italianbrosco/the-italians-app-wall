@@ -247,7 +247,7 @@ window.APP_CATALOG = [
     category: "Push-your-luck game",
     description: "Push a score one tap at a time, bank before the risk catches you, then see what would have happened.",
     icon: "/assets/icons/one-more.png",
-    screenshot: "/assets/screenshots/one-more-build-3.png",
+    screenshot: "/assets/screenshots/one-more-build-4.png",
     screenshotAlt: "One More game screen starting at zero with a red plus-one button, bust chance, disabled bank action, and best score",
     status: "coming",
     statusLabel: "Coming soon",
