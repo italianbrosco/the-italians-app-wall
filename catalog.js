@@ -177,7 +177,7 @@ window.APP_CATALOG = [
     category: "Card game",
     description: "Play quick rounds of blackjack against Captain Finn in the storm-lit gaming hold of the Gilded Wake.",
     icon: "/assets/icons/blackwake-21.webp",
-    screenshot: "/assets/screenshots/blackwake-21.webp",
+    screenshot: "/assets/screenshots/blackwake-21.jpg",
     screenshotAlt: "Blackwake 21 pirate blackjack table with Captain Finn, player cards, totals, and hit and stand actions",
     status: "coming",
     statusLabel: "Coming soon",
