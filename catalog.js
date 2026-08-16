@@ -20,7 +20,7 @@ window.APP_CATALOG = [
     description: "Turn miles into play with license-plate spotting, road bingo, trivia, word races, and shared trip scores.",
     icon: "/assets/icons/road-trip-arcade.webp",
     screenshot: "/assets/screenshots/road-trip-arcade.webp",
-    screenshotAlt: "Road Trip Arcade pixel-art home screen with a night highway and five game choices",
+    screenshotAlt: "Road Trip Arcade pixel-art daytime highway home screen with five game choices",
     status: "coming",
     statusLabel: "Coming soon",
     accent: "arcade",
