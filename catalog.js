@@ -262,7 +262,7 @@ window.APP_CATALOG = [
     description: "Fast biplane dogfights with solo survival, online rooms, rockets, ejection, and parachute rescues.",
     icon: "/assets/icons/tin-wings.webp",
     screenshot: "/assets/screenshots/tin-wings.webp",
-    screenshotAlt: "Tin Wings landscape menu with solo, survival, online, how-to-fly, and settings actions",
+    screenshotAlt: "Tin Wings clay-style landscape menu with Solo, Online, and Garage actions",
     status: "coming",
     statusLabel: "Coming soon",
     accent: "steel",
