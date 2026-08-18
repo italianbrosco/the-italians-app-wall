@@ -27,7 +27,7 @@ case "$REMOTE_STAGE" in
 esac
 
 rsync -az \
-  index.html styles.css catalog.js app.js \
+  index.html styles.css catalog.js app.js app-ads.txt \
   .well-known assets debug abc-smash are-you-human blackwake-21 clay-scorecard dont-touch-red road-trip-arcade tin-wings underworld-21 dealanalyzer \
   "$REMOTE:$REMOTE_STAGE/"
 
@@ -36,13 +36,14 @@ ssh "$REMOTE" "set -eu
   if [ ! -f '$TARGET/debug/apps/index.html' ]; then
     sudo install -m 644 '$TARGET/index.html' '$TARGET/debug/apps/index.html'
   fi
-  for file in index.html styles.css catalog.js app.js; do
+  for file in index.html styles.css catalog.js app.js app-ads.txt; do
     if [ -f '$TARGET/'\"\$file\" ]; then sudo cp -a '$TARGET/'\"\$file\" '$BACKUP_ROOT/$STAMP/'; fi
   done
   sudo install -m 644 '$REMOTE_STAGE/index.html' '$TARGET/index.html'
   sudo install -m 644 '$REMOTE_STAGE/styles.css' '$TARGET/styles.css'
   sudo install -m 644 '$REMOTE_STAGE/catalog.js' '$TARGET/catalog.js'
   sudo install -m 644 '$REMOTE_STAGE/app.js' '$TARGET/app.js'
+  sudo install -m 644 '$REMOTE_STAGE/app-ads.txt' '$TARGET/app-ads.txt'
   sudo cp -R '$REMOTE_STAGE/.well-known/.' '$TARGET/.well-known/'
   sudo cp -R '$REMOTE_STAGE/assets/.' '$TARGET/assets/'
   sudo cp -R '$REMOTE_STAGE/debug/.' '$TARGET/debug/'

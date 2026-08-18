@@ -8,6 +8,7 @@ trap 'rm -rf "$TMP_DIR"' EXIT HUP INT TERM
 curl -fsSL "$BASE_URL/" -o "$TMP_DIR/home.html"
 curl -fsSL "$BASE_URL/catalog.js" -o "$TMP_DIR/catalog.js"
 curl -fsSL "$BASE_URL/app.js" -o "$TMP_DIR/app.js"
+curl -fsSL "$BASE_URL/app-ads.txt" -o "$TMP_DIR/app-ads.txt"
 curl -fsSL "$BASE_URL/assets/favicon.svg" -o "$TMP_DIR/favicon.svg"
 curl -fsSL "$BASE_URL/debug/apps/" -o "$TMP_DIR/debug-apps.html"
 curl -fsSL "$BASE_URL/abc-smash/privacy/" -o "$TMP_DIR/abc-smash-privacy.html"
@@ -33,6 +34,8 @@ grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
 grep -q '<svg' "$TMP_DIR/favicon.svg"
 grep -q 'window.APP_CATALOG' "$TMP_DIR/catalog.js"
 grep -q 'Release updates coming soon' "$TMP_DIR/app.js"
+test "$(wc -l < "$TMP_DIR/app-ads.txt" | tr -d ' ')" -eq 1
+grep -qx 'google.com, pub-7421827000635278, DIRECT, f08c47fec0942fa0' "$TMP_DIR/app-ads.txt"
 if grep -Eqi 'testflight\.apple\.com|play\.google\.com/apps/testing|public beta|closed test' "$TMP_DIR/home.html" "$TMP_DIR/catalog.js" "$TMP_DIR/app.js"; then
   printf 'Testing links or testing language leaked into the public showcase.\n' >&2
   exit 1
