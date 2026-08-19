@@ -25,6 +25,8 @@ curl -fsSL "$BASE_URL/blackwake-21/privacy/" -o "$TMP_DIR/blackwake-21-privacy.h
 curl -fsSL "$BASE_URL/blackwake-21/support/" -o "$TMP_DIR/blackwake-21-support.html"
 curl -fsSL "$BASE_URL/dont-touch-red/privacy/" -o "$TMP_DIR/dont-touch-red-privacy.html"
 curl -fsSL "$BASE_URL/dont-touch-red/support/" -o "$TMP_DIR/dont-touch-red-support.html"
+curl -fsSL "$BASE_URL/marbles/privacy/" -o "$TMP_DIR/marbles-privacy.html"
+curl -fsSL "$BASE_URL/marbles/support/" -o "$TMP_DIR/marbles-support.html"
 curl -fsSL "$BASE_URL/dealanalyzer/deal/" -o "$TMP_DIR/deal-viewer.html"
 curl -fsSL "$BASE_URL/.well-known/apple-app-site-association" -o "$TMP_DIR/apple-app-site-association"
 curl -fsSL "$BASE_URL/.well-known/assetlinks.json" -o "$TMP_DIR/assetlinks.json"
@@ -69,6 +71,10 @@ grep -q '<title>Don’t Touch Red Privacy Policy' "$TMP_DIR/dont-touch-red-priva
 grep -q 'Google Mobile Ads' "$TMP_DIR/dont-touch-red-privacy.html"
 grep -q '<title>Don’t Touch Red Support' "$TMP_DIR/dont-touch-red-support.html"
 grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/dont-touch-red-support.html"
+grep -q '<title>Marbles Privacy Policy' "$TMP_DIR/marbles-privacy.html"
+grep -q 'does not collect personal information' "$TMP_DIR/marbles-privacy.html"
+grep -q '<title>Marbles Support' "$TMP_DIR/marbles-support.html"
+grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/marbles-support.html"
 grep -q '<title>Shared Deal — Deal Analyzer</title>' "$TMP_DIR/deal-viewer.html"
 grep -q 'class="header-title">Shared Deal' "$TMP_DIR/deal-viewer.html"
 grep -q 'styles.css?v=20260813.1' "$TMP_DIR/deal-viewer.html"
@@ -82,7 +88,7 @@ grep -q 'E6:D8:41:08:AD:57:1D:DE:4C:6A:AD:D4:B7:AB:DE:27:57:F0:CB:91:53:81:A3:02
 grep -q 'com.theitalians.mortgagecalculator' "$TMP_DIR/assetlinks.json"
 grep -q 'D1:0E:59:B1:7F:CD:3F:EA:50:02:D8:84:9E:6A:DB:3A:D3:35:98:AD:3A:70:AC:FD:26:95:28:84:68:D4:B9:49' "$TMP_DIR/assetlinks.json"
 
-for icon in abc-smash blackwake-21 calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred mortgage-calculator pollwar real-or-ai road-trip-arcade super-game tin-wings; do
+for icon in abc-smash blackwake-21 calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred marbles mortgage-calculator pollwar real-or-ai road-trip-arcade super-game tin-wings; do
   curl -fsSL "$BASE_URL/assets/icons/$icon.webp" -o "$TMP_DIR/$icon.webp"
   test -s "$TMP_DIR/$icon.webp"
 done
@@ -100,4 +106,4 @@ test -s "$TMP_DIR/one-more-screen.png"
 grep -q 'id: "one-more"' "$TMP_DIR/catalog.js"
 grep -q 'name: "One More: Push Your Luck"' "$TMP_DIR/catalog.js"
 
-printf 'Verified %s: showcase, catalog, 19 icons including One More, existing legal pages, Deal Analyzer universal/app links and shared viewer, and preserved /debug/apps page.\n' "$BASE_URL"
+printf 'Verified %s: showcase, catalog, 20 icons including Marbles and One More, existing legal pages, Deal Analyzer universal/app links and shared viewer, and preserved /debug/apps page.\n' "$BASE_URL"
