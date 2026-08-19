@@ -231,7 +231,7 @@ window.APP_CATALOG = [
     id: "dont-touch-red",
     name: "Don’t Touch Red",
     category: "Reflex game",
-    description: "Guide a tiny white dot through moving hazards while color tricks, fake alerts, and changing controls try to make you panic.",
+    description: "Guide a tiny white dot through escalating 30-second waves as each newly introduced color brings its own temporary debuff.",
     icon: "/assets/icons/dont-touch-red.png",
     screenshot: "/assets/screenshots/dont-touch-red-build-4.png",
     screenshotAlt: "Don’t Touch Red home screen with one Play button, compact navigation, and the red-and-white dot mark",
