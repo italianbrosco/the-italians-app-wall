@@ -95,7 +95,7 @@ curl -fsSL "$BASE_URL/assets/screenshots/dont-touch-red.png" -o "$TMP_DIR/dont-t
 test -s "$TMP_DIR/dont-touch-red-screen.png"
 curl -fsSL "$BASE_URL/assets/icons/one-more.png" -o "$TMP_DIR/one-more.png"
 test -s "$TMP_DIR/one-more.png"
-curl -fsSL "$BASE_URL/assets/screenshots/one-more.png" -o "$TMP_DIR/one-more-screen.png"
+curl -fsSL "$BASE_URL/assets/screenshots/one-more-build-11.png" -o "$TMP_DIR/one-more-screen.png"
 test -s "$TMP_DIR/one-more-screen.png"
 grep -q 'id: "one-more"' "$TMP_DIR/catalog.js"
 grep -q 'name: "One More: Push Your Luck"' "$TMP_DIR/catalog.js"
