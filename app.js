@@ -6,6 +6,7 @@
   const featuredOrder = [
     "are-you-human",
     "road-trip-arcade",
+    "marbles",
     "blackwake-21",
     "dont-touch-red",
     "one-more",
@@ -49,7 +50,7 @@
     const imagePriority = priorityIds.has(app.id)
       ? 'loading="eager" fetchpriority="high"'
       : 'loading="lazy"';
-    const isLandscape = app.id === "tin-wings";
+    const isLandscape = app.id === "tin-wings" || app.id === "marbles";
     const screenshotWidth = isLandscape ? 900 : 520;
     const screenshotHeight = isLandscape ? 414 : 1128;
 

@@ -28,6 +28,20 @@ window.APP_CATALOG = [
     actions: []
   },
   {
+    id: "marbles",
+    name: "Marbles: Family Board Game",
+    category: "Family board game",
+    description: "Roll, race, block, and capture in a warm tabletop match against three lively computer opponents.",
+    icon: "/assets/icons/marbles.webp",
+    screenshot: "/assets/screenshots/marbles.webp",
+    screenshotAlt: "Marbles Family Match showing the live wooden board, colored marbles, player panels, dice, hint, and undo controls",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "amber",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "calcspace",
     name: "CalcSpace",
     category: "Everyday utility",

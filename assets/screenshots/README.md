@@ -22,5 +22,6 @@ Imported and verified on August 10, 2026:
 | `road-trip-arcade.webp` | Real Road Trip Arcade native iOS simulator capture at `1179×2556`, showing the verified final home screen |
 | `super-game.webp` | App Store Connect, Apple ID `6798083095`, en-US iPhone screenshot `01-home.png` |
 | `tin-wings.webp` | Real Tin Wings native iOS simulator capture, rotated to the app’s landscape orientation without altering the screen content |
+| `marbles.webp` | Real Marbles native Android landscape capture showing a live Family Match selection state, resized and center-cropped by less than two pixels for the showcase |
 
 The WebP derivatives are resized for website delivery only. Preserve the corresponding App Store Connect listing or verified app capture as the source of truth when refreshing a screen.
