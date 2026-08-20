@@ -34,7 +34,7 @@ window.APP_CATALOG = [
     description: "Roll two dice, race, block, and capture on a premium wooden board against three lively computer opponents.",
     icon: "/assets/icons/marbles.webp",
     screenshot: "/assets/screenshots/marbles.webp",
-    screenshotAlt: "Marbles Family Match showing the live wooden board, colored marbles, player panels, dice, hint, and undo controls",
+    screenshotAlt: "Marbles showing a polished wooden cross board, corner marble bases, player panels, two dice, hint, and undo controls",
     status: "coming",
     statusLabel: "Coming soon",
     accent: "amber",
