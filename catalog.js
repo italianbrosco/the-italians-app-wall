@@ -31,7 +31,7 @@ window.APP_CATALOG = [
     id: "marbles",
     name: "Marbles: Family Board Game",
     category: "Family board game",
-    description: "Roll, race, block, and capture in a warm tabletop match against three lively computer opponents.",
+    description: "Roll two dice, race, block, and capture on a premium wooden board against three lively computer opponents.",
     icon: "/assets/icons/marbles.webp",
     screenshot: "/assets/screenshots/marbles.webp",
     screenshotAlt: "Marbles Family Match showing the live wooden board, colored marbles, player panels, dice, hint, and undo controls",
