@@ -270,6 +270,20 @@ window.APP_CATALOG = [
     actions: []
   },
   {
+    id: "get-in-line",
+    name: "Get In Line: Rank & Reveal",
+    category: "Social ranking game",
+    description: "Rank funny dilemmas, reveal the crowd’s consensus, and compare choices with friends.",
+    icon: "/assets/icons/get-in-line.png",
+    screenshot: "/assets/screenshots/get-in-line-build-7.png",
+    screenshotAlt: "Get In Line time-machine ranking screen with four illustrated choices and a Done button",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "purple",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "tin-wings",
     name: "Tin Wings",
     category: "Arcade game",

@@ -5,6 +5,7 @@
   const grid = document.querySelector("#app-grid");
   const featuredOrder = [
     "are-you-human",
+    "get-in-line",
     "road-trip-arcade",
     "marbles",
     "blackwake-21",
