@@ -105,5 +105,11 @@ curl -fsSL "$BASE_URL/assets/screenshots/one-more-build-11.png" -o "$TMP_DIR/one
 test -s "$TMP_DIR/one-more-screen.png"
 grep -q 'id: "one-more"' "$TMP_DIR/catalog.js"
 grep -q 'name: "One More: Push Your Luck"' "$TMP_DIR/catalog.js"
+curl -fsSL "$BASE_URL/assets/icons/get-in-line.png" -o "$TMP_DIR/get-in-line.png"
+test -s "$TMP_DIR/get-in-line.png"
+curl -fsSL "$BASE_URL/assets/screenshots/get-in-line-build-7.png" -o "$TMP_DIR/get-in-line-screen.png"
+test -s "$TMP_DIR/get-in-line-screen.png"
+grep -q 'id: "get-in-line"' "$TMP_DIR/catalog.js"
+grep -q 'name: "Get In Line: Rank & Reveal"' "$TMP_DIR/catalog.js"
 
-printf 'Verified %s: showcase, catalog, 20 icons including Marbles and One More, existing legal pages, Deal Analyzer universal/app links and shared viewer, and preserved /debug/apps page.\n' "$BASE_URL"
+printf 'Verified %s: showcase, catalog, 21 icons including Marbles, One More, and Get In Line, existing legal pages, Deal Analyzer universal/app links and shared viewer, and preserved /debug/apps page.\n' "$BASE_URL"
