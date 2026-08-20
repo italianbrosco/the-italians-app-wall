@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const source = fs.readFileSync(path.join(root, "catalog.js"), "utf8");
 const appSource = fs.readFileSync(path.join(root, "app.js"), "utf8");
+const indexSource = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const sandbox = { window: {} };
 vm.runInNewContext(source, sandbox, { filename: "catalog.js" });
 
@@ -71,6 +72,19 @@ if (Array.isArray(catalog)) {
     if (!ids.has(id)) errors.push(`${id}: rendered app order has no catalog entry`);
   }
   if (renderedIds.length !== renderedSet.size) errors.push("rendered app order contains a duplicate id");
+
+  const orderedCatalog = sandbox.window.orderAppCatalog(catalog, renderedIds);
+  const firstComingIndex = orderedCatalog.findIndex((app) => app.status === "coming");
+  if (firstComingIndex >= 0 && orderedCatalog.slice(firstComingIndex).some((app) => app.status === "available")) {
+    errors.push("available apps must render before every unreleased app");
+  }
+
+  if (indexSource.indexOf('id="apps"') > indexSource.indexOf('id="about"')) {
+    errors.push("the apps section must precede the studio intro in mobile/document order");
+  }
+  if (indexSource.includes("three-brothers-fountain") || appSource.includes("three-brothers-fountain")) {
+    errors.push("the retired three-brothers portrait must not be rendered");
+  }
 }
 
 if (errors.length) {

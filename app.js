@@ -26,9 +26,9 @@
     "super-game",
     "tin-wings"
   ];
-  const priorityIds = new Set(featuredOrder.slice(0, 6));
   const byId = new Map(catalog.map((app) => [app.id, app]));
-  const orderedCatalog = featuredOrder.map((id) => byId.get(id)).filter(Boolean);
+  const orderedCatalog = window.orderAppCatalog(catalog, featuredOrder);
+  const priorityIds = new Set(orderedCatalog.slice(0, 6).map((app) => app.id));
 
   const escapeHtml = (value) =>
     String(value)
@@ -82,7 +82,7 @@
 
   const supportMarkup = () => `
     <article class="support-panel" aria-labelledby="support-title">
-      <img src="/assets/brand/three-brothers-fountain.webp" alt="" width="900" height="600" loading="lazy" />
+      <img src="/assets/brand/atelier-emblem.svg" alt="" width="900" height="600" loading="lazy" />
       <div>
         <p>Direct from our workshop</p>
         <h3 id="support-title">Need a hand?</h3>

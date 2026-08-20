@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Italian Bros atelier emblem</title>
+  <desc id="desc">A hand-drawn fedora and curled mustache.</desc>
+  <defs>
+    <linearGradient id="hat" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff4dc"/>
+      <stop offset="1" stop-color="#e2bd76"/>
+    </linearGradient>
+    <pattern id="hatch" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+      <path d="M0 2h18M0 10h18" stroke="#3b2419" stroke-width="2" opacity=".18"/>
+    </pattern>
+  </defs>
+  <g transform="translate(-126 -51) scale(1.28)" fill="none" stroke="#3b2419" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M257 248c22-103 68-155 142-164 77-9 145 18 189 81l51 77c9 14 3 32-12 39-104 48-347 48-459 1-18-8-23-31-9-45 22-22 55-26 98-21Z" fill="url(#hat)" stroke-width="15"/>
+    <path d="M223 218c113 50 274 52 402 7l22 45c-134 52-312 52-443-4Z" fill="#b6543f" stroke-width="12"/>
+    <path d="M232 219c105 47 258 51 380 13" stroke="#143f40" stroke-width="15"/>
+    <path d="M304 191c59-48 189-59 271 3M299 143c84 32 180 30 255 3" stroke-width="7" opacity=".55"/>
+    <path d="M257 248c22-103 68-155 142-164 77-9 145 18 189 81l51 77c9 14 3 32-12 39-104 48-347 48-459 1-18-8-23-31-9-45 22-22 55-26 98-21Z" fill="url(#hatch)" stroke="none"/>
+    <path d="M624 227c28-35 50-55 67-59-2 28-16 52-45 72" fill="#d6a64e" stroke-width="8"/>
+    <path d="M687 171c-17 20-29 39-38 64" stroke-width="5"/>
+    <path d="M442 345c-55-59-121-65-166-34-39 27-76 18-91-16-5 57 24 94 81 90 61-4 105-27 176-40Z" fill="#3b2419" stroke-width="8"/>
+    <path d="M458 345c55-59 121-65 166-34 39 27 76 18 91-16 5 57-24 94-81 90-61-4-105-27-176-40Z" fill="#3b2419" stroke-width="8"/>
+    <path d="M442 345c-62 7-119 20-172 38M458 345c62 7 119 20 172 38" stroke="#fff4dc" stroke-width="6" opacity=".32"/>
+  </g>
+</svg>

@@ -46,6 +46,10 @@ ssh "$REMOTE" "set -eu
   sudo install -m 644 '$REMOTE_STAGE/app-ads.txt' '$TARGET/app-ads.txt'
   sudo cp -R '$REMOTE_STAGE/.well-known/.' '$TARGET/.well-known/'
   sudo cp -R '$REMOTE_STAGE/assets/.' '$TARGET/assets/'
+  sudo rm -f \
+    '$TARGET/assets/brand/three-brothers-fountain.png' \
+    '$TARGET/assets/brand/three-brothers-fountain.webp' \
+    '$TARGET/assets/brand/three-brothers-ink.webp'
   sudo cp -R '$REMOTE_STAGE/debug/.' '$TARGET/debug/'
   sudo cp -R '$REMOTE_STAGE/abc-smash/.' '$TARGET/abc-smash/'
   sudo cp -R '$REMOTE_STAGE/are-you-human/.' '$TARGET/are-you-human/'

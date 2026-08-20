@@ -298,3 +298,12 @@ window.APP_CATALOG = [
     actions: []
   }
 ];
+
+window.orderAppCatalog = (catalog, featuredOrder) => {
+  const rank = { available: 0, coming: 1 };
+  return featuredOrder
+    .map((id, index) => ({ app: catalog.find((item) => item.id === id), index }))
+    .filter(({ app }) => Boolean(app))
+    .sort((left, right) => (rank[left.app.status] ?? 99) - (rank[right.app.status] ?? 99) || left.index - right.index)
+    .map(({ app }) => app);
+};
