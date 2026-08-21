@@ -85,6 +85,12 @@ if (Array.isArray(catalog)) {
   if (indexSource.includes("three-brothers-fountain") || appSource.includes("three-brothers-fountain")) {
     errors.push("the retired three-brothers portrait must not be rendered");
   }
+  if (!indexSource.includes('/assets/brand/italian-bros-crest.webp')) {
+    errors.push("the header must render the approved Italian Bros crest logo");
+  }
+  if (!fs.existsSync(path.join(root, "assets/brand/italian-bros-crest.webp"))) {
+    errors.push("the approved Italian Bros crest logo asset is missing");
+  }
 }
 
 if (errors.length) {
