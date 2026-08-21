@@ -55,7 +55,7 @@ if (Array.isArray(catalog)) {
   const counts = Object.fromEntries(
     ["available", "coming"].map((status) => [status, catalog.filter((app) => app.status === status).length])
   );
-  const expected = { available: 2, coming: 19 };
+  const expected = { available: 3, coming: 18 };
   for (const [status, count] of Object.entries(expected)) {
     if (counts[status] !== count) errors.push(`expected ${count} ${status} apps, found ${counts[status]}`);
   }
@@ -74,6 +74,10 @@ if (Array.isArray(catalog)) {
   if (renderedIds.length !== renderedSet.size) errors.push("rendered app order contains a duplicate id");
 
   const orderedCatalog = sandbox.window.orderAppCatalog(catalog, renderedIds);
+  const expectedLeadingIds = ["calcspace", "mortgage-calculator", "dream-journal", "deal-analyzer"];
+  if (orderedCatalog.slice(0, 4).map((app) => app.id).join(",") !== expectedLeadingIds.join(",")) {
+    errors.push("the catalog must begin with CalcSpace, Mortgage Calculator, Dream Journal, then Deal Analyzer");
+  }
   const firstComingIndex = orderedCatalog.findIndex((app) => app.status === "coming");
   if (firstComingIndex >= 0 && orderedCatalog.slice(firstComingIndex).some((app) => app.status === "available")) {
     errors.push("available apps must render before every unreleased app");
@@ -85,17 +89,17 @@ if (Array.isArray(catalog)) {
   if (indexSource.includes("three-brothers-fountain") || appSource.includes("three-brothers-fountain")) {
     errors.push("the retired three-brothers portrait must not be rendered");
   }
-  if (!indexSource.includes('/assets/brand/italian-bros-crest.webp')) {
-    errors.push("the header must render the approved Italian Bros crest logo");
+  if (!indexSource.includes('/assets/brand/italian-bros-crest-transparent.png')) {
+    errors.push("the header must render the transparent Italian Bros crest logo");
   }
-  if (!fs.existsSync(path.join(root, "assets/brand/italian-bros-crest.webp"))) {
-    errors.push("the approved Italian Bros crest logo asset is missing");
+  if (!indexSource.includes('/assets/brand/italian-bros-wordmark.png')) {
+    errors.push("the header must render the centered Italian Bros Co. wordmark");
   }
-  if (!appSource.includes('/assets/brand/italian-bros-support.webp')) {
-    errors.push("the support panel must render the approved Italian Bros team badge");
+  if (!fs.existsSync(path.join(root, "assets/brand/italian-bros-crest-transparent.png")) || !fs.existsSync(path.join(root, "assets/brand/italian-bros-wordmark.png"))) {
+    errors.push("the transparent header brand assets are missing");
   }
-  if (!fs.existsSync(path.join(root, "assets/brand/italian-bros-support.webp"))) {
-    errors.push("the approved Italian Bros support badge asset is missing");
+  if (!appSource.includes('/assets/brand/italian-bros-support-transparent.png') || !fs.existsSync(path.join(root, "assets/brand/italian-bros-support-transparent.png"))) {
+    errors.push("the transparent Italian Bros support badge asset is missing");
   }
 }
 
@@ -104,4 +108,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("Catalog verified: 21 unique apps, 21 icons, 21 authentic screenshots, 2 store releases, 19 release updates coming soon, no testing links.");
+console.log("Catalog verified: 21 unique apps, 21 icons, 21 authentic screenshots, 3 store releases, 18 release updates coming soon, no testing links.");

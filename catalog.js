@@ -109,11 +109,13 @@ window.APP_CATALOG = [
     icon: "/assets/icons/dream-journal.webp",
     screenshot: "/assets/screenshots/dream-journal.webp",
     screenshotAlt: "Dream Journal home screen with a clay moon illustration and journal action",
-    status: "coming",
-    statusLabel: "Coming soon",
+    status: "available",
+    statusLabel: "Available now",
     accent: "lilac",
-    platforms: [],
-    actions: []
+    platforms: [{ label: "iPhone & iPad", kind: "ios" }],
+    actions: [
+      { label: "View on the App Store", href: "https://apps.apple.com/us/app/dream-journal-ai-analyzer/id6798083909", primary: true }
+    ]
   },
   {
     id: "abc-smash",

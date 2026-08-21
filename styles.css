@@ -80,16 +80,16 @@ button:focus-visible {
 .site-header {
   position: relative;
   z-index: 20;
-  height: 96px;
+  height: 104px;
   padding: 0 clamp(28px, 3.5vw, 58px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 248, 230, 0.16);
+  border-bottom: 1px solid rgba(18, 48, 60, 0.22);
   background:
-    radial-gradient(circle at 20% -90%, rgba(244, 216, 164, 0.16), transparent 58%),
-    linear-gradient(110deg, #12372f 0%, var(--studio-green) 48%, var(--studio-green-light) 100%);
-  box-shadow: 0 3px 18px rgba(7, 31, 38, 0.2);
+    radial-gradient(circle at 50% -120%, rgba(255, 255, 255, 0.88), transparent 62%),
+    linear-gradient(110deg, #d5c097 0%, #f4eee1 30%, #fffaf0 50%, #f4eee1 70%, #d5c097 100%);
+  box-shadow: 0 3px 18px rgba(7, 31, 38, 0.16);
 }
 
 .site-header::after {
@@ -104,15 +104,12 @@ button:focus-visible {
 }
 
 .brand {
-  width: 86px;
-  height: 86px;
+  width: 98px;
+  height: 98px;
   flex: 0 0 auto;
   display: block;
-  overflow: hidden;
-  border: 1px solid rgba(226, 189, 119, 0.72);
-  border-radius: 13px;
-  background: #f8f6f1;
-  box-shadow: 0 6px 14px rgba(5, 24, 25, 0.28);
+  border: 0;
+  background: transparent;
   text-decoration: none;
 }
 
@@ -121,13 +118,26 @@ button:focus-visible {
   height: 100%;
   display: block;
   object-fit: contain;
-  transform: scale(1.14);
+  filter: drop-shadow(0 5px 7px rgba(5, 24, 25, 0.2));
+}
+
+.brand-wordmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(300px, 32vw, 460px);
+  height: 78px;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
 }
 
 .site-nav {
   display: flex;
   align-items: center;
   gap: clamp(26px, 3vw, 50px);
+  margin-left: auto;
 }
 
 .site-nav a {
@@ -138,7 +148,7 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid transparent;
-  color: #fff8e9;
+  color: #173b3c;
   font-size: 15px;
   font-weight: 760;
   letter-spacing: 0.01em;
@@ -147,12 +157,12 @@ button:focus-visible {
 }
 
 .site-nav a:hover {
-  border-bottom-color: #e0b66c;
-  color: white;
+  border-bottom-color: #a9563f;
+  color: #0c2c32;
 }
 
 .showcase-shell {
-  height: calc(100vh - 96px);
+  height: calc(100vh - 104px);
   padding: 30px clamp(28px, 3.5vw, 58px) 28px;
   display: grid;
   grid-template-columns: minmax(320px, 372px) minmax(0, 1fr);
@@ -376,8 +386,8 @@ button:focus-visible {
   padding: 12px 3px 14px 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: calc((100% - 26px) / 3);
-  gap: 24px 15px;
+  grid-auto-rows: calc((100% - 56px) / 3);
+  gap: 28px 20px;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -629,9 +639,9 @@ button:focus-visible {
 }
 
 .support-panel > img {
-  width: min(100%, 205px);
+  width: min(100%, 270px);
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 900 / 681;
   align-self: center;
   object-fit: contain;
   object-position: center;
@@ -832,7 +842,7 @@ button:focus-visible {
 
 @media (max-width: 820px) {
   html {
-    scroll-padding-top: 90px;
+    scroll-padding-top: 94px;
   }
 
   body {
@@ -842,14 +852,18 @@ button:focus-visible {
   .site-header {
     position: sticky;
     top: 0;
-    height: 80px;
-    padding: 0 17px;
+    height: 84px;
+    padding: 0 14px;
   }
 
   .brand {
-    width: 72px;
-    height: 72px;
-    border-radius: 11px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .brand-wordmark {
+    width: clamp(150px, 34vw, 240px);
+    height: 60px;
   }
 
   .site-nav {
@@ -865,7 +879,7 @@ button:focus-visible {
 
   .showcase-shell {
     height: auto;
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 84px);
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -940,7 +954,7 @@ button:focus-visible {
     padding: 0;
     grid-template-columns: 1fr;
     grid-auto-rows: 310px;
-    gap: 14px;
+    gap: 20px;
     overflow: visible;
   }
 
@@ -996,8 +1010,8 @@ button:focus-visible {
 
   .support-panel {
     padding: 20px;
-    grid-template-columns: minmax(120px, 0.85fr) minmax(0, 1.15fr);
-    gap: 18px;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 16px;
   }
 
   .support-panel > img {
@@ -1016,9 +1030,13 @@ button:focus-visible {
   }
 
   .brand {
-    width: 66px;
-    height: 66px;
-    border-radius: 10px;
+    width: 74px;
+    height: 74px;
+  }
+
+  .brand-wordmark {
+    width: 142px;
+    height: 52px;
   }
 
   .site-nav a[href="#about"] {
@@ -1109,8 +1127,8 @@ button:focus-visible {
 
   .support-panel {
     padding: 16px;
-    grid-template-columns: 105px minmax(0, 1fr);
-    gap: 13px;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 12px;
   }
 
   .support-panel h3 {
@@ -1127,6 +1145,12 @@ button:focus-visible {
 
   .app-dialog {
     padding: 28px 22px 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-nav a[href="#about"] {
+    display: none;
   }
 }
 

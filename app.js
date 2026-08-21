@@ -4,6 +4,10 @@
   const catalog = Array.isArray(window.APP_CATALOG) ? window.APP_CATALOG : [];
   const grid = document.querySelector("#app-grid");
   const featuredOrder = [
+    "calcspace",
+    "mortgage-calculator",
+    "dream-journal",
+    "deal-analyzer",
     "are-you-human",
     "get-in-line",
     "road-trip-arcade",
@@ -12,15 +16,11 @@
     "dont-touch-red",
     "one-more",
     "clay-scorecard",
-    "dream-journal",
     "easy-audio-notes",
     "echobeat",
     "eyes-up",
     "real-or-ai",
     "hundred",
-    "calcspace",
-    "mortgage-calculator",
-    "deal-analyzer",
     "abc-smash",
     "pollwar",
     "super-game",
@@ -82,7 +82,7 @@
 
   const supportMarkup = () => `
     <article class="support-panel" aria-labelledby="support-title">
-      <img src="/assets/brand/italian-bros-support.webp" alt="" width="768" height="768" loading="lazy" />
+      <img src="/assets/brand/italian-bros-support-transparent.png" alt="" width="900" height="681" loading="lazy" />
       <div>
         <p>Direct from our workshop</p>
         <h3 id="support-title">Need a hand?</h3>
