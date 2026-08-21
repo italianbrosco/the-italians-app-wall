@@ -106,10 +106,19 @@
   };
 
   const openApp = () => {
-    if (encoded) window.location.href = `dealanalyzer://deal/shared?deal=${encodeURIComponent(encoded)}`;
+    window.location.href = encoded
+      ? `dealanalyzer://deal/shared?deal=${encodeURIComponent(encoded)}`
+      : "dealanalyzer://";
   };
   byId("open-app").addEventListener("click", openApp);
   byId("open-app-bottom").addEventListener("click", openApp);
+  byId("open-app-landing").addEventListener("click", openApp);
+
+  if (!encoded) {
+    byId("loading").hidden = true;
+    byId("landing").hidden = false;
+    return;
+  }
 
   decodePayload(encoded)
     .then((payload) => {

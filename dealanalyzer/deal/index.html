@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f1ede6" />
     <meta name="description" content="View a shared Deal Analyzer real-estate evaluation." />
     <title>Shared Deal — Deal Analyzer</title>
-    <link rel="stylesheet" href="./styles.css?v=20260813.1" />
+    <link rel="stylesheet" href="./styles.css?v=20260821.1" />
   </head>
   <body>
     <header class="app-header">
@@ -21,9 +21,22 @@
           </svg>
         </span>
         <span class="header-title">Shared Deal</span>
-        <button class="header-action" id="open-app" type="button">OPEN APP</button>
       </div>
     </header>
+
+    <section class="install-banner" aria-labelledby="install-title">
+      <div class="install-copy">
+        <span class="install-mark" aria-hidden="true">DA</span>
+        <div>
+          <strong id="install-title">Get Deal Analyzer</strong>
+          <p>Analyze deals, compare outcomes, and export polished reports.</p>
+        </div>
+      </div>
+      <div class="install-actions">
+        <button id="open-app" type="button">Open Deal Analyzer</button>
+        <span>APP STORE RELEASE COMING SOON</span>
+      </div>
+    </section>
 
     <main>
       <section class="loading" id="loading" aria-live="polite"><span></span><p>Opening shared evaluation…</p></section>
@@ -31,6 +44,12 @@
         <p class="analysis-label">SHARED EVALUATION</p>
         <h1>This deal link could not be opened.</h1>
         <p>Ask the sender to copy a new link from Deal Analyzer.</p>
+      </section>
+      <section class="landing" id="landing" hidden>
+        <p class="analysis-label">DEAL ANALYZER</p>
+        <h1>Underwrite the deal before you make the offer.</h1>
+        <p>Analyze rentals, flips, BRRRR deals, multifamily properties, house packages, and wholesale opportunities in one focused workspace.</p>
+        <button id="open-app-landing" type="button">Open Deal Analyzer</button>
       </section>
 
       <article id="deal" hidden>
@@ -73,6 +92,6 @@
       </article>
     </main>
     <footer>DEVELOPED BY ITALIAN BROS COMPANY</footer>
-    <script src="./viewer.js?v=20260813.1"></script>
+    <script src="./viewer.js?v=20260821.1"></script>
   </body>
 </html>

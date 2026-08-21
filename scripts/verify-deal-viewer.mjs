@@ -47,8 +47,12 @@ const requiredHtml = [
   'id="property-heading">PROPERTY',
   'id="results-heading">RESULTS',
   'id="assumptions-heading">SHARED ASSUMPTIONS',
-  'styles.css?v=20260813.1',
-  'viewer.js?v=20260813.1',
+  'class="install-banner"',
+  'id="install-title">Get Deal Analyzer',
+  'APP STORE RELEASE COMING SOON',
+  'id="landing"',
+  'styles.css?v=20260821.1',
+  'viewer.js?v=20260821.1',
 ];
 requiredHtml.forEach((value) => assert.ok(html.includes(value), `Shared viewer HTML is missing: ${value}`));
 
@@ -60,7 +64,7 @@ const requiredCss = [
   '--gold: #b78b2f',
   '--gold-dark: #ad8130',
   'font-family: "Avenir Next", Inter, system-ui, sans-serif',
-  'grid-template-columns: 34px 39px minmax(0, 1fr) auto',
+  'grid-template-columns: 34px 39px minmax(0, 1fr)',
   'min-height: 44px',
 ];
 requiredCss.forEach((value) => assert.ok(css.includes(value), `Shared viewer CSS is missing app parity token: ${value}`));
@@ -75,6 +79,8 @@ assert.equal(/Georgia|Times New Roman|font-family:\s*Avenir,/.test(css), false, 
   'Array.isArray(inputs.unitRents)',
   '⚠ Marginal — proceed carefully',
   'dealanalyzer://deal/shared?deal=',
+  '"dealanalyzer://"',
+  'if (!encoded)',
 ].forEach((value) => assert.ok(script.includes(value), `Shared viewer behavior is missing: ${value}`));
 
 console.log('Deal Analyzer shared viewer parity contract verified.');
