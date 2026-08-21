@@ -13,6 +13,7 @@ curl -fsSL "$BASE_URL/app-ads.txt" -o "$TMP_DIR/app-ads.txt"
 curl -fsSL "$BASE_URL/assets/favicon.svg" -o "$TMP_DIR/favicon.svg"
 curl -fsSL "$BASE_URL/assets/brand/atelier-emblem.svg" -o "$TMP_DIR/atelier-emblem.svg"
 curl -fsSL "$BASE_URL/assets/brand/italian-bros-crest.webp" -o "$TMP_DIR/italian-bros-crest.webp"
+curl -fsSL "$BASE_URL/assets/brand/italian-bros-support.webp" -o "$TMP_DIR/italian-bros-support.webp"
 curl -fsSL "$BASE_URL/debug/apps/" -o "$TMP_DIR/debug-apps.html"
 curl -fsSL "$BASE_URL/abc-smash/privacy/" -o "$TMP_DIR/abc-smash-privacy.html"
 curl -fsSL "$BASE_URL/abc-smash/support/" -o "$TMP_DIR/abc-smash-support.html"
@@ -39,6 +40,7 @@ grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
 grep -q '<svg' "$TMP_DIR/favicon.svg"
 grep -q 'Italian Bros atelier emblem' "$TMP_DIR/atelier-emblem.svg"
 cmp -s "$ROOT/assets/brand/italian-bros-crest.webp" "$TMP_DIR/italian-bros-crest.webp"
+cmp -s "$ROOT/assets/brand/italian-bros-support.webp" "$TMP_DIR/italian-bros-support.webp"
 for retired_asset in three-brothers-fountain.png three-brothers-fountain.webp three-brothers-ink.webp; do
   if curl -fsS -o /dev/null "$BASE_URL/assets/brand/$retired_asset" 2>/dev/null; then
     printf 'Retired three-brothers artwork is still publicly served: %s\n' "$retired_asset" >&2

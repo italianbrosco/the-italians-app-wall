@@ -91,6 +91,12 @@ if (Array.isArray(catalog)) {
   if (!fs.existsSync(path.join(root, "assets/brand/italian-bros-crest.webp"))) {
     errors.push("the approved Italian Bros crest logo asset is missing");
   }
+  if (!appSource.includes('/assets/brand/italian-bros-support.webp')) {
+    errors.push("the support panel must render the approved Italian Bros team badge");
+  }
+  if (!fs.existsSync(path.join(root, "assets/brand/italian-bros-support.webp"))) {
+    errors.push("the approved Italian Bros support badge asset is missing");
+  }
 }
 
 if (errors.length) {

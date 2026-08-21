@@ -82,7 +82,7 @@
 
   const supportMarkup = () => `
     <article class="support-panel" aria-labelledby="support-title">
-      <img src="/assets/brand/atelier-emblem.svg" alt="" width="900" height="600" loading="lazy" />
+      <img src="/assets/brand/italian-bros-support.webp" alt="" width="768" height="768" loading="lazy" />
       <div>
         <p>Direct from our workshop</p>
         <h3 id="support-title">Need a hand?</h3>
