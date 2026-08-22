@@ -9,6 +9,7 @@ trap 'rm -rf "$TMP_DIR"' EXIT HUP INT TERM
 curl -fsSL "$BASE_URL/" -o "$TMP_DIR/home.html"
 curl -fsSL "$BASE_URL/catalog.js" -o "$TMP_DIR/catalog.js"
 curl -fsSL "$BASE_URL/app.js" -o "$TMP_DIR/app.js"
+curl -fsSL "$BASE_URL/styles.css" -o "$TMP_DIR/styles.css"
 curl -fsSL "$BASE_URL/app-ads.txt" -o "$TMP_DIR/app-ads.txt"
 curl -fsSL "$BASE_URL/assets/favicon.svg" -o "$TMP_DIR/favicon.svg"
 curl -fsSL "$BASE_URL/assets/brand/atelier-emblem.svg" -o "$TMP_DIR/atelier-emblem.svg"
@@ -41,6 +42,16 @@ curl -fsSL "$BASE_URL/yawtzee/join/?game=123456" -o "$TMP_DIR/yawtzee-join.html"
 
 grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/home.html"
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
+grep -q 'styles.css?v=20260822.1' "$TMP_DIR/home.html"
+grep -q 'app.js?v=20260822.1' "$TMP_DIR/home.html"
+grep -q 'mailto:italianbrosco@proton.me' "$TMP_DIR/app.js"
+grep -q 'Email us at italianbrosco@proton.me' "$TMP_DIR/app.js"
+grep -q 'grid-template-columns: repeat(3, minmax(0, 1fr));' "$TMP_DIR/styles.css"
+grep -q 'grid-auto-rows: 280px;' "$TMP_DIR/styles.css"
+if grep -Eq 'Three brothers · one independent studio|Independent<br />apps|apps in our workshop|Direct from our workshop|id="about"|grid-auto-rows: calc\(\(100%' "$TMP_DIR/home.html" "$TMP_DIR/app.js" "$TMP_DIR/styles.css"; then
+  printf 'Retired homepage copy, studio section, or overlapping percentage tracks remain in production.\n' >&2
+  exit 1
+fi
 grep -q '<svg' "$TMP_DIR/favicon.svg"
 grep -q 'Italian Bros atelier emblem' "$TMP_DIR/atelier-emblem.svg"
 cmp -s "$ROOT/assets/brand/italian-bros-crest.webp" "$TMP_DIR/italian-bros-crest.webp"
