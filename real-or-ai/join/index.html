@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Join a Real or AI Match</title>
+  <meta name="theme-color" content="#090b0e">
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0,#3d1e591f,transparent 42%),#090b0e;color:#f8f7f3;font-family:ui-rounded,"Nunito",system-ui,sans-serif;display:grid;place-items:center;padding:28px}.card{width:min(100%,420px);padding:34px 24px 28px;border:1px solid #624a70;border-radius:30px;background:linear-gradient(145deg,#151019,#0b0e11);box-shadow:0 20px 50px rgba(0,0,0,.48);text-align:center}.mark{width:74px;height:74px;margin:0 auto 19px;border:2px solid #bcff2b;border-radius:24px;display:grid;place-items:center;color:#bcff2b;font-size:31px;font-weight:1000;transform:rotate(-4deg);box-shadow:0 0 24px #bcff2b2e}.mark span{transform:rotate(4deg)}h1{margin:0;font-size:30px;line-height:1.15;letter-spacing:.4px}p{margin:12px auto 0;color:#b5b3b8;font-size:16px;line-height:1.5}.number{margin:24px auto 19px;font-size:35px;letter-spacing:5px;font-weight:1000;color:#bcff2b}.open{display:flex;min-height:62px;align-items:center;justify-content:center;border-radius:20px;background:#bcff2b;color:#080a0c;text-decoration:none;font-size:17px;font-weight:1000;letter-spacing:.8px;box-shadow:0 9px 22px #bcff2b2b}.open[hidden]{display:none}.note{font-size:13px;color:#8e8b94}.invalid{color:#ff6d79}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="mark" aria-hidden="true"><span>R/A</span></div>
+    <h1>Join this match</h1>
+    <p id="message">Open Real or AI to enter the private lobby.</p>
+    <div class="number" id="number">------</div>
+    <a class="open" id="open" href="realorai://join">OPEN INSTALLED APP</a>
+    <p class="note" id="note">The match code is ready when the app opens.</p>
+  </main>
+  <script>
+    const code=(new URLSearchParams(location.search).get('code')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,6);
+    const number=document.getElementById('number');const open=document.getElementById('open');const message=document.getElementById('message');const note=document.getElementById('note');
+    if(code.length===6){number.textContent=code;open.href='realorai://join?code='+encodeURIComponent(code)}else{number.textContent='INVALID';number.classList.add('invalid');message.textContent='This invite is missing a valid six-character match code.';note.textContent='Ask the host to share a new invite link.';open.hidden=true}
+  </script>
+</body>
+</html>
