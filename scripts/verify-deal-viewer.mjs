@@ -19,6 +19,9 @@ assert.deepEqual(apple.applinks.details, [{
 }, {
   appID: '257M5TM5Z8.com.theitalians.mortgagecalculator',
   paths: ['/mortgagecalc/estimate', '/mortgagecalc/estimate/*'],
+}, {
+  appID: '257M5TM5Z8.com.italianbros.clayscorecard',
+  paths: ['/yawtzee/join', '/yawtzee/join/*'],
 }]);
 
 const android = JSON.parse(androidAssociation);
@@ -35,6 +38,13 @@ assert.deepEqual(android, [{
     namespace: 'android_app',
     package_name: 'com.theitalians.mortgagecalculator',
     sha256_cert_fingerprints: ['D1:0E:59:B1:7F:CD:3F:EA:50:02:D8:84:9E:6A:DB:3A:D3:35:98:AD:3A:70:AC:FD:26:95:28:84:68:D4:B9:49'],
+  },
+}, {
+  relation: ['delegate_permission/common.handle_all_urls'],
+  target: {
+    namespace: 'android_app',
+    package_name: 'com.italianbros.clayscorecard',
+    sha256_cert_fingerprints: ['20:F0:69:44:3B:69:5B:03:4B:02:13:98:97:E8:84:05:CA:5D:C9:34:07:61:FA:1E:DA:6D:F8:EE:30:5C:A7:C0'],
   },
 }]);
 
