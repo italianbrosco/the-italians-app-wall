@@ -33,7 +33,7 @@ window.APP_CATALOG = [
     category: "Family board game",
     description: "Roll two dice, race, block, and capture on a premium wooden board against three lively computer opponents.",
     icon: "/assets/icons/marbles.webp",
-    screenshot: "/assets/screenshots/marbles-build7.webp",
+    screenshot: "/assets/screenshots/marbles-build8.webp",
     screenshotAlt: "Marbles showing a sharp oak cross board, physical dice rolling on the table, a slate woven runner, player panels, chat, emotes, and undo",
     status: "coming",
     statusLabel: "Coming soon",

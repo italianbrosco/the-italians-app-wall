@@ -379,6 +379,15 @@ button:focus-visible {
   color: var(--ink);
 }
 
+.release-snapshot {
+  display: block;
+  margin-top: 3px;
+  color: #7b8b91;
+  font-size: 7px;
+  letter-spacing: 0.025em;
+  text-transform: none;
+}
+
 .app-grid {
   min-height: 0;
   flex: 1;
