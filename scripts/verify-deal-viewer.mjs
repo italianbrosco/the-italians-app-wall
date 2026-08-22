@@ -22,6 +22,9 @@ assert.deepEqual(apple.applinks.details, [{
 }, {
   appID: '257M5TM5Z8.com.italianbros.clayscorecard',
   paths: ['/yawtzee/join', '/yawtzee/join/*'],
+}, {
+  appID: '257M5TM5Z8.com.italianbros.realorai',
+  paths: ['/real-or-ai/join', '/real-or-ai/join/*'],
 }]);
 
 const android = JSON.parse(androidAssociation);
