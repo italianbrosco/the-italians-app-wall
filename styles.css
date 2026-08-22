@@ -165,9 +165,8 @@ button:focus-visible {
   height: calc(100vh - 104px);
   padding: 30px clamp(28px, 3.5vw, 58px) 28px;
   display: grid;
-  grid-template-columns: minmax(320px, 372px) minmax(0, 1fr);
-  grid-template-areas: "intro apps";
-  gap: clamp(30px, 3.1vw, 48px);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "apps";
   overflow: hidden;
   background:
     linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
@@ -385,9 +384,9 @@ button:focus-visible {
   flex: 1;
   padding: 12px 3px 14px 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: calc((100% - 56px) / 3);
-  gap: 28px 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 280px;
+  gap: 28px 24px;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -654,15 +653,6 @@ button:focus-visible {
   min-width: 0;
 }
 
-.support-panel > div > p:first-child {
-  margin: 0 0 4px;
-  color: #e2bd77;
-  font-size: 8px;
-  font-weight: 850;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 .support-panel h3 {
   margin: 0;
   color: #fff7e7;
@@ -822,12 +812,12 @@ button:focus-visible {
 
 @media (max-width: 1250px) {
   .showcase-shell {
-    grid-template-columns: minmax(294px, 0.34fr) minmax(0, 0.66fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .app-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 264px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 280px;
   }
 
   .app-summary {
@@ -1200,8 +1190,8 @@ button:focus-visible {
   }
 
   .app-grid {
-    grid-auto-rows: calc((100% - 36px) / 3);
-    gap: 18px 14px;
+    grid-auto-rows: 252px;
+    gap: 24px 20px;
   }
 }
 

@@ -84,10 +84,9 @@
     <article class="support-panel" aria-labelledby="support-title">
       <img src="/assets/brand/italian-bros-support-transparent.png" alt="" width="900" height="681" loading="lazy" />
       <div>
-        <p>Direct from our workshop</p>
         <h3 id="support-title">Need a hand?</h3>
         <p>Questions, feedback, or help with one of our apps? You’ll reach the brothers who build them.</p>
-        <a href="mailto:ciminillo@italianbrosco.com">Email support <span aria-hidden="true">→</span></a>
+        <a href="mailto:italianbrosco@proton.me">Email us at italianbrosco@proton.me <span aria-hidden="true">→</span></a>
       </div>
     </article>`;
 

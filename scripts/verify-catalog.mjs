@@ -7,6 +7,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const source = fs.readFileSync(path.join(root, "catalog.js"), "utf8");
 const appSource = fs.readFileSync(path.join(root, "app.js"), "utf8");
 const indexSource = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const styleSource = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 const sandbox = { window: {} };
 vm.runInNewContext(source, sandbox, { filename: "catalog.js" });
 
@@ -83,8 +84,22 @@ if (Array.isArray(catalog)) {
     errors.push("available apps must render before every unreleased app");
   }
 
-  if (indexSource.indexOf('id="apps"') > indexSource.indexOf('id="about"')) {
-    errors.push("the apps section must precede the studio intro in mobile/document order");
+  if (indexSource.includes('id="about"')) {
+    errors.push("the retired studio introduction must not render");
+  }
+  for (const retiredCopy of ["Three brothers · one independent studio", "Independent<br />apps, made<br />with care.", "apps in our workshop.", "Direct from our workshop"]) {
+    if (indexSource.includes(retiredCopy) || appSource.includes(retiredCopy)) {
+      errors.push(`retired homepage copy must not render: ${retiredCopy}`);
+    }
+  }
+  if (!appSource.includes('mailto:italianbrosco@proton.me') || !appSource.includes('Email us at italianbrosco@proton.me')) {
+    errors.push("the homepage support panel must use the Proton Mail contact address");
+  }
+  if (!styleSource.includes("grid-template-columns: repeat(3, minmax(0, 1fr));")) {
+    errors.push("the desktop app catalog must render three cards per row");
+  }
+  if (!styleSource.includes("grid-auto-rows: 280px;") || styleSource.includes("grid-auto-rows: calc((100%")) {
+    errors.push("desktop app rows must use non-overlapping fixed tracks");
   }
   if (indexSource.includes("three-brothers-fountain") || appSource.includes("three-brothers-fountain")) {
     errors.push("the retired three-brothers portrait must not be rendered");
