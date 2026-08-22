@@ -15,6 +15,13 @@
           "/mortgagecalc/estimate",
           "/mortgagecalc/estimate/*"
         ]
+      },
+      {
+        "appID": "257M5TM5Z8.com.italianbros.clayscorecard",
+        "paths": [
+          "/yawtzee/join",
+          "/yawtzee/join/*"
+        ]
       }
     ]
   }

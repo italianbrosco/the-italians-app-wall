@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Join a Yawtzee Scorecard</title>
+  <meta name="theme-color" content="#fcf8ef">
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:#fcf8ef;color:#153b73;font-family:ui-rounded,"Nunito",system-ui,sans-serif;display:grid;place-items:center;padding:28px}.card{width:min(100%,420px);padding:34px 24px 28px;border-radius:32px;background:rgba(255,255,255,.76);box-shadow:0 15px 34px rgba(39,76,112,.14);text-align:center}.dice{display:flex;justify-content:center;gap:10px;margin-bottom:18px}.die{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;color:#fff;font-size:27px;font-weight:900;box-shadow:inset 0 3px 7px rgba(255,255,255,.5),0 7px 12px rgba(40,76,106,.16)}.coral{background:#eb715a}.mint{background:#55bb94}.purple{background:#9d82d3}h1{margin:0;font-size:28px;line-height:1.12}p{margin:12px auto 0;color:#526b83;font-size:16px;line-height:1.5}.number{margin:23px auto 18px;font-size:34px;letter-spacing:4px;font-weight:900;color:#173f79}.open{display:flex;min-height:62px;align-items:center;justify-content:center;border-radius:20px;background:#4b8ed8;color:white;text-decoration:none;font-size:18px;font-weight:900;letter-spacing:.6px;box-shadow:0 8px 14px rgba(46,103,168,.22)}.note{font-size:13px}.invalid{color:#ba4e45}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="dice" aria-hidden="true"><div class="die coral">••</div><div class="die mint">•••</div><div class="die purple">••••</div></div>
+    <h1>Join this scorecard</h1>
+    <p id="message">Open Yawtzee: Best Scorecard to join the shared game.</p>
+    <div class="number" id="number">------</div>
+    <a class="open" id="open" href="clayscorecard://yawtzee/join">OPEN INSTALLED APP</a>
+    <p class="note">Everyone with this invite sees the same live scores.</p>
+  </main>
+  <script>
+    const game=(new URLSearchParams(location.search).get('game')||'').replace(/\D/g,'').slice(0,6);
+    const number=document.getElementById('number');const open=document.getElementById('open');const message=document.getElementById('message');
+    if(game.length===6){number.textContent=game;open.href='clayscorecard://yawtzee/join?game='+encodeURIComponent(game)}else{number.textContent='INVALID';number.classList.add('invalid');message.textContent='This invite is missing a valid six-digit game number.';open.hidden=true}
+  </script>
+</body>
+</html>
