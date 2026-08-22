@@ -8,6 +8,7 @@
     "mortgage-calculator",
     "dream-journal",
     "deal-analyzer",
+    "pt-airman",
     "are-you-human",
     "get-in-line",
     "road-trip-arcade",

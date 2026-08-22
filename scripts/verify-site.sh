@@ -35,6 +35,8 @@ curl -fsSL "$BASE_URL/dont-touch-red/privacy/" -o "$TMP_DIR/dont-touch-red-priva
 curl -fsSL "$BASE_URL/dont-touch-red/support/" -o "$TMP_DIR/dont-touch-red-support.html"
 curl -fsSL "$BASE_URL/marbles/privacy/" -o "$TMP_DIR/marbles-privacy.html"
 curl -fsSL "$BASE_URL/marbles/support/" -o "$TMP_DIR/marbles-support.html"
+curl -fsSL "$BASE_URL/pt-airman/privacy/" -o "$TMP_DIR/pt-airman-privacy.html"
+curl -fsSL "$BASE_URL/pt-airman/support/" -o "$TMP_DIR/pt-airman-support.html"
 curl -fsSL "$BASE_URL/dealanalyzer/deal/" -o "$TMP_DIR/deal-viewer.html"
 curl -fsSL "$BASE_URL/.well-known/apple-app-site-association" -o "$TMP_DIR/apple-app-site-association"
 curl -fsSL "$BASE_URL/.well-known/assetlinks.json" -o "$TMP_DIR/assetlinks.json"
@@ -108,6 +110,10 @@ grep -q '<title>Marbles Privacy Policy' "$TMP_DIR/marbles-privacy.html"
 grep -q 'does not collect personal information' "$TMP_DIR/marbles-privacy.html"
 grep -q '<title>Marbles Support' "$TMP_DIR/marbles-support.html"
 grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/marbles-support.html"
+grep -q '<title>PT Airman Privacy Policy' "$TMP_DIR/pt-airman-privacy.html"
+grep -q 'does not collect, transmit, sell, or share personal data' "$TMP_DIR/pt-airman-privacy.html"
+grep -q '<title>PT Airman Support' "$TMP_DIR/pt-airman-support.html"
+grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/pt-airman-support.html"
 grep -q '<title>Shared Deal — Deal Analyzer</title>' "$TMP_DIR/deal-viewer.html"
 grep -q 'class="header-title">Shared Deal' "$TMP_DIR/deal-viewer.html"
 grep -q 'styles.css?v=20260821.1' "$TMP_DIR/deal-viewer.html"
@@ -127,7 +133,7 @@ grep -q '20:F0:69:44:3B:69:5B:03:4B:02:13:98:97:E8:84:05:CA:5D:C9:34:07:61:FA:1E
 grep -q 'Join this scorecard' "$TMP_DIR/yawtzee-join.html"
 grep -q "URLSearchParams(location.search).get('game')" "$TMP_DIR/yawtzee-join.html"
 
-for icon in abc-smash blackwake-21 calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred marbles mortgage-calculator pollwar real-or-ai road-trip-arcade super-game tin-wings; do
+for icon in abc-smash blackwake-21 calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred marbles mortgage-calculator pollwar pt-airman real-or-ai road-trip-arcade super-game tin-wings; do
   curl -fsSL "$BASE_URL/assets/icons/$icon.webp" -o "$TMP_DIR/$icon.webp"
   test -s "$TMP_DIR/$icon.webp"
 done

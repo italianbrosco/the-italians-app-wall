@@ -1,5 +1,19 @@
 window.APP_CATALOG = [
   {
+    id: "pt-airman",
+    name: "PT Airman",
+    category: "Fitness readiness",
+    description: "Check USAF fitness scores, practice timed components, follow HAMR cadence, and keep assessment history privately on your device.",
+    icon: "/assets/icons/pt-airman.webp",
+    screenshot: "/assets/screenshots/pt-airman.jpg",
+    screenshotAlt: "PT Airman dashboard showing a local fitness profile and assessment tools",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "blue",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "are-you-human",
     name: "Are You Human? Prove It",
     category: "Comedy puzzle game",
