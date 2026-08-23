@@ -101,6 +101,13 @@ if (Array.isArray(catalog)) {
   if (!styleSource.includes("grid-auto-rows: 280px;") || styleSource.includes("grid-auto-rows: calc((100%")) {
     errors.push("desktop app rows must use non-overlapping fixed tracks");
   }
+  if (styleSource.includes(".phone-preview::before")) {
+    errors.push("phone previews must not draw a synthetic notch over screenshot device chrome");
+  }
+  const landscapeBlocks = [...styleSource.matchAll(/\.phone-preview-landscape\s*\{([^}]*)\}/g)].map((match) => match[1]);
+  if (!landscapeBlocks.length || landscapeBlocks.some((block) => !/bottom:\s*(?:1[6-9]|[2-9]\d)px/.test(block))) {
+    errors.push("every landscape phone preview must have at least 16px of bottom clearance");
+  }
   if (indexSource.includes("three-brothers-fountain") || appSource.includes("three-brothers-fountain")) {
     errors.push("the retired three-brothers portrait must not be rendered");
   }

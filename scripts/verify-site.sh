@@ -47,7 +47,7 @@ curl -fsSL "$BASE_URL/real-or-ai/join/?code=AB23CD" -o "$TMP_DIR/real-or-ai-join
 
 grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/home.html"
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
-grep -q 'styles.css?v=20260822.2' "$TMP_DIR/home.html"
+grep -q 'styles.css?v=20260823.1' "$TMP_DIR/home.html"
 grep -q 'app.js?v=20260823.1' "$TMP_DIR/home.html"
 grep -q 'catalog.js?v=20260823.1' "$TMP_DIR/home.html"
 grep -q '<strong data-total-count>23</strong>' "$TMP_DIR/home.html"
@@ -55,6 +55,17 @@ grep -q 'mailto:italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'Email us at italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'grid-template-columns: repeat(3, minmax(0, 1fr));' "$TMP_DIR/styles.css"
 grep -q 'grid-auto-rows: 280px;' "$TMP_DIR/styles.css"
+if grep -q '.phone-preview::before' "$TMP_DIR/styles.css"; then
+  printf 'Synthetic phone notch still overlays screenshots in production.\n' >&2
+  exit 1
+fi
+if grep -Eq '\.phone-preview-landscape[^{]*\{[^}]*bottom:[[:space:]]*-' "$TMP_DIR/styles.css"; then
+  printf 'A landscape phone preview still uses a clipped negative bottom offset.\n' >&2
+  exit 1
+fi
+grep -q 'bottom: 16px;' "$TMP_DIR/styles.css"
+grep -q 'bottom: 22px;' "$TMP_DIR/styles.css"
+grep -q 'bottom: 20px;' "$TMP_DIR/styles.css"
 if grep -Eq 'Three brothers · one independent studio|Independent<br />apps|apps in our workshop|Direct from our workshop|id="about"|grid-auto-rows: calc\(\(100%' "$TMP_DIR/home.html" "$TMP_DIR/app.js" "$TMP_DIR/styles.css"; then
   printf 'Retired homepage copy, studio section, or overlapping percentage tracks remain in production.\n' >&2
   exit 1
