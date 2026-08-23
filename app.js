@@ -8,6 +8,7 @@
     "mortgage-calculator",
     "dream-journal",
     "deal-analyzer",
+    "embrace-the-suck",
     "pt-airman",
     "are-you-human",
     "get-in-line",

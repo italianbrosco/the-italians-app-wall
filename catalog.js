@@ -1,5 +1,19 @@
 window.APP_CATALOG = [
   {
+    id: "embrace-the-suck",
+    name: "Embrace the Suck!",
+    category: "Fitness challenges",
+    description: "Take on inclusive daily and weekly workouts with effort-level options, adaptations, timers, saved challenges, and progress that stays on your device.",
+    icon: "/assets/icons/embrace-the-suck.webp",
+    screenshot: "/assets/screenshots/embrace-the-suck.webp",
+    screenshotAlt: "Embrace the Suck home screen showing today’s challenge, weekly challenge, progress, and upcoming workouts",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "red",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "pt-airman",
     name: "PT Airman",
     category: "Fitness readiness",
