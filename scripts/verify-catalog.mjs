@@ -19,6 +19,7 @@ if (!Array.isArray(catalog)) errors.push("catalog.js must define window.APP_CATA
 if (Array.isArray(catalog)) {
   const ids = new Set();
   const expectedStatuses = new Set(["available", "coming"]);
+  const refreshedScreens = new Set(["calcspace", "mortgage-calculator", "dream-journal", "deal-analyzer"]);
 
   for (const app of catalog) {
     for (const key of ["id", "name", "category", "description", "icon", "screenshot", "screenshotAlt", "status", "statusLabel"]) {
@@ -27,6 +28,9 @@ if (Array.isArray(catalog)) {
     if (ids.has(app.id)) errors.push(`${app.id}: duplicate id`);
     ids.add(app.id);
     if (!expectedStatuses.has(app.status)) errors.push(`${app.id}: unsupported status ${app.status}`);
+    if (refreshedScreens.has(app.id) && app.screenshotVersion !== "20260824.1") {
+      errors.push(`${app.id}: current home screenshot must use the 20260824.1 cache key`);
+    }
 
     const iconPath = path.join(root, app.icon.replace(/^\//, ""));
     if (!fs.existsSync(iconPath)) errors.push(`${app.id}: missing icon ${app.icon}`);
@@ -103,6 +107,14 @@ if (Array.isArray(catalog)) {
   }
   if (styleSource.includes(".phone-preview::before")) {
     errors.push("phone previews must not draw a synthetic notch over screenshot device chrome");
+  }
+  if (!/\.app-screenshot\s*\{[^}]*object-fit:\s*contain/.test(styleSource)) {
+    errors.push("app screenshots must use object-fit: contain so no screen content is cropped");
+  }
+  for (const width of [162, 148, 136]) {
+    if (!styleSource.includes(`width: ${width}px;`)) {
+      errors.push(`portrait phone framing must retain the ${width}px responsive width`);
+    }
   }
   const landscapeBlocks = [...styleSource.matchAll(/\.phone-preview-landscape\s*\{([^}]*)\}/g)].map((match) => match[1]);
   if (!landscapeBlocks.length || landscapeBlocks.some((block) => !/bottom:\s*(?:1[6-9]|[2-9]\d)px/.test(block))) {

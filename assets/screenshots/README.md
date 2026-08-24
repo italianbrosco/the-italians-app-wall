@@ -2,20 +2,20 @@
 
 The public showcase uses real product screens only. Do not replace these files with CSS mockups, generated UI, concept art, or screenshots from a different app.
 
-Imported and verified on August 10, 2026:
+Imported and verified through August 24, 2026:
 
 | Showcase asset | Authentic source |
 | --- | --- |
 | `abc-smash.webp` | App Store Connect, Apple ID `6798801210`, en-US iPhone screenshot `app-store-child-1242x2688.png` |
-| `calcspace.webp` | App Store Connect, Apple ID `6789995674`, en-US iPhone screenshot `03-two.png` |
+| `calcspace.webp` | Current CalcSpace `iphone-6.9/01-chooser.png` source used by the public App Store 1.0.1 listing, refreshed August 24, 2026 |
 | `yawtzee-best-scorecard.webp` | Real Yawtzee: Best Scorecard native app captured at the App Store `1290×2796` iPhone 6.7-inch size, then resized for the showcase |
-| `deal-analyzer.webp` | App Store Connect, Apple ID `6790182110`, en-US iPhone screenshot `01-deal-analyzer-home-20260808.png` |
-| `dream-journal.webp` | App Store Connect, Apple ID `6798083909`, en-US iPhone screenshot `01-journal-history-current.png` |
+| `deal-analyzer.webp` | Current Deal Analyzer App Store preview source `premium-previews/source/01-home.png`, refreshed August 24, 2026 |
+| `dream-journal.webp` | Current Dream Journal App Store 1.0.2 preview source `premium-previews/source/01-summary.png`, refreshed August 24, 2026 |
 | `easy-audio-notes.webp` | App Store Connect, Apple ID `6798798592`, en-US iPhone screenshot `build2-record-iphone.png` |
 | `echobeat.webp` | App Store Connect, Apple ID `6799536277`, en-US iPhone screenshot `07-you.png` |
 | `eyes-up.webp` | App Store Connect, Apple ID `6799536126`, en-US iPhone screenshot `01-home.png` |
 | `hundred.webp` | App Store Connect, Apple ID `6799536266`, en-US iPhone screenshot `01-home.png` |
-| `mortgage-calculator.webp` | App Store Connect, Apple ID `6790174039`, en-US iPhone screenshot `01-iphone-home.png` |
+| `mortgage-calculator.webp` | Current Mortgage Calculator Suite App Store 1.1.3 preview source `premium-previews/source/01-iphone-home-expanded-clean.png`, refreshed August 24, 2026 |
 | `one-more-build-7.png` | Real One More build 7 Release app captured on the dedicated iPhone 16 Pro after a clean install, showing the truthful `0`, `0.1% BUST CHANCE`, `BEST 0`, verified `GLOBAL 35`, and disabled `BANK 0` state |
 | `pollwar.webp` | App Store Connect, Apple ID `6798080422`, en-US iPhone screenshot `pollwar-store-home-1242x2688.png` |
 | `real-or-ai.webp` | App Store Connect, Apple ID `6799536279`, en-US iPhone screenshot `03-answer-reveal.png` |

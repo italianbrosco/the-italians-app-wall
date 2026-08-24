@@ -56,6 +56,9 @@
     const isLandscape = app.id === "tin-wings" || app.id === "marbles";
     const screenshotWidth = isLandscape ? 900 : 520;
     const screenshotHeight = isLandscape ? 414 : 1128;
+    const screenshotSrc = app.screenshotVersion
+      ? `${app.screenshot}?v=${app.screenshotVersion}`
+      : app.screenshot;
 
     return `
       <article class="app-panel accent-${escapeHtml(app.accent)}${isLandscape ? " has-landscape-preview" : ""}">
@@ -72,7 +75,7 @@
         <figure class="phone-preview${isLandscape ? " phone-preview-landscape" : ""}">
           <img
             class="app-screenshot"
-            src="${escapeHtml(app.screenshot)}"
+            src="${escapeHtml(screenshotSrc)}"
             alt="${escapeHtml(app.screenshotAlt)}"
             ${imagePriority}
             width="${screenshotWidth}"

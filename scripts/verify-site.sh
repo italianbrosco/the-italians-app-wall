@@ -18,6 +18,9 @@ curl -fsSL "$BASE_URL/assets/brand/italian-bros-support.webp" -o "$TMP_DIR/itali
 curl -fsSL "$BASE_URL/assets/brand/italian-bros-crest-transparent.png" -o "$TMP_DIR/italian-bros-crest-transparent.png"
 curl -fsSL "$BASE_URL/assets/brand/italian-bros-wordmark.png" -o "$TMP_DIR/italian-bros-wordmark.png"
 curl -fsSL "$BASE_URL/assets/brand/italian-bros-support-transparent.png" -o "$TMP_DIR/italian-bros-support-transparent.png"
+for screenshot in calcspace mortgage-calculator dream-journal deal-analyzer; do
+  curl -fsSL "$BASE_URL/assets/screenshots/$screenshot.webp?v=20260824.1" -o "$TMP_DIR/$screenshot.webp"
+done
 curl -fsSL "$BASE_URL/debug/apps/" -o "$TMP_DIR/debug-apps.html"
 curl -fsSL "$BASE_URL/abc-smash/privacy/" -o "$TMP_DIR/abc-smash-privacy.html"
 curl -fsSL "$BASE_URL/abc-smash/support/" -o "$TMP_DIR/abc-smash-support.html"
@@ -47,14 +50,19 @@ curl -fsSL "$BASE_URL/real-or-ai/join/?code=AB23CD" -o "$TMP_DIR/real-or-ai-join
 
 grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/home.html"
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
-grep -q 'styles.css?v=20260823.1' "$TMP_DIR/home.html"
-grep -q 'app.js?v=20260823.1' "$TMP_DIR/home.html"
-grep -q 'catalog.js?v=20260823.1' "$TMP_DIR/home.html"
+grep -q 'styles.css?v=20260824.1' "$TMP_DIR/home.html"
+grep -q 'app.js?v=20260824.1' "$TMP_DIR/home.html"
+grep -q 'catalog.js?v=20260824.1' "$TMP_DIR/home.html"
 grep -q '<strong data-total-count>23</strong>' "$TMP_DIR/home.html"
 grep -q 'mailto:italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'Email us at italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'grid-template-columns: repeat(3, minmax(0, 1fr));' "$TMP_DIR/styles.css"
 grep -q 'grid-auto-rows: 280px;' "$TMP_DIR/styles.css"
+grep -q 'object-fit: contain;' "$TMP_DIR/styles.css"
+grep -q 'width: 162px;' "$TMP_DIR/styles.css"
+grep -q 'width: 148px;' "$TMP_DIR/styles.css"
+grep -q 'width: 136px;' "$TMP_DIR/styles.css"
+grep -q 'screenshotVersion: "20260824.1"' "$TMP_DIR/catalog.js"
 if grep -q '.phone-preview::before' "$TMP_DIR/styles.css"; then
   printf 'Synthetic phone notch still overlays screenshots in production.\n' >&2
   exit 1
@@ -73,6 +81,9 @@ fi
 grep -q '<svg' "$TMP_DIR/favicon.svg"
 grep -q 'Italian Bros atelier emblem' "$TMP_DIR/atelier-emblem.svg"
 cmp -s "$ROOT/assets/brand/italian-bros-crest.webp" "$TMP_DIR/italian-bros-crest.webp"
+for screenshot in calcspace mortgage-calculator dream-journal deal-analyzer; do
+  cmp -s "$ROOT/assets/screenshots/$screenshot.webp" "$TMP_DIR/$screenshot.webp"
+done
 cmp -s "$ROOT/assets/brand/italian-bros-support.webp" "$TMP_DIR/italian-bros-support.webp"
 cmp -s "$ROOT/assets/brand/italian-bros-crest-transparent.png" "$TMP_DIR/italian-bros-crest-transparent.png"
 cmp -s "$ROOT/assets/brand/italian-bros-wordmark.png" "$TMP_DIR/italian-bros-wordmark.png"
