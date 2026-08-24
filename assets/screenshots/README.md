@@ -8,7 +8,7 @@ Imported and verified through August 24, 2026:
 | --- | --- |
 | `abc-smash.webp` | App Store Connect, Apple ID `6798801210`, en-US iPhone screenshot `app-store-child-1242x2688.png` |
 | `calcspace.webp` | Current CalcSpace `iphone-6.9/01-chooser.png` source used by the public App Store 1.0.1 listing, refreshed August 24, 2026 |
-| `yawtzee-best-scorecard.webp` | Real Yawtzee: Best Scorecard native app captured at the App Store `1290×2796` iPhone 6.7-inch size, then resized for the showcase |
+| `yawtzee-best-scorecard.webp` | Real Yawtzee: Best Scorecard build 26 native active-game home screen captured at `1179×2556` on the dedicated iPhone simulator and resized to `520×1128`, refreshed August 24, 2026 |
 | `deal-analyzer.webp` | Current Deal Analyzer App Store preview source `premium-previews/source/01-home.png`, refreshed August 24, 2026 |
 | `dream-journal.webp` | Current Dream Journal App Store 1.0.2 preview source `premium-previews/source/01-summary.png`, refreshed August 24, 2026 |
 | `easy-audio-notes.webp` | App Store Connect, Apple ID `6798798592`, en-US iPhone screenshot `build2-record-iphone.png` |
