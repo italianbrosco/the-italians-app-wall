@@ -26,7 +26,8 @@
     "abc-smash",
     "pollwar",
     "super-game",
-    "tin-wings"
+    "tin-wings",
+    "ricochet"
   ];
   const byId = new Map(catalog.map((app) => [app.id, app]));
   const orderedCatalog = window.orderAppCatalog(catalog, featuredOrder);

@@ -331,6 +331,20 @@ window.APP_CATALOG = [
     accent: "steel",
     platforms: [],
     actions: []
+  },
+  {
+    id: "ricochet",
+    name: "Ricochet!",
+    category: "Kinetic puzzle game",
+    description: "Launch one ball, bank shots off the walls, and clear twelve precision puzzle rooms with armored and chain-reaction targets.",
+    icon: "/assets/icons/ricochet.webp",
+    screenshot: "/assets/screenshots/ricochet.webp",
+    screenshotAlt: "Ricochet room one showing three targets, the aiming guide, remaining shots, and the launch ball",
+    status: "coming",
+    statusLabel: "Release updates coming soon",
+    accent: "lime",
+    platforms: [],
+    actions: []
   }
 ];
 
