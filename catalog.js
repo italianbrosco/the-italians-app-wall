@@ -333,6 +333,20 @@ window.APP_CATALOG = [
     actions: []
   },
   {
+    id: "draw-your-defense",
+    name: "Draw Your Defense",
+    category: "Arcade defense game",
+    description: "Scribble limited-life shields, bounce trouble away from Pip, and chase personal and daily-run bests.",
+    icon: "/assets/icons/draw-your-defense.webp",
+    screenshot: "/assets/screenshots/draw-your-defense.webp",
+    screenshotAlt: "Draw Your Defense tutorial showing Pip, the crayon meter, and the Grab the Crayon action",
+    status: "coming",
+    statusLabel: "Release updates coming soon",
+    accent: "blue",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "ricochet",
     name: "Ricochet!",
     category: "Kinetic puzzle game",

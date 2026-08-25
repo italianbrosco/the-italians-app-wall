@@ -28,11 +28,11 @@ esac
 
 rsync -az \
   index.html styles.css catalog.js app.js app-ads.txt \
-  .well-known assets debug abc-smash are-you-human blackwake-21 clay-scorecard dont-touch-red embrace-the-suck marbles one-more pt-airman real-or-ai ricochet road-trip-arcade tin-wings underworld-21 dealanalyzer yawtzee \
+  .well-known assets debug abc-smash are-you-human blackwake-21 clay-scorecard dont-touch-red draw-your-defense embrace-the-suck marbles one-more pt-airman real-or-ai ricochet road-trip-arcade tin-wings underworld-21 dealanalyzer yawtzee \
   "$REMOTE:$REMOTE_STAGE/"
 
 ssh "$REMOTE" "set -eu
-  sudo install -d -m 755 '$TARGET' '$TARGET/.well-known' '$TARGET/assets' '$TARGET/assets/icons' '$TARGET/debug' '$TARGET/debug/apps' '$TARGET/abc-smash' '$TARGET/are-you-human' '$TARGET/blackwake-21' '$TARGET/clay-scorecard' '$TARGET/dont-touch-red' '$TARGET/embrace-the-suck' '$TARGET/marbles' '$TARGET/one-more' '$TARGET/pt-airman' '$TARGET/real-or-ai' '$TARGET/ricochet' '$TARGET/road-trip-arcade' '$TARGET/tin-wings' '$TARGET/underworld-21' '$TARGET/dealanalyzer' '$TARGET/yawtzee' '$BACKUP_ROOT/$STAMP'
+  sudo install -d -m 755 '$TARGET' '$TARGET/.well-known' '$TARGET/assets' '$TARGET/assets/icons' '$TARGET/debug' '$TARGET/debug/apps' '$TARGET/abc-smash' '$TARGET/are-you-human' '$TARGET/blackwake-21' '$TARGET/clay-scorecard' '$TARGET/dont-touch-red' '$TARGET/draw-your-defense' '$TARGET/embrace-the-suck' '$TARGET/marbles' '$TARGET/one-more' '$TARGET/pt-airman' '$TARGET/real-or-ai' '$TARGET/ricochet' '$TARGET/road-trip-arcade' '$TARGET/tin-wings' '$TARGET/underworld-21' '$TARGET/dealanalyzer' '$TARGET/yawtzee' '$BACKUP_ROOT/$STAMP'
   if [ ! -f '$TARGET/debug/apps/index.html' ]; then
     sudo install -m 644 '$TARGET/index.html' '$TARGET/debug/apps/index.html'
   fi
@@ -56,6 +56,7 @@ ssh "$REMOTE" "set -eu
   sudo cp -R '$REMOTE_STAGE/blackwake-21/.' '$TARGET/blackwake-21/'
   sudo cp -R '$REMOTE_STAGE/clay-scorecard/.' '$TARGET/clay-scorecard/'
   sudo cp -R '$REMOTE_STAGE/dont-touch-red/.' '$TARGET/dont-touch-red/'
+  sudo cp -R '$REMOTE_STAGE/draw-your-defense/.' '$TARGET/draw-your-defense/'
   sudo cp -R '$REMOTE_STAGE/embrace-the-suck/.' '$TARGET/embrace-the-suck/'
   sudo cp -R '$REMOTE_STAGE/marbles/.' '$TARGET/marbles/'
   sudo cp -R '$REMOTE_STAGE/one-more/.' '$TARGET/one-more/'
@@ -67,7 +68,7 @@ ssh "$REMOTE" "set -eu
   sudo cp -R '$REMOTE_STAGE/underworld-21/.' '$TARGET/underworld-21/'
   sudo cp -R '$REMOTE_STAGE/dealanalyzer/.' '$TARGET/dealanalyzer/'
   sudo cp -R '$REMOTE_STAGE/yawtzee/.' '$TARGET/yawtzee/'
-  sudo chmod -R a+rX '$TARGET/.well-known' '$TARGET/assets' '$TARGET/debug' '$TARGET/abc-smash' '$TARGET/are-you-human' '$TARGET/blackwake-21' '$TARGET/clay-scorecard' '$TARGET/dont-touch-red' '$TARGET/embrace-the-suck' '$TARGET/marbles' '$TARGET/one-more' '$TARGET/pt-airman' '$TARGET/real-or-ai' '$TARGET/ricochet' '$TARGET/road-trip-arcade' '$TARGET/tin-wings' '$TARGET/underworld-21' '$TARGET/dealanalyzer' '$TARGET/yawtzee'
+  sudo chmod -R a+rX '$TARGET/.well-known' '$TARGET/assets' '$TARGET/debug' '$TARGET/abc-smash' '$TARGET/are-you-human' '$TARGET/blackwake-21' '$TARGET/clay-scorecard' '$TARGET/dont-touch-red' '$TARGET/draw-your-defense' '$TARGET/embrace-the-suck' '$TARGET/marbles' '$TARGET/one-more' '$TARGET/pt-airman' '$TARGET/real-or-ai' '$TARGET/ricochet' '$TARGET/road-trip-arcade' '$TARGET/tin-wings' '$TARGET/underworld-21' '$TARGET/dealanalyzer' '$TARGET/yawtzee'
 "
 
 printf 'Deployed Italian Bros showcase to %s:%s (backup %s/%s).\n' "$REMOTE" "$TARGET" "$BACKUP_ROOT" "$STAMP"

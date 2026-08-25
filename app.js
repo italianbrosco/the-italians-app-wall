@@ -27,6 +27,7 @@
     "pollwar",
     "super-game",
     "tin-wings",
+    "draw-your-defense",
     "ricochet"
   ];
   const byId = new Map(catalog.map((app) => [app.id, app]));
