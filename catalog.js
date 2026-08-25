@@ -91,7 +91,7 @@ window.APP_CATALOG = [
     name: "Yawtzee: Best Scorecard",
     category: "Scorecard",
     description: "A cheerful, tactile score sheet for keeping real five-dice games moving with friends and family.",
-    icon: "/assets/icons/clay-scorecard.webp",
+    icon: "/assets/icons/clay-scorecard-v2.webp",
     screenshot: "/assets/screenshots/yawtzee-best-scorecard.webp",
     screenshotVersion: "20260824.2",
     screenshotAlt: "Yawtzee: Best Scorecard home screen with a resumable Game Night, new scorecard, history, statistics, rules, and settings actions",
