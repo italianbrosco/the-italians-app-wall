@@ -44,6 +44,35 @@ h2 { margin: 28px 0 6px; font-size: 1.25rem; }
 h2:first-child { margin-top: 0; }
 p, li { color: var(--muted); }
 .card a { display: inline-flex; min-height: 44px; align-items: center; }
+form { display: grid; gap: 10px; margin: 24px 0 8px; }
+label { color: var(--ink); font-size: .82rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+input {
+  width: 100%;
+  min-height: 52px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 10px 13px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+}
+input:focus-visible, button:focus-visible, a:focus-visible { outline: 4px solid var(--yellow); outline-offset: 3px; }
+button {
+  min-height: 52px;
+  margin-top: 8px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  color: #fff;
+  background: #b9241f;
+  box-shadow: 0 4px 0 var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 950;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+button:disabled { cursor: progress; opacity: .65; }
+#status { min-height: 1.65em; margin: 8px 0 0; font-weight: 800; }
 footer { padding: 30px 10px 0; color: var(--muted); text-align: center; font-size: .9rem; }
 
 @media (max-width: 420px) {

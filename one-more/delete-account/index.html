@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Permanently delete a One More account and its associated server data." />
+    <title>Delete One More Account — Italian Bros</title>
+    <link rel="stylesheet" href="/one-more/legal.css?v=20260825.1" />
+  </head>
+  <body>
+    <main class="shell">
+      <a class="back" href="/one-more/privacy/">← One More Privacy</a>
+      <section class="hero">
+        <p class="eyebrow">One More</p>
+        <h1>Delete your<br />account.</h1>
+        <p class="lede">Permanent account and server-data deletion</p>
+        <div class="signals" aria-hidden="true"><i></i><i></i><i></i></div>
+      </section>
+      <article class="card">
+        <h2>What will be deleted</h2>
+        <p>Your One More account profile, password hash, sessions, live presence, shared stats, and account-linked leaderboard entries will be permanently removed. Local game stats stay on each device unless you also delete the app or clear its storage. An anonymized aggregate global-best value may remain because it is not linked to an account.</p>
+
+        <form id="delete-form">
+          <label for="username">Username</label>
+          <input id="username" name="username" autocomplete="username" maxlength="20" required />
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" required />
+          <label for="confirmation">Type DELETE to confirm</label>
+          <input id="confirmation" name="confirmation" autocomplete="off" maxlength="6" pattern="DELETE" required />
+          <button id="delete-button" type="submit">Delete account</button>
+          <p id="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <h2>Need help?</h2>
+        <p>If you cannot use the self-service form, email <a href="mailto:ciminillo@italianbrosco.com?subject=One%20More%20Account%20Deletion">ciminillo@italianbrosco.com</a> for account-deletion support.</p>
+      </article>
+      <footer>© 2026 Italian Bros. All rights reserved.</footer>
+    </main>
+    <script>
+      const form = document.getElementById('delete-form');
+      const button = document.getElementById('delete-button');
+      const status = document.getElementById('status');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const username = form.elements.username.value.trim();
+        const password = form.elements.password.value;
+        const confirmation = form.elements.confirmation.value.toUpperCase();
+        if (confirmation !== 'DELETE') {
+          status.textContent = 'Type DELETE exactly to confirm.';
+          return;
+        }
+        button.disabled = true;
+        status.textContent = 'Deleting account…';
+        try {
+          const response = await fetch('/api/one-more/account/delete', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: username, password }),
+          });
+          if (!response.ok) {
+            status.textContent = response.status === 401
+              ? 'The username or password did not match an account.'
+              : 'The account could not be deleted. Please try again.';
+            return;
+          }
+          form.reset();
+          status.textContent = 'Your One More account and associated server data were deleted.';
+        } catch {
+          status.textContent = 'The account could not be deleted. Please check your connection and try again.';
+        } finally {
+          button.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>
