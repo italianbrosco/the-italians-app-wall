@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Join Don’t Touch Red Co-op</title>
+  <meta name="theme-color" content="#f04b45">
+  <link rel="icon" href="/assets/favicon.svg">
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:28px;background:radial-gradient(circle at 12% 8%,#f04b4538,transparent 23rem),#f5f0e6;color:#1f1c19;font-family:ui-rounded,"SF Pro Rounded","Avenir Next",system-ui,sans-serif}.card{width:min(100%,430px);padding:34px 24px 28px;border:3px solid #1f1c19;border-radius:28px;background:#fffdf8;box-shadow:0 9px 0 #1f1c19;text-align:center}.mark{position:relative;width:78px;height:78px;margin:0 auto 21px;border:3px solid #1f1c19;border-radius:50%;background:#f04b45}.mark:after{content:"";position:absolute;width:15px;height:15px;left:29px;top:29px;border:2px solid #1f1c19;border-radius:50%;background:#fffdf8}h1{margin:0;font-size:31px;line-height:1.08;letter-spacing:-.8px;text-transform:uppercase}p{margin:13px auto 0;color:#625d57;font-size:16px;line-height:1.48}.room{margin:23px auto 20px;font-size:17px;letter-spacing:2px;font-weight:900;overflow-wrap:anywhere}.open{display:flex;min-height:60px;align-items:center;justify-content:center;border:3px solid #1f1c19;border-radius:18px;background:#f04b45;color:#fffdf8;text-decoration:none;font-size:17px;font-weight:900;letter-spacing:.7px;box-shadow:0 5px 0 #1f1c19}.open:focus-visible{outline:4px solid #f7c948;outline-offset:4px}.open[hidden]{display:none}.note{font-size:13px}.invalid{color:#b52f2a}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="mark" aria-hidden="true"></div>
+    <h1>Join this co-op game</h1>
+    <p id="message">Open Don’t Touch Red to enter your friend’s lobby.</p>
+    <div class="room" id="room">LOADING…</div>
+    <a class="open" id="open" href="donttouchred://coop">OPEN INSTALLED APP</a>
+    <p class="note" id="note">Both players will appear together on the Home screen.</p>
+  </main>
+  <script>
+    const room=(new URLSearchParams(location.search).get('room')||'').replace(/[^A-Za-z0-9_-]/g,'').slice(0,32);
+    const roomLabel=document.getElementById('room');const open=document.getElementById('open');const message=document.getElementById('message');const note=document.getElementById('note');
+    if(room.length===16){roomLabel.textContent=room.toUpperCase();open.href='donttouchred://coop/'+encodeURIComponent(room)}else{roomLabel.textContent='INVALID INVITE';roomLabel.classList.add('invalid');message.textContent='This co-op invite is missing a valid room.';note.textContent='Ask your friend to send a new invite link.';open.hidden=true}
+  </script>
+</body>
+</html>

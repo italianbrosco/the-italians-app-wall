@@ -48,6 +48,7 @@ curl -fsSL "$BASE_URL/.well-known/apple-app-site-association" -o "$TMP_DIR/apple
 curl -fsSL "$BASE_URL/.well-known/assetlinks.json" -o "$TMP_DIR/assetlinks.json"
 curl -fsSL "$BASE_URL/yawtzee/join/?game=123456" -o "$TMP_DIR/yawtzee-join.html"
 curl -fsSL "$BASE_URL/real-or-ai/join/?code=AB23CD" -o "$TMP_DIR/real-or-ai-join.html"
+curl -fsSL "$BASE_URL/dont-touch-red/invite/?room=0123456789abcdef" -o "$TMP_DIR/dont-touch-red-invite.html"
 
 grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/home.html"
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
@@ -170,6 +171,9 @@ grep -q '"/real-or-ai/join"' "$TMP_DIR/apple-app-site-association"
 grep -q 'Join this match' "$TMP_DIR/real-or-ai-join.html"
 grep -q "URLSearchParams(location.search).get('code')" "$TMP_DIR/real-or-ai-join.html"
 grep -q "realorai://join?code=" "$TMP_DIR/real-or-ai-join.html"
+grep -q 'Join this co-op game' "$TMP_DIR/dont-touch-red-invite.html"
+grep -q "URLSearchParams(location.search).get('room')" "$TMP_DIR/dont-touch-red-invite.html"
+grep -q "donttouchred://coop/" "$TMP_DIR/dont-touch-red-invite.html"
 
 for icon in abc-smash blackwake-21 calcspace clay-scorecard deal-analyzer dream-journal easy-audio-notes echobeat eyes-up hundred marbles mortgage-calculator pollwar pt-airman real-or-ai road-trip-arcade super-game tin-wings; do
   curl -fsSL "$BASE_URL/assets/icons/$icon.webp" -o "$TMP_DIR/$icon.webp"
