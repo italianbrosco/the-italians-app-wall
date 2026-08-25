@@ -296,10 +296,10 @@ window.APP_CATALOG = [
     category: "Push-your-luck game",
     description: "Push a score one tap at a time, save before the risk catches you, then continue to see how far you could have gotten.",
     icon: "/assets/icons/one-more.png",
-    screenshot: "/assets/screenshots/one-more-build-11.png",
-    screenshotAlt: "One More build 11 game screen starting at zero with a centered red plus-one button, bust chance, personal best, and verified global best",
+    screenshot: "/assets/screenshots/one-more-build-17.png",
+    screenshotAlt: "One More build 17 game screen starting at zero with a centered red plus-one button, bust chance, personal best, and verified global best",
     status: "coming",
-    statusLabel: "Coming soon",
+    statusLabel: "Release updates coming soon",
     accent: "red",
     platforms: [],
     actions: []
