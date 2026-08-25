@@ -55,7 +55,7 @@ grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/h
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
 grep -q 'styles.css?v=20260824.1' "$TMP_DIR/home.html"
 grep -q 'app.js?v=20260824.1' "$TMP_DIR/home.html"
-grep -q 'catalog.js?v=20260824.4' "$TMP_DIR/home.html"
+grep -q 'catalog.js?v=20260825.1' "$TMP_DIR/home.html"
 grep -q '<strong data-total-count>23</strong>' "$TMP_DIR/home.html"
 grep -q 'mailto:italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'Email us at italianbrosco@proton.me' "$TMP_DIR/app.js"
