@@ -1,5 +1,19 @@
 window.APP_CATALOG = [
   {
+    id: "dice-and-dice",
+    name: "Dice & Dice: Best Dice",
+    category: "Dice roller",
+    description: "Roll a tactile collection of polyhedral dice, a true 100-face die, and a coin in free-moving 3D or focused top-down mode.",
+    icon: "/assets/icons/dice-and-dice.webp",
+    screenshot: "/assets/screenshots/dice-and-dice.webp",
+    screenshotAlt: "Dice & Dice showing two ivory dice settling on a walnut tabletop with 3D and 2D roll controls",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "amber",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "embrace-the-suck",
     name: "Embrace the Suck!",
     category: "Fitness challenges",

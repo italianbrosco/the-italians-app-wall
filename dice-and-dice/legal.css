@@ -1,0 +1,55 @@
+:root {
+  color-scheme: light;
+  --ink: #241915;
+  --muted: #6e574b;
+  --cream: #fff8e9;
+  --walnut: #7a3e28;
+  --brass: #e7ae43;
+  --coral: #d8664c;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--cream); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 5%, rgba(231, 174, 67, .22), transparent 23rem),
+    radial-gradient(circle at 92% 18%, rgba(216, 102, 76, .16), transparent 24rem),
+    var(--cream);
+  font-family: ui-rounded, "SF Pro Rounded", "Avenir Next", system-ui, sans-serif;
+  line-height: 1.65;
+}
+
+a { color: #9a4e32; }
+.shell { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 56px; }
+.back { display: inline-flex; min-height: 44px; align-items: center; font-weight: 800; text-decoration: none; }
+.hero, .card {
+  border: 2px solid rgba(36, 25, 21, .08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 12px 0 rgba(36, 25, 21, .06), 0 24px 60px rgba(80, 43, 29, .12);
+}
+.hero { margin: 14px 0 22px; padding: clamp(26px, 6vw, 52px); border-top: 6px solid var(--walnut); }
+.eyebrow { margin: 0; color: #9a4e32; font-size: .78rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+h1 { margin: 10px 0 8px; font-size: clamp(2.2rem, 8vw, 4.2rem); line-height: .98; letter-spacing: -.05em; }
+.lede { margin: 16px 0 0; color: var(--muted); font-size: 1.08rem; }
+.dice { display: flex; gap: 10px; margin-top: 26px; }
+.dice i { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 11px; background: var(--brass); color: var(--ink); font-style: normal; font-size: .75rem; font-weight: 900; box-shadow: inset 0 -5px 0 rgba(122, 62, 40, .18); }
+.dice i:nth-child(2) { transform: rotate(7deg); background: #f7d48b; }
+.dice i:nth-child(3) { border-radius: 50%; background: var(--coral); color: white; }
+.card { padding: clamp(22px, 5vw, 38px); }
+h2 { margin: 28px 0 6px; font-size: 1.25rem; }
+h2:first-child { margin-top: 0; }
+p, li { color: var(--muted); }
+.contact { margin-top: 28px; padding: 18px 20px; border-radius: 16px; background: #fff1d0; }
+.contact a { min-height: 44px; display: inline-flex; align-items: center; }
+footer { padding: 28px 10px 0; color: var(--muted); text-align: center; font-size: .9rem; }
+
+@media (max-width: 420px) {
+  .shell { width: min(100% - 22px, 760px); padding-top: 12px; }
+  .hero, .card { border-radius: 20px; }
+  .hero { padding: 26px 22px; }
+  .card { padding: 24px 20px; }
+}
