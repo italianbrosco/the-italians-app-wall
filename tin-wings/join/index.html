@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Join a Tin Wings Flight</title>
+  <meta name="theme-color" content="#55b9e8">
+  <meta property="og:title" content="Join a Tin Wings Flight">
+  <meta property="og:description" content="Open Tin Wings and join this private room.">
+  <meta property="og:image" content="https://italianbrosco.com/assets/icons/tin-wings.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/assets/icons/tin-wings.png">
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:28px;background:radial-gradient(circle at 50% 0,#dff5ff 0,#55b9e8 56%,#2478b4 100%);color:#153f66;font-family:ui-rounded,"Avenir Next Rounded",system-ui,sans-serif}.card{width:min(100%,430px);padding:30px 25px 27px;border:5px solid #fff0cf;border-radius:32px;background:#fff0cf;box-shadow:0 18px 42px #0a355b55;text-align:center}.icon{display:block;width:92px;height:92px;margin:0 auto 15px;border-radius:23px;box-shadow:0 8px 18px #153f6650}h1{margin:0;font-size:30px;line-height:1.15;letter-spacing:.3px}p{margin:11px auto 0;color:#476b88;font-size:16px;line-height:1.45}.code{margin:22px auto 18px;color:#e04736;font-size:39px;line-height:1;letter-spacing:8px;font-weight:1000}.open{display:flex;min-height:62px;align-items:center;justify-content:center;border-radius:20px;background:#e04736;color:#fff0cf;text-decoration:none;font-size:18px;font-weight:1000;letter-spacing:.7px;box-shadow:0 8px 18px #9c261f47}.open[hidden]{display:none}.note{font-size:13px;color:#6c8292}.invalid{letter-spacing:1px}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="icon" src="/assets/icons/tin-wings.png" alt="Tin Wings app icon">
+    <h1>Join this flight</h1>
+    <p id="message">Open Tin Wings to enter the private lobby.</p>
+    <div class="code" id="code">----</div>
+    <a class="open" id="open" href="tinwings://join">OPEN TIN WINGS</a>
+    <p class="note" id="note">Your room code will be ready when the app opens.</p>
+  </main>
+  <script>
+    const code=(new URLSearchParams(location.search).get('room')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,4);
+    const codeNode=document.getElementById('code');const open=document.getElementById('open');const message=document.getElementById('message');const note=document.getElementById('note');
+    if(code.length===4){codeNode.textContent=code;open.href='tinwings://join/'+encodeURIComponent(code)}else{codeNode.textContent='INVALID';codeNode.classList.add('invalid');message.textContent='This invite is missing a valid four-character room code.';note.textContent='Ask the host to share a new invite link.';open.hidden=true}
+  </script>
+</body>
+</html>

@@ -25,6 +25,9 @@ assert.deepEqual(apple.applinks.details, [{
 }, {
   appID: '257M5TM5Z8.com.italianbros.realorai',
   paths: ['/real-or-ai/join', '/real-or-ai/join/*'],
+}, {
+  appID: '257M5TM5Z8.com.julesdavid8.tinwings',
+  paths: ['/tin-wings/join', '/tin-wings/join/*'],
 }]);
 
 const android = JSON.parse(androidAssociation);
