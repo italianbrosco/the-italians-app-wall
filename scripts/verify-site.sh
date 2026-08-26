@@ -249,4 +249,6 @@ test -s "$TMP_DIR/get-in-line-screen.png"
 grep -q 'id: "get-in-line"' "$TMP_DIR/catalog.js"
 grep -q 'name: "Get In Line: Rank & Reveal"' "$TMP_DIR/catalog.js"
 
-printf 'Verified %s: showcase, 26-app catalog including Dice & Dice, live legal pages, Deal Analyzer and Yawtzee universal/app links, and preserved /debug/apps page.\n' "$BASE_URL"
+node "$ROOT/scripts/verify-food-glorious-food-demo.mjs" "$BASE_URL"
+
+printf 'Verified %s: showcase, Food Glorious Food demo, 26-app catalog including Dice & Dice, live legal pages, Deal Analyzer and Yawtzee universal/app links, and preserved /debug/apps page.\n' "$BASE_URL"
