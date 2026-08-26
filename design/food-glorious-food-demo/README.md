@@ -7,4 +7,4 @@ Generated with the built-in image-generation tool on 2026-08-25 as visual refere
 - `03-desktop-visit-catering.png`: catering, visit, and footer sections.
 - `04-mobile-welcome.png`: responsive mobile welcome state.
 
-The live site recreates the concepts with native layout, text, links, navigation, focus states, and responsive behavior. The concept boards are not shipped as interactive UI. Generated food artwork in the live site is visibly labeled as concept imagery and should be replaced or approved by the business before a final launch.
+The live site uses these boards only as layout references. Its interface is native HTML/CSS/JavaScript, and every public-facing photo and the logo come from the business's official website. The concept boards are not shipped as interface or content. See `source-coverage.md` for the verified source inventory, media provenance, CTA mapping, and coverage reconciliation.

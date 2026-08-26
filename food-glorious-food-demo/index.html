@@ -3,175 +3,326 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#faf4e8">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="Food Glorious Food is a neighborhood bakery in Pittsburgh's Highland Park, offering sweet and savory bakes, whole cakes, and catering.">
-  <meta property="og:title" content="Food Glorious Food | Highland Park Bakery">
-  <meta property="og:description" content="Home of the White Lily. Sweet and savory bakes, whole cakes, and catering in Highland Park.">
-  <meta property="og:image" content="https://italianbrosco.com/food-glorious-food-demo/og.png">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Food Glorious Food | Highland Park Bakery">
-  <meta name="twitter:description" content="Home of the White Lily. Sweet and savory bakes, whole cakes, and catering in Highland Park.">
-  <meta name="twitter:image" content="https://italianbrosco.com/food-glorious-food-demo/og.png">
   <title>Food Glorious Food | Highland Park Bakery</title>
+  <meta name="description" content="Explore Food Glorious Food's complete bakery menu, cakes, pies, catering, gallery, hours, and Highland Park location.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#fff9f2">
+  <meta property="og:title" content="Food Glorious Food | Highland Park Bakery">
+  <meta property="og:description" content="Made-from-scratch sweets, savory favorites, whole cakes, pies, and catering in Highland Park.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://italianbrosco.com/food-glorious-food-demo/">
+  <meta property="og:image" content="https://italianbrosco.com/food-glorious-food-demo/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/official/fgf-logo.webp" type="image/webp">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Food Glorious Food home">
-      <span class="brand-mark" aria-hidden="true">✦</span>
+      <img src="assets/official/fgf-logo.webp" alt="" width="800" height="795">
       <span>Food Glorious Food</span>
     </a>
+
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#menu">Menu</a>
-      <a href="#cakes">Cakes</a>
+      <a href="#about">About</a>
       <a href="#catering">Catering</a>
+      <a href="#gallery">Gallery</a>
       <a href="#visit">Visit</a>
     </nav>
+
+    <a class="header-action" href="https://www.instagram.com/bryantstbakery/" target="_blank" rel="noopener noreferrer">Today’s specials</a>
+
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
-      <span>Menu</span><span class="menu-lines" aria-hidden="true"></span>
+      <span>Menu</span>
+      <i aria-hidden="true"></i>
     </button>
   </header>
 
   <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
     <a href="#menu">Menu</a>
-    <a href="#cakes">Cakes</a>
+    <a href="#about">About</a>
     <a href="#catering">Catering</a>
+    <a href="#gallery">Gallery</a>
     <a href="#visit">Visit</a>
+    <a class="mobile-specials" href="https://www.instagram.com/bryantstbakery/" target="_blank" rel="noopener noreferrer">Today’s specials ↗</a>
   </nav>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">Highland Park · Pittsburgh</p>
-        <h1 id="hero-title">Food<br>Glorious<br>Food</h1>
-        <p class="script-line">Home of the White Lily</p>
-        <p class="hero-intro">A neighborhood bakery for sweet mornings, savory lunches, and every reason to celebrate.</p>
+        <h1 id="hero-title">Made from scratch.<br>Worth making a trip.</h1>
+        <p class="hero-intro">Food Glorious Food is a neighborhood bakery for sweet mornings, savory lunches, and every reason to celebrate.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://www.instagram.com/bryantstbakery/" target="_blank" rel="noopener noreferrer">See today’s specials</a>
+          <a class="button button-secondary" href="tel:+14123635330">Call the bakery</a>
+        </div>
+        <dl class="hero-facts">
+          <div><dt>Visit</dt><dd>5906 Bryant Street · Highland Park</dd></div>
+          <div><dt>Hours</dt><dd>Wed–Sat · 9:30am–2:30pm</dd></div>
+        </dl>
       </div>
-      <figure class="hero-art">
-        <img src="assets/bakery-still-life.webp" alt="Illustrated bakery still life with layer cake, madeleines, strudel, berries, and a white lily" width="1536" height="1024">
-        <figcaption>Concept imagery</figcaption>
+
+      <figure class="hero-photo">
+        <img src="assets/official/bakery-cake.webp" alt="A decorated cake from Food Glorious Food topped with fresh strawberries" width="1440" height="1920">
+        <figcaption>Made at Food Glorious Food</figcaption>
+        <span class="hero-mark" aria-hidden="true">Home of the<br><em>White Lily</em></span>
       </figure>
-      <div class="hero-actions">
-        <a class="button button-primary" href="#menu">See today’s selection</a>
-        <a class="button button-secondary" href="tel:+14123635330">Call the bakery</a>
-      </div>
-      <dl class="quick-facts">
-        <div><dt>Visit</dt><dd>5906 Bryant Street · Highland Park</dd></div>
-        <div><dt>Hours</dt><dd>Wed–Sat · 9:30am–2:30pm</dd></div>
-      </dl>
     </section>
 
-    <div class="flavor-ribbon" aria-label="Bakery offerings">
-      <span>Scratch-baked</span><i aria-hidden="true">✦</i>
-      <span>Sweet &amp; savory</span><i aria-hidden="true">✦</i>
-      <span>Whole cakes</span><i aria-hidden="true">✦</i>
-      <span>Catering</span>
-    </div>
+    <aside class="specials-strip" aria-label="Daily specials">
+      <span class="specials-dot" aria-hidden="true"></span>
+      <p><strong>Looking for today’s specials?</strong> The bakery posts the daily lineup on Instagram.</p>
+      <a href="https://www.instagram.com/bryantstbakery/" target="_blank" rel="noopener noreferrer">@bryantstbakery <span aria-hidden="true">↗</span></a>
+    </aside>
 
     <section class="menu-section section-shell" id="menu" aria-labelledby="menu-title">
-      <div class="section-intro">
-        <p class="eyebrow">From the bakery case</p>
-        <h2 id="menu-title">Sweet, savory,<br>and made from scratch.</h2>
-        <p>The selection changes daily. Call ahead if you’re looking for a favorite.</p>
-        <a class="text-link" href="tel:+14123635330">Ask about today’s selection <span aria-hidden="true">→</span></a>
+      <div class="section-heading menu-heading">
+        <div>
+          <p class="eyebrow">The full bakery menu</p>
+          <h2 id="menu-title">Sweet, savory,<br>and everything between.</h2>
+        </div>
+        <div class="heading-copy">
+          <p>Daily items vary. If you’re looking for something in particular, call ahead. For daily savory specials, check Instagram.</p>
+          <div class="inline-actions">
+            <a class="text-link" href="tel:+14123635330">Call 412-363-5330 <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="https://www.instagram.com/bryantstbakery/" target="_blank" rel="noopener noreferrer">Today’s specials <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
       </div>
-      <div class="menu-columns">
-        <div class="menu-card">
-          <p class="menu-number" aria-hidden="true">01</p>
-          <h3>Savory</h3>
-          <ul>
-            <li>Strata</li><li>Assorted quiche</li><li>Marinated ham &amp; cheese sliders</li>
-            <li>Southern biscuits</li><li>Assorted pizza</li><li>Potato cheese pie</li>
-          </ul>
+
+      <nav class="menu-jump" aria-label="Menu categories">
+        <a href="#savory">Savory</a>
+        <a href="#cakes">Cakes</a>
+        <a href="#pies">Pies</a>
+        <a href="#seasonal">Special & seasonal</a>
+        <a href="#treats">Pastries & treats</a>
+        <a href="#beverages">Beverages</a>
+      </nav>
+
+      <div class="menu-groups">
+        <details class="menu-group" id="savory" open>
+          <summary><span>Savory</span><small>6 items</small></summary>
+          <div class="menu-grid">
+            <article class="menu-item"><div><h3>Strata</h3></div><strong>$5</strong></article>
+            <article class="menu-item"><div><h3>Assorted Quiches</h3><p>Broccoli-Cheddar, Quiche Lorraine, Asparagus-Swiss, Mushroom</p></div><strong>$5</strong></article>
+            <article class="menu-item"><div><h3>Marinated Ham and Cheese Sandwiches</h3><p>Pack of 3 sliders</p></div><strong>$11</strong></article>
+            <article class="menu-item"><div><h3>Southern Biscuits</h3><p>Can be served with sausage gravy or bought by the tray for $10.</p></div><strong>$1.75 / $14</strong></article>
+            <article class="menu-item"><div><h3>Assorted Pizzas</h3></div><strong>$5</strong></article>
+            <article class="menu-item"><div><h3>Potato Cheese Pie</h3></div><strong>$4.25</strong></article>
+          </div>
+        </details>
+
+        <details class="menu-group" id="cakes">
+          <summary><span>Cakes</span><small>Whole & by the slice</small></summary>
+          <div class="menu-note">Standard cakes are 8 inches; larger sizes can be made. Please call in advance for whole cakes.</div>
+          <div class="menu-grid">
+            <article class="menu-item"><div><h3>White Lily</h3><p>Vanilla cake, white-chocolate mousse, fresh raspberries, whipped cream</p></div><strong>$40 / $4.50</strong></article>
+            <article class="menu-item"><div><h3>Chocolate Mousse Cake</h3><p>Chocolate cake, chocolate mousse, chocolate ganache</p></div><strong>$40 / $4.50</strong></article>
+            <article class="menu-item"><div><h3>Key Lime Cake</h3></div><strong>$40 / $4.50</strong></article>
+            <article class="menu-item"><div><h3>Nutella Tart</h3></div><strong>$35 / $4.50</strong></article>
+          </div>
+        </details>
+
+        <details class="menu-group" id="pies">
+          <summary><span>Pies</span><small>Whole & by the slice</small></summary>
+          <div class="menu-note">Please call in advance for whole pies.</div>
+          <div class="menu-grid compact-grid">
+            <article class="menu-item"><div><h3>Sour Cream Apple</h3></div><strong>$28.50</strong></article>
+            <article class="menu-item"><div><h3>Coconut Cream</h3></div><strong>$25.50</strong></article>
+            <article class="menu-item"><div><h3>Key Lime</h3></div><strong>$25.50</strong></article>
+            <article class="menu-item"><div><h3>Walnut and Chocolate</h3></div><strong>$25.50</strong></article>
+            <article class="menu-item"><div><h3>Pecan</h3></div><strong>$25.50</strong></article>
+            <article class="menu-item"><div><h3>Mixed Berry</h3></div><strong>$30</strong></article>
+            <article class="menu-item"><div><h3>Pumpkin</h3></div><strong>$25.50</strong></article>
+          </div>
+        </details>
+
+        <details class="menu-group" id="seasonal">
+          <summary><span>Special & Seasonal Cakes/Pies</span><small>11 options</small></summary>
+          <div class="menu-note">Available whole and by the slice. Please call in advance for whole pies and cakes.</div>
+          <div class="menu-grid">
+            <article class="menu-item"><div><h3>Fresh Berry Tart</h3></div><strong>$28.50</strong></article>
+            <article class="menu-item"><div><h3>Cassata</h3></div><strong>$40</strong></article>
+            <article class="menu-item"><div><h3>Red Velvet</h3></div><strong>$40</strong></article>
+            <article class="menu-item"><div><h3>Black Orchid</h3><p>Brownie bottom, chocolate mousse, chocolate ganache</p></div><strong>$40</strong></article>
+            <article class="menu-item"><div><h3>Peanut Butter Mousse</h3></div><strong>$40</strong></article>
+            <article class="menu-item"><div><h3>Flourless Chocolate Cake</h3></div><strong>$30</strong></article>
+            <article class="menu-item"><div><h3>Boston Cream Cake</h3></div><strong>$40</strong></article>
+            <article class="menu-item"><div><h3>Lemon Curd Cake</h3></div><strong>$40</strong></article>
+            <article class="menu-item"><div><h3>Marjolaine</h3><p>Whole size / half size</p></div><strong>$70 / $38</strong></article>
+            <article class="menu-item"><div><h3>Wedding Cake</h3><p>Prices and sizes vary. Call to talk about options.</p></div><strong>Call</strong></article>
+            <article class="menu-item"><div><h3>Birthday Cakes</h3><p>Prices and sizes vary. The bakery can write on your cake.</p></div><strong>Call</strong></article>
+          </div>
+        </details>
+
+        <details class="menu-group" id="treats">
+          <summary><span>Cookies, Pastries & Other Treats</span><small>17 favorites</small></summary>
+          <div class="menu-grid compact-grid">
+            <article class="menu-item"><div><h3>Plain and Dipped Madeleines</h3></div><strong>$1.50 / $1.75</strong></article>
+            <article class="menu-item"><div><h3>Apple Strudel</h3></div><strong>$4.50</strong></article>
+            <article class="menu-item"><div><h3>Arlettes</h3></div><strong>$3.50</strong></article>
+            <article class="menu-item"><div><h3>Cinnamon Roll</h3></div><strong>$3.50</strong></article>
+            <article class="menu-item"><div><h3>Jewish Pizza</h3></div><strong>$3.25</strong></article>
+            <article class="menu-item"><div><h3>Chocolate Chip Cookies</h3></div><strong>$2.50</strong></article>
+            <article class="menu-item"><div><h3>Kolackies</h3><p>Raspberry, Apricot, Walnut</p></div><strong>$2.25</strong></article>
+            <article class="menu-item"><div><h3>Cheesecake Brownies</h3></div><strong>$3</strong></article>
+            <article class="menu-item"><div><h3>Scotch-a-Roo</h3></div><strong>$3.25</strong></article>
+            <article class="menu-item"><div><h3>Cut-Out Cookies</h3></div><strong>$3</strong></article>
+            <article class="menu-item"><div><h3>Fresh Fruit Tart</h3></div><strong>$4.75</strong></article>
+            <article class="menu-item"><div><h3>Strawberry Napoleon</h3></div><strong>$5</strong></article>
+            <article class="menu-item"><div><h3>Tulip</h3></div><strong>$7.50</strong></article>
+            <article class="menu-item"><div><h3>Pumpkin Roll</h3></div><strong>$4</strong></article>
+            <article class="menu-item"><div><h3>Oatmeal Florentine</h3></div><strong>$2.75</strong></article>
+            <article class="menu-item"><div><h3>Assorted Muffins</h3><p>Blueberry, Pumpkin, Cranberry-Orange, Cherry-Almond, Raspberry-Almond, Apple-Cinnamon</p></div><strong>$3.50</strong></article>
+            <article class="menu-item"><div><h3>Assorted Cupcakes</h3></div><strong>$3.25</strong></article>
+          </div>
+        </details>
+
+        <details class="menu-group" id="beverages">
+          <summary><span>Beverages</span><small>Warm & cold</small></summary>
+          <div class="menu-grid">
+            <article class="menu-item"><div><h3>Warm Beverages</h3><p>Drip Coffee, Assorted Tea</p></div></article>
+            <article class="menu-item"><div><h3>Cold Beverages</h3><p>San Pellegrino, Coke, Diet Pepsi, Bottled Water, Sparkling Water</p></div></article>
+          </div>
+        </details>
+      </div>
+
+      <div class="order-callout">
+        <div>
+          <p class="eyebrow">Planning ahead?</p>
+          <h3>Call ahead for whole cakes, pies, and large orders.</h3>
         </div>
-        <div class="menu-card">
-          <p class="menu-number" aria-hidden="true">02</p>
-          <h3>Sweet</h3>
-          <ul>
-            <li>Madeleines</li><li>Apple strudel</li><li>Cinnamon rolls</li>
-            <li>Kolackies</li><li>Cheesecake brownies</li><li>Seasonal pastries</li>
-          </ul>
-        </div>
+        <a class="button button-primary" href="tel:+14123635330">Call 412-363-5330</a>
+      </div>
+      <p class="menu-disclaimer">Menu and prices reflect the bakery’s currently published information. Daily availability varies.</p>
+    </section>
+
+    <section class="about-section section-shell" id="about" aria-labelledby="about-title">
+      <div class="about-logo-wrap">
+        <img src="assets/official/fgf-logo.webp" alt="Food Glorious Food chef-hat and rolling-pin logo" width="800" height="795" loading="lazy">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">About the bakery</p>
+        <h2 id="about-title">Home of the<br><em>White Lily</em></h2>
+        <p class="about-lead">A neighborhood bakery offering a daily selection of sweet and savory treats.</p>
+        <p>Food Glorious Food has served the Highland Park community for more than 18 years, continuing to produce its products from scratch and deliver the quality its neighbors have come to expect.</p>
+        <a class="text-link" href="#gallery">See the bakery photos <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
-    <section class="cake-section section-shell" id="cakes" aria-labelledby="cakes-title">
-      <div class="cake-copy">
-        <p class="eyebrow eyebrow-light">Made for celebrating</p>
-        <h2 id="cakes-title">Cakes worth<br>gathering around.</h2>
-        <p>Whole cakes are available by advance order. The standard size is 8 inches, and larger sizes can be discussed by phone.</p>
-        <div class="cake-actions">
-          <a class="button button-gold" href="tel:+14123635330">Call to order</a>
-          <a class="text-link text-link-light" href="#visit">Plan your pickup <span aria-hidden="true">↓</span></a>
-        </div>
-      </div>
-      <figure class="cake-art">
-        <img src="assets/chocolate-cake.webp" alt="Illustrated slice of chocolate layer cake on a stoneware plate" width="1536" height="1024" loading="lazy">
-        <figcaption>Concept imagery</figcaption>
+    <section class="catering-section" id="catering" aria-labelledby="catering-title">
+      <figure class="catering-photo">
+        <img src="assets/official/catering-table.webp" alt="A catered table set inside Food Glorious Food" width="1440" height="1920" loading="lazy">
+        <figcaption>On-premise event setting at the bakery</figcaption>
       </figure>
+      <div class="catering-copy">
+        <p class="eyebrow">Private events & catering</p>
+        <h2 id="catering-title">Gather around<br>something glorious.</h2>
+        <p>Food Glorious Food offers a wide variety of customized on- and off-premise catering events.</p>
+        <p>Call or stop by the bakery to discuss your party plans.</p>
+        <div class="inline-actions">
+          <a class="button button-light" href="tel:+14123635330">Call to plan</a>
+          <a class="text-link text-link-light" href="#visit">Visit the bakery <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
     </section>
 
-    <section class="gathering-section section-shell" id="catering" aria-labelledby="gathering-title">
-      <header class="center-heading">
-        <p class="eyebrow">For the table</p>
-        <h2 id="gathering-title">Made for gathering.</h2>
-      </header>
-      <div class="service-grid">
-        <article class="service-card">
-          <span class="service-icon" aria-hidden="true">✤</span>
-          <p class="service-kicker">Advance order</p>
-          <h3>Whole cakes</h3>
-          <p>Call ahead for birthday cakes, celebration cakes, and larger sizes.</p>
-          <a class="text-link" href="tel:+14123635330">Call to order <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="service-card service-card-green">
-          <span class="service-icon" aria-hidden="true">❧</span>
-          <p class="service-kicker">Your occasion</p>
-          <h3>Catering</h3>
-          <p>Customized on- and off-premise catering is available for gatherings and events.</p>
-          <a class="text-link" href="tel:+14123635330">Call to plan <span aria-hidden="true">→</span></a>
-        </article>
+    <section class="gallery-section section-shell" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-heading gallery-heading">
+        <div>
+          <p class="eyebrow">Photo gallery</p>
+          <h2 id="gallery-title">From their kitchen<br>and Bryant Street.</h2>
+        </div>
+        <p>Every photo currently shared on the bakery’s official website, gathered here in one place.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <button class="gallery-card gallery-card-tall" type="button" data-gallery-index="0" aria-label="Open photo of a decorated bakery cake">
+          <img src="assets/official/bakery-cake.webp" alt="A decorated bakery cake topped with fresh strawberries" width="1440" height="1920" loading="lazy">
+          <span><b>From the bakery</b><small>A decorated cake made at Food Glorious Food</small></span>
+        </button>
+        <button class="gallery-card" type="button" data-gallery-index="1" aria-label="Open photo of the Food Glorious Food storefront">
+          <img src="assets/official/storefront.webp" alt="The blue and red Food Glorious Food storefront on Bryant Street" width="1440" height="1920" loading="lazy">
+          <span><b>5906 Bryant Street</b><small>The real Highland Park storefront</small></span>
+        </button>
+        <button class="gallery-card" type="button" data-gallery-index="2" aria-label="Open photo of a catered table inside the bakery">
+          <img src="assets/official/catering-table.webp" alt="A long catered table set with flowers inside Food Glorious Food" width="1440" height="1920" loading="lazy">
+          <span><b>Private events</b><small>An on-premise table setting</small></span>
+        </button>
       </div>
     </section>
 
     <section class="visit-section" id="visit" aria-labelledby="visit-title">
-      <div class="visit-inner section-shell">
-        <div class="visit-copy">
-          <p class="eyebrow eyebrow-light">Highland Park</p>
-          <h2 id="visit-title">Come by<br>the bakery.</h2>
-          <div class="visit-details">
-            <div><span>Address</span><p>5906 Bryant Street<br>Pittsburgh, PA 15206</p></div>
-            <div><span>Bakery hours</span><p>Wednesday–Saturday<br>9:30am–2:30pm</p></div>
-          </div>
-          <div class="visit-actions">
-            <a class="button button-gold" href="https://www.google.com/maps/search/?api=1&amp;query=5906+Bryant+Street+Pittsburgh+PA+15206" target="_blank" rel="noopener noreferrer">Get directions</a>
-            <a class="button button-ghost-light" href="tel:+14123635330">Call 412-363-5330</a>
-          </div>
+      <figure class="visit-photo">
+        <img src="assets/official/storefront.webp" alt="Food Glorious Food's blue storefront with a red bakery door" width="1440" height="1920" loading="lazy">
+      </figure>
+      <div class="visit-copy">
+        <p class="eyebrow">Visit for breakfast, lunch & sweets</p>
+        <h2 id="visit-title">Come by<br>the bakery.</h2>
+        <p>Daily items vary. If you’re looking for something in particular, call in advance.</p>
+
+        <address>
+          <strong>Food Glorious Food</strong><br>
+          5906 Bryant Street<br>
+          Pittsburgh, Pennsylvania 15206
+        </address>
+
+        <div class="hours-card">
+          <h3>Hours</h3>
+          <dl>
+            <div><dt>Monday</dt><dd>Closed</dd></div>
+            <div><dt>Tuesday</dt><dd>Closed</dd></div>
+            <div><dt>Wednesday</dt><dd>9:30am–2:30pm</dd></div>
+            <div><dt>Thursday</dt><dd>9:30am–2:30pm</dd></div>
+            <div><dt>Friday</dt><dd>9:30am–2:30pm</dd></div>
+            <div><dt>Saturday</dt><dd>9:30am–2:30pm</dd></div>
+            <div><dt>Sunday</dt><dd>Closed</dd></div>
+          </dl>
         </div>
-        <div class="storefront" aria-hidden="true">
-          <span class="storefront-sun"></span>
-          <span class="awning"><i></i><i></i><i></i><i></i><i></i></span>
-          <span class="window"><b>Fresh<br>today</b></span>
-          <span class="door"><i></i></span>
-          <span class="planter planter-one">✦</span><span class="planter planter-two">✦</span>
-          <span class="sidewalk"></span>
+
+        <div class="visit-actions">
+          <a class="button button-primary" href="https://www.google.com/maps/search/?api=1&amp;query=5906+Bryant+Street+Pittsburgh+PA+15206" target="_blank" rel="noopener noreferrer">Get directions</a>
+          <a class="button button-secondary" href="tel:+14123635330">Call 412-363-5330</a>
         </div>
+        <p class="order-note">Please call ahead for whole cakes, pies, and other large orders.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <a class="footer-brand" href="#top">Food Glorious Food</a>
+    <a class="footer-brand" href="#top">
+      <img src="assets/official/fgf-logo.webp" alt="" width="800" height="795">
+      <span>Food Glorious Food</span>
+    </a>
     <div class="footer-links">
       <a href="https://www.instagram.com/bryantstbakery/" target="_blank" rel="noopener noreferrer">@bryantstbakery</a>
       <a href="tel:+14123635330">412-363-5330</a>
       <a href="#top">Back to top ↑</a>
     </div>
-    <p class="concept-note">Website concept · Public business information should be confirmed before launch.</p>
+    <p class="concept-note">Unofficial website concept · Business photography and logo sourced from Food Glorious Food’s current official website.</p>
   </footer>
-  <script src="script.js"></script>
+
+  <dialog class="gallery-dialog" id="gallery-dialog" aria-labelledby="gallery-dialog-title">
+    <button class="dialog-close" type="button" aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button>
+    <figure>
+      <img id="gallery-dialog-image" src="assets/official/bakery-cake.webp" alt="" width="1440" height="1920">
+      <figcaption>
+        <strong id="gallery-dialog-title">From the bakery</strong>
+        <span id="gallery-dialog-caption">A decorated cake made at Food Glorious Food</span>
+      </figcaption>
+    </figure>
+    <div class="dialog-nav" aria-label="Photo navigation">
+      <button type="button" data-gallery-direction="-1">← Previous</button>
+      <span id="gallery-dialog-count" aria-live="polite">1 of 3</span>
+      <button type="button" data-gallery-direction="1">Next →</button>
+    </div>
+  </dialog>
 </body>
 </html>
