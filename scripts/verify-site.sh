@@ -18,6 +18,8 @@ curl -fsSL "$BASE_URL/assets/brand/italian-bros-support.webp" -o "$TMP_DIR/itali
 curl -fsSL "$BASE_URL/assets/brand/italian-bros-crest-transparent.png" -o "$TMP_DIR/italian-bros-crest-transparent.png"
 curl -fsSL "$BASE_URL/assets/brand/italian-bros-wordmark.png" -o "$TMP_DIR/italian-bros-wordmark.png"
 curl -fsSL "$BASE_URL/assets/brand/italian-bros-support-transparent.png" -o "$TMP_DIR/italian-bros-support-transparent.png"
+curl -fsSL "$BASE_URL/assets/icons/mustard-seed-church.png" -o "$TMP_DIR/mustard-seed-church.png"
+curl -fsSL "$BASE_URL/assets/screenshots/mustard-seed-church.webp?v=20260825.1" -o "$TMP_DIR/mustard-seed-church.webp"
 for screenshot in calcspace mortgage-calculator dream-journal deal-analyzer; do
   curl -fsSL "$BASE_URL/assets/screenshots/$screenshot.webp?v=20260824.1" -o "$TMP_DIR/$screenshot.webp"
 done
@@ -60,9 +62,9 @@ curl -fsSL "$BASE_URL/dont-touch-red/invite/?room=0123456789abcdef" -o "$TMP_DIR
 grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/home.html"
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
 grep -q 'styles.css?v=20260824.1' "$TMP_DIR/home.html"
-grep -q 'app.js?v=20260825.3' "$TMP_DIR/home.html"
-grep -q 'catalog.js?v=20260825.4' "$TMP_DIR/home.html"
-grep -q '<strong data-total-count>26</strong>' "$TMP_DIR/home.html"
+grep -q 'app.js?v=20260825.4' "$TMP_DIR/home.html"
+grep -q 'catalog.js?v=20260825.5' "$TMP_DIR/home.html"
+grep -q '<strong data-total-count>27</strong>' "$TMP_DIR/home.html"
 grep -q 'mailto:italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'Email us at italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'grid-template-columns: repeat(3, minmax(0, 1fr));' "$TMP_DIR/styles.css"
@@ -97,6 +99,10 @@ cmp -s "$ROOT/assets/brand/italian-bros-support.webp" "$TMP_DIR/italian-bros-sup
 cmp -s "$ROOT/assets/brand/italian-bros-crest-transparent.png" "$TMP_DIR/italian-bros-crest-transparent.png"
 cmp -s "$ROOT/assets/brand/italian-bros-wordmark.png" "$TMP_DIR/italian-bros-wordmark.png"
 cmp -s "$ROOT/assets/brand/italian-bros-support-transparent.png" "$TMP_DIR/italian-bros-support-transparent.png"
+cmp -s "$ROOT/assets/icons/mustard-seed-church.png" "$TMP_DIR/mustard-seed-church.png"
+cmp -s "$ROOT/assets/screenshots/mustard-seed-church.webp" "$TMP_DIR/mustard-seed-church.webp"
+grep -q 'id: "mustard-seed-church"' "$TMP_DIR/catalog.js"
+grep -q 'name: "Mustard Seed Church"' "$TMP_DIR/catalog.js"
 for retired_asset in three-brothers-fountain.png three-brothers-fountain.webp three-brothers-ink.webp; do
   if curl -fsS -o /dev/null "$BASE_URL/assets/brand/$retired_asset" 2>/dev/null; then
     printf 'Retired three-brothers artwork is still publicly served: %s\n' "$retired_asset" >&2
