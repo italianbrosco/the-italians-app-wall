@@ -251,4 +251,4 @@ grep -q 'name: "Get In Line: Rank & Reveal"' "$TMP_DIR/catalog.js"
 
 node "$ROOT/scripts/verify-food-glorious-food-demo.mjs" "$BASE_URL"
 
-printf 'Verified %s: showcase, Food Glorious Food demo, 26-app catalog including Dice & Dice, live legal pages, Deal Analyzer and Yawtzee universal/app links, and preserved /debug/apps page.\n' "$BASE_URL"
+printf 'Verified %s: showcase, Food Glorious Food demo, 27-app catalog including Mustard Seed Church, live legal pages, Deal Analyzer and Yawtzee universal/app links, and preserved /debug/apps page.\n' "$BASE_URL"

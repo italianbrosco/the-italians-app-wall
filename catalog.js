@@ -1,5 +1,20 @@
 window.APP_CATALOG = [
   {
+    id: "mustard-seed-church",
+    name: "Mustard Seed Church",
+    category: "Church community",
+    description: "Explore worship times, beliefs, leadership, giving, sermons, and member resources for Mustard Seed Church in Mascoutah, Illinois.",
+    icon: "/assets/icons/mustard-seed-church.png",
+    screenshot: "/assets/screenshots/mustard-seed-church.webp",
+    screenshotVersion: "20260825.1",
+    screenshotAlt: "Mustard Seed Church home screen with worship information, a welcome message, visit and sermon actions, and church navigation",
+    status: "coming",
+    statusLabel: "Coming soon",
+    accent: "forest",
+    platforms: [],
+    actions: []
+  },
+  {
     id: "dice-and-dice",
     name: "Dice & Dice: Best Dice",
     category: "Dice roller",

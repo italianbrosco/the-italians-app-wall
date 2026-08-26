@@ -8,6 +8,7 @@
     "mortgage-calculator",
     "dream-journal",
     "deal-analyzer",
+    "mustard-seed-church",
     "dice-and-dice",
     "embrace-the-suck",
     "pt-airman",
