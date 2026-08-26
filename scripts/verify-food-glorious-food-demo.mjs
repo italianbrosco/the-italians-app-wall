@@ -17,11 +17,22 @@ const assert = (condition, message) => {
   if (!condition) throw new Error(message);
 };
 
+const shellVersion = '20260826.2';
+
 const [html, css, js] = await Promise.all([
   loadText('index.html'),
   loadText('styles.css'),
   loadText('script.js'),
 ]);
+
+assert(
+  html.includes(`/food-glorious-food-demo/styles.css?v=${shellVersion}`),
+  'stylesheet must use the current path-absolute cache key',
+);
+assert(
+  html.includes(`/food-glorious-food-demo/script.js?v=${shellVersion}`),
+  'script must use the current path-absolute cache key',
+);
 
 const publicAssets = [
   'assets/official/fgf-logo.webp',
