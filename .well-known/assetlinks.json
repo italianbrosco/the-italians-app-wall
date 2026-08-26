@@ -34,5 +34,17 @@
         "20:F0:69:44:3B:69:5B:03:4B:02:13:98:97:E8:84:05:CA:5D:C9:34:07:61:FA:1E:DA:6D:F8:EE:30:5C:A7:C0"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.julesdavid8.tinwings",
+      "sha256_cert_fingerprints": [
+        "E7:D9:7C:76:71:9B:8E:91:8C:21:94:68:4C:9C:CD:D8:EA:EA:40:19:C7:33:BA:64:5F:CB:18:D9:AA:43:8A:91"
+      ]
+    }
   }
 ]

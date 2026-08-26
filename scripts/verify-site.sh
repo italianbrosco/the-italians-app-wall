@@ -178,6 +178,8 @@ grep -q '257M5TM5Z8.com.italianbros.clayscorecard' "$TMP_DIR/apple-app-site-asso
 grep -q '"/yawtzee/join"' "$TMP_DIR/apple-app-site-association"
 grep -q 'com.italianbros.clayscorecard' "$TMP_DIR/assetlinks.json"
 grep -q '20:F0:69:44:3B:69:5B:03:4B:02:13:98:97:E8:84:05:CA:5D:C9:34:07:61:FA:1E:DA:6D:F8:EE:30:5C:A7:C0' "$TMP_DIR/assetlinks.json"
+grep -q 'com.julesdavid8.tinwings' "$TMP_DIR/assetlinks.json"
+grep -q 'E7:D9:7C:76:71:9B:8E:91:8C:21:94:68:4C:9C:CD:D8:EA:EA:40:19:C7:33:BA:64:5F:CB:18:D9:AA:43:8A:91' "$TMP_DIR/assetlinks.json"
 grep -q 'Join this scorecard' "$TMP_DIR/yawtzee-join.html"
 grep -q "URLSearchParams(location.search).get('game')" "$TMP_DIR/yawtzee-join.html"
 grep -q '257M5TM5Z8.com.italianbros.realorai' "$TMP_DIR/apple-app-site-association"
