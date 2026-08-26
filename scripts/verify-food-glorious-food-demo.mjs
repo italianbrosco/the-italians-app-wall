@@ -34,7 +34,8 @@ if (!baseUrl) {
   for (const asset of ['assets/bakery-still-life.webp', 'assets/chocolate-cake.webp', 'og.png']) {
     const response = await fetch(`${baseUrl}/food-glorious-food-demo/${asset}`);
     assert(response.ok, `${asset} returned HTTP ${response.status}`);
-    assert(Number(response.headers.get('content-length') || 1) > 0, `${asset} is empty`);
+    const bytes = await response.arrayBuffer();
+    assert(bytes.byteLength > 0, `${asset} is empty`);
   }
 }
 
