@@ -368,6 +368,7 @@ window.APP_CATALOG = [
     description: "Scribble limited-life shields inside Pip's defense ring, bounce attacks back, and stack upgrades between waves.",
     icon: "/assets/icons/draw-your-defense.webp",
     screenshot: "/assets/screenshots/draw-your-defense.webp",
+    screenshotVersion: "20260826.1",
     screenshotAlt: "Draw Your Defense opening screen with Pip and the Grab the Crayon action",
     status: "coming",
     statusLabel: "Release updates coming soon",
