@@ -7,7 +7,7 @@ TMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TMP_DIR"' EXIT HUP INT TERM
 
 curl -fsSL "$BASE_URL/" -o "$TMP_DIR/home.html"
-curl -fsSL "$BASE_URL/catalog.js" -o "$TMP_DIR/catalog.js"
+curl -fsSL "$BASE_URL/catalog.js?v=20260826.1" -o "$TMP_DIR/catalog.js"
 curl -fsSL "$BASE_URL/app.js" -o "$TMP_DIR/app.js"
 curl -fsSL "$BASE_URL/styles.css" -o "$TMP_DIR/styles.css"
 curl -fsSL "$BASE_URL/app-ads.txt" -o "$TMP_DIR/app-ads.txt"
@@ -23,6 +23,7 @@ curl -fsSL "$BASE_URL/assets/screenshots/mustard-seed-church.webp?v=20260825.1" 
 for screenshot in calcspace mortgage-calculator dream-journal deal-analyzer; do
   curl -fsSL "$BASE_URL/assets/screenshots/$screenshot.webp?v=20260824.1" -o "$TMP_DIR/$screenshot.webp"
 done
+curl -fsSL "$BASE_URL/assets/screenshots/draw-your-defense.webp?v=20260826.1" -o "$TMP_DIR/draw-your-defense.webp"
 curl -fsSL "$BASE_URL/debug/apps/" -o "$TMP_DIR/debug-apps.html"
 curl -fsSL "$BASE_URL/abc-smash/privacy/" -o "$TMP_DIR/abc-smash-privacy.html"
 curl -fsSL "$BASE_URL/abc-smash/support/" -o "$TMP_DIR/abc-smash-support.html"
@@ -64,7 +65,7 @@ grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/h
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
 grep -q 'styles.css?v=20260824.1' "$TMP_DIR/home.html"
 grep -q 'app.js?v=20260825.4' "$TMP_DIR/home.html"
-grep -q 'catalog.js?v=20260825.5' "$TMP_DIR/home.html"
+grep -q 'catalog.js?v=20260826.1' "$TMP_DIR/home.html"
 grep -q '<strong data-total-count>27</strong>' "$TMP_DIR/home.html"
 grep -q 'mailto:italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'Email us at italianbrosco@proton.me' "$TMP_DIR/app.js"
@@ -96,6 +97,7 @@ cmp -s "$ROOT/assets/brand/italian-bros-crest.webp" "$TMP_DIR/italian-bros-crest
 for screenshot in calcspace mortgage-calculator dream-journal deal-analyzer; do
   cmp -s "$ROOT/assets/screenshots/$screenshot.webp" "$TMP_DIR/$screenshot.webp"
 done
+cmp -s "$ROOT/assets/screenshots/draw-your-defense.webp" "$TMP_DIR/draw-your-defense.webp"
 cmp -s "$ROOT/assets/brand/italian-bros-support.webp" "$TMP_DIR/italian-bros-support.webp"
 cmp -s "$ROOT/assets/brand/italian-bros-crest-transparent.png" "$TMP_DIR/italian-bros-crest-transparent.png"
 cmp -s "$ROOT/assets/brand/italian-bros-wordmark.png" "$TMP_DIR/italian-bros-wordmark.png"
