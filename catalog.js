@@ -181,7 +181,7 @@ window.APP_CATALOG = [
   },
   {
     id: "abc-smash",
-    name: "ABC Smash: Letter Adventure",
+    name: "ABC Smash: Letter Game",
     category: "Learning",
     description: "A quick, kid-friendly early-literacy game with spoken letter sounds and playful bug-smashing rounds.",
     icon: "/assets/icons/abc-smash.webp",
