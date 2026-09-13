@@ -45,11 +45,14 @@
     maoPct: "MAO rule",
     contractPrice: "Contract price",
     assignmentFee: "Assignment fee",
+    utilOwnerPaid: "Utilities paid by owner",
+    financeRehab: "Finance rehab costs",
+    financeClosing: "Finance closing costs",
   };
   const moneyKeys = new Set(["price", "closing", "rehab", "rent", "otherIncome", "taxAnnual", "insAnnual", "hoaMonthly", "utilMonthly", "otherMonthly", "arv", "monthlyCarry", "otherCost", "carryTotal", "refiClosing", "repairs", "contractPrice", "assignmentFee"]);
   const monthlyKeys = new Set(["rent", "otherIncome", "hoaMonthly", "utilMonthly", "otherMonthly", "monthlyCarry"]);
   const percentKeys = new Set(["ratePct", "vacancyPct", "mgmtPct", "maintPct", "capexPct", "financedPct", "pointsPct", "sellingPct", "refiLtvPct", "refiRatePct", "maoPct"]);
-  const hiddenKeys = new Set(["downMode", "maintMode", "capexMode", "utilOwnerPaid", "financeRehab", "financeClosing", "otherExpenses", "unitRents", "houses"]);
+  const hiddenKeys = new Set(["downMode", "maintMode", "capexMode", "otherExpenses", "unitRents", "houses"]);
 
   const decodePayload = async (value) => {
     const base64 = value.replace(/-/g, "+").replace(/_/g, "/").padEnd(Math.ceil(value.length / 4) * 4, "=");
@@ -79,6 +82,10 @@
   const titleFromKey = (key) => labels[key] || key.replace(/([A-Z])/g, " $1").replace(/^./, (character) => character.toUpperCase());
   const money = (value) => `$${Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
   const formatInput = (key, value, inputs) => {
+    if (["utilOwnerPaid", "financeRehab", "financeClosing"].includes(key)) return value ? "Yes" : "No";
+    if (key === "maintPct" && inputs.maintMode) return `${money(value)}/mo`;
+    if (key === "capexPct" && inputs.capexMode) return `${money(value)}/mo`;
+    if (key === "utilMonthly" && inputs.utilOwnerPaid === 0) return `${money(value)}/mo (tenant pays — excluded)`;
     if (key === "downPct") return inputs.downMode ? money(value) : `${value}%`;
     if (percentKeys.has(key)) return `${value}%`;
     if (key === "termYears" || key === "refiTermYears") return `${value} yr`;
@@ -95,13 +102,46 @@
       .filter(([key, value]) => !hiddenKeys.has(key) && (typeof value === "number" || typeof value === "string"))
       .forEach(([key, value]) => container.append(makeRow(titleFromKey(key), formatInput(key, value, inputs))));
 
+    const addExpenses = (expenses, prefix = "") => {
+      if (Array.isArray(expenses)) expenses.forEach(expense => {
+        container.append(makeRow(`${prefix}${expense.label || "Other expense"}`, `${money(expense.amount || 0)}/mo${expense.paidBy === "tenant" ? " (tenant pays — excluded)" : ""}`));
+      });
+    };
+    addExpenses(inputs.otherExpenses);
     if (Array.isArray(inputs.unitRents)) {
       inputs.unitRents.forEach((value, index) => container.append(makeRow(`Unit ${index + 1} rent`, `${money(value)}/mo`)));
     }
     if (Array.isArray(inputs.houses)) {
       inputs.houses.forEach((house, index) => {
-        container.append(makeRow(`House ${index + 1}`, `${money(house.rent || 0)}/mo`, { sub: `${money(house.price || 0)} purchase` }));
+        container.append(makeRow(`House ${index + 1} purchase price`, money(house.price || 0)));
+        container.append(makeRow(`House ${index + 1} rent`, `${money(house.rent || 0)}/mo`));
+        container.append(makeRow(`House ${index + 1} property tax`, `${money(house.taxAnnual || 0)}/yr`));
+        container.append(makeRow(`House ${index + 1} insurance`, `${money(house.insAnnual || 0)}/yr`));
+        addExpenses(house.expenses, `House ${index + 1} — `);
       });
+    }
+    const planner = inputs.planner;
+    if (planner && Array.isArray(planner.components)) {
+      const heading = document.createElement("h3");
+      heading.textContent = "Flip Planner worksheet";
+      container.append(heading);
+      const monthly = new Set(["mortgage", "propertyTaxes", "insurance", "utilities", "lawnCare", "holdingOther"]);
+      const plannerLabels = { purchasePrice: "Purchase price", closingCosts: "Purchase closing costs", purchaseOther: "Other purchase costs", holdingOther: "Other holding costs", buyerTermite: "Buyer termite treatment", buyerClosing: "Buyer closing costs", sellerClosing: "Seller closing costs", commissionPct: "Sales commission", bufferPct: "Rehab contingency" };
+      Object.entries(planner).filter(([, value]) => typeof value === "number").forEach(([key, value]) => {
+        const formatted = key === "holdingMonths" ? `${value} months` : key.endsWith("Pct") ? `${value}%` : `${money(value)}${monthly.has(key) ? "/mo" : ""}`;
+        container.append(makeRow(plannerLabels[key] || titleFromKey(key), formatted));
+      });
+      let subtotal = 0;
+      planner.components.forEach(component => {
+        if (!component.tasks.length) container.append(makeRow(component.name, "No tasks entered"));
+        component.tasks.forEach(task => {
+          const total = (Number(task.labor) || 0) + (Number(task.materials) || 0);
+          subtotal += total;
+          container.append(makeRow(`${component.name} — ${task.task || "Unnamed task"}`, `Labor ${money(task.labor)} · Materials ${money(task.materials)} · Total ${money(total)}`, { sub: task.done ? "Complete" : "Pending" }));
+        });
+      });
+      container.append(makeRow("Rehab subtotal", money(subtotal)));
+      container.append(makeRow("Rehab total including contingency", money(subtotal * (1 + (Number(planner.bufferPct) || 0) / 100)), { total: true }));
     }
   };
 
@@ -122,7 +162,7 @@
 
   decodePayload(encoded)
     .then((payload) => {
-      if (payload.version !== 1 || !payload.strategy || !payload.inputs) throw new Error("Invalid deal payload");
+      if (!payload || payload.version !== 1 || !Object.hasOwn(strategyLabels, payload.strategy) || !payload.inputs || typeof payload.inputs !== "object" || Array.isArray(payload.inputs)) throw new Error("Invalid deal payload");
 
       byId("loading").hidden = true;
       byId("deal").hidden = false;
@@ -163,6 +203,7 @@
     })
     .catch(() => {
       byId("loading").hidden = true;
+      byId("deal").hidden = true;
       byId("error").hidden = false;
     });
 })();

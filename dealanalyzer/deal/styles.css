@@ -181,7 +181,7 @@ main { width: min(760px, 100%); margin: 0 auto; padding: 20px 14px 42px; }
 .metric.bad strong { color: var(--bad); }
 .breakdown { margin-top: 4px; }
 .row { min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--parchment-light); }
-.row-label { min-width: 0; flex: 1; color: var(--espresso); font-size: 14px; line-height: 21px; }
+.row-label { overflow-wrap: anywhere; min-width: 0; flex: 1; color: var(--espresso); font-size: 14px; line-height: 21px; }
 .row-label small { display: inline; color: var(--slate); font-size: 11.5px; line-height: 17px; }
 .row > strong { flex-shrink: 0; max-width: 43%; color: var(--espresso); font-size: 14px; line-height: 20px; font-weight: 600; text-align: right; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 .row.total { margin-top: 2px; padding-top: 12px; border-top: 2px solid var(--line); border-bottom: 0; }
@@ -232,3 +232,15 @@ footer { padding: 0 16px max(24px, env(safe-area-inset-bottom)); color: var(--sl
   .install-actions { flex-basis: auto; width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { .loading span { animation: none; } }
+
+/* Keep long worksheet descriptions readable on narrow screens. */
+#inputs h3 { font-size: 17px; margin: 24px 0 8px; }
+@media print {
+  @page { size: Letter; margin: 0.5in; }
+  body, html { background: white; }
+  .app-header { position: static; }
+  .install-banner, .next-step, .back { display: none; }
+  main { width: 100%; padding: 16px 0; }
+  .app-card { box-shadow: none; }
+  .row, .metric, .verdict { break-inside: avoid; }
+}

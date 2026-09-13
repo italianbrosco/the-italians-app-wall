@@ -74,8 +74,8 @@ const requiredHtml = [
   'id="install-title">Get Deal Analyzer',
   'APP STORE RELEASE COMING SOON',
   'id="landing"',
-  'styles.css?v=20260821.1',
-  'viewer.js?v=20260821.1',
+  'styles.css?v=20260912.1',
+  'viewer.js?v=20260912.1',
 ];
 requiredHtml.forEach((value) => assert.ok(html.includes(value), `Shared viewer HTML is missing: ${value}`));
 
