@@ -7,8 +7,8 @@ TMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TMP_DIR"' EXIT HUP INT TERM
 
 curl -fsSL "$BASE_URL/" -o "$TMP_DIR/home.html"
-curl -fsSL "$BASE_URL/catalog.js?v=20260922.1" -o "$TMP_DIR/catalog.js"
-curl -fsSL "$BASE_URL/app.js" -o "$TMP_DIR/app.js"
+curl -fsSL "$BASE_URL/catalog.js?v=20260922.2" -o "$TMP_DIR/catalog.js"
+curl -fsSL "$BASE_URL/app.js?v=20260922.1" -o "$TMP_DIR/app.js"
 curl -fsSL "$BASE_URL/styles.css" -o "$TMP_DIR/styles.css"
 curl -fsSL "$BASE_URL/app-ads.txt" -o "$TMP_DIR/app-ads.txt"
 curl -fsSL "$BASE_URL/assets/favicon.svg" -o "$TMP_DIR/favicon.svg"
@@ -24,6 +24,15 @@ for screenshot in calcspace mortgage-calculator dream-journal deal-analyzer; do
   curl -fsSL "$BASE_URL/assets/screenshots/$screenshot.webp?v=20260824.1" -o "$TMP_DIR/$screenshot.webp"
 done
 curl -fsSL "$BASE_URL/assets/screenshots/draw-your-defense.webp?v=20260826.1" -o "$TMP_DIR/draw-your-defense.webp"
+for icon in bright-buds coast-pt corps-pt family-catechism pt-sailor turnover-ready; do
+  curl -fsSL "$BASE_URL/assets/icons/$icon.webp" -o "$TMP_DIR/$icon-icon.webp"
+done
+for screenshot in bright-buds coast-pt corps-pt family-catechism pt-sailor turnover-ready; do
+  curl -fsSL "$BASE_URL/assets/screenshots/$screenshot.webp?v=20260922.1" -o "$TMP_DIR/$screenshot-screen.webp"
+done
+for screenshot in marbles one-more pt-airman-latest yawtzee-best-scorecard; do
+  curl -fsSL "$BASE_URL/assets/screenshots/$screenshot.webp?v=20260922.2" -o "$TMP_DIR/$screenshot-screen.webp"
+done
 curl -fsSL "$BASE_URL/debug/apps/" -o "$TMP_DIR/debug-apps.html"
 curl -fsSL "$BASE_URL/abc-smash/privacy/" -o "$TMP_DIR/abc-smash-privacy.html"
 curl -fsSL "$BASE_URL/abc-smash/support/" -o "$TMP_DIR/abc-smash-support.html"
@@ -64,9 +73,9 @@ curl -fsSL "$BASE_URL/dont-touch-red/invite/?room=0123456789abcdef" -o "$TMP_DIR
 grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/home.html"
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
 grep -q 'styles.css?v=20260824.1' "$TMP_DIR/home.html"
-grep -q 'app.js?v=20260825.4' "$TMP_DIR/home.html"
-grep -q 'catalog.js?v=20260922.1' "$TMP_DIR/home.html"
-grep -q '<strong data-total-count>27</strong>' "$TMP_DIR/home.html"
+grep -q 'app.js?v=20260922.1' "$TMP_DIR/home.html"
+grep -q 'catalog.js?v=20260922.2' "$TMP_DIR/home.html"
+grep -q '<strong data-total-count>33</strong>' "$TMP_DIR/home.html"
 grep -q 'mailto:italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'Email us at italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'grid-template-columns: repeat(3, minmax(0, 1fr));' "$TMP_DIR/styles.css"
@@ -98,6 +107,12 @@ for screenshot in calcspace mortgage-calculator dream-journal deal-analyzer; do
   cmp -s "$ROOT/assets/screenshots/$screenshot.webp" "$TMP_DIR/$screenshot.webp"
 done
 cmp -s "$ROOT/assets/screenshots/draw-your-defense.webp" "$TMP_DIR/draw-your-defense.webp"
+for icon in bright-buds coast-pt corps-pt family-catechism pt-sailor turnover-ready; do
+  cmp -s "$ROOT/assets/icons/$icon.webp" "$TMP_DIR/$icon-icon.webp"
+done
+for screenshot in bright-buds coast-pt corps-pt family-catechism pt-sailor turnover-ready marbles one-more pt-airman-latest yawtzee-best-scorecard; do
+  cmp -s "$ROOT/assets/screenshots/$screenshot.webp" "$TMP_DIR/$screenshot-screen.webp"
+done
 cmp -s "$ROOT/assets/brand/italian-bros-support.webp" "$TMP_DIR/italian-bros-support.webp"
 cmp -s "$ROOT/assets/brand/italian-bros-crest-transparent.png" "$TMP_DIR/italian-bros-crest-transparent.png"
 cmp -s "$ROOT/assets/brand/italian-bros-wordmark.png" "$TMP_DIR/italian-bros-wordmark.png"
@@ -166,7 +181,7 @@ grep -q 'sample, local-only activity' "$TMP_DIR/embrace-the-suck-support.html"
 grep -q 'ciminillo@italianbrosco.com' "$TMP_DIR/embrace-the-suck-support.html"
 grep -q '<title>Shared Deal — Deal Analyzer</title>' "$TMP_DIR/deal-viewer.html"
 grep -q 'class="header-title">Shared Deal' "$TMP_DIR/deal-viewer.html"
-grep -q 'styles.css?v=20260821.1' "$TMP_DIR/deal-viewer.html"
+grep -q 'styles.css?v=20260912.1' "$TMP_DIR/deal-viewer.html"
 grep -q 'id="results-heading">RESULTS' "$TMP_DIR/deal-viewer.html"
 grep -q '257M5TM5Z8.com.theitalians.dealanalyzer' "$TMP_DIR/apple-app-site-association"
 grep -q '"/dealanalyzer/deal/"' "$TMP_DIR/apple-app-site-association"
@@ -267,4 +282,4 @@ grep -q 'name: "Get In Line: Rank & Reveal"' "$TMP_DIR/catalog.js"
 
 node "$ROOT/scripts/verify-food-glorious-food-demo.mjs" "$BASE_URL"
 
-printf 'Verified %s: showcase, Food Glorious Food demo, 27-app catalog including Mustard Seed Church, live legal pages, Deal Analyzer and Yawtzee universal/app links, and preserved /debug/apps page.\n' "$BASE_URL"
+printf 'Verified %s: showcase, Food Glorious Food demo, 33-app catalog, live legal pages, Deal Analyzer and Yawtzee universal/app links, and preserved /debug/apps page.\n' "$BASE_URL"
