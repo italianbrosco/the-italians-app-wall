@@ -60,12 +60,12 @@ if (Array.isArray(catalog)) {
   const counts = Object.fromEntries(
     ["available", "coming"].map((status) => [status, catalog.filter((app) => app.status === status).length])
   );
-  const expected = { available: 4, coming: 23 };
+  const expected = { available: 4, coming: 29 };
   for (const [status, count] of Object.entries(expected)) {
     if (counts[status] !== count) errors.push(`expected ${count} ${status} apps, found ${counts[status]}`);
   }
 
-  if (catalog.length !== 27) errors.push(`expected 27 apps, found ${catalog.length}`);
+  if (catalog.length !== 33) errors.push(`expected 33 apps, found ${catalog.length}`);
 
   const orderSource = appSource.match(/const featuredOrder = \[([\s\S]*?)\];/)?.[1] || "";
   const renderedIds = [...orderSource.matchAll(/"([a-z0-9-]+)"/g)].map((match) => match[1]);
@@ -142,4 +142,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("Catalog verified: 27 unique apps, 27 icons, 27 authentic screenshots, 4 store releases, 23 release updates coming soon, no testing links.");
+console.log("Catalog verified: 33 unique apps, 33 icons, 33 authentic screenshots, 4 store releases, 29 release updates coming soon, no testing links.");
