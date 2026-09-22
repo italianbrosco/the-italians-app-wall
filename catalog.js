@@ -285,11 +285,11 @@ window.APP_CATALOG = [
     icon: "/assets/icons/real-or-ai.webp",
     screenshot: "/assets/screenshots/real-or-ai.webp",
     screenshotAlt: "Real or AI answer screen revealing an AI-generated modern house image",
-    status: "coming",
-    statusLabel: "Coming soon",
+    status: "available",
+    statusLabel: "Available now",
     accent: "amber",
-    platforms: [],
-    actions: []
+    platforms: [{ label: "iPhone & iPad", kind: "ios" }],
+    actions: [{ label: "View on the App Store", href: "https://apps.apple.com/us/app/real-or-ai-daily-challenge/id6799536279", primary: true }]
   },
   {
     id: "super-game",

@@ -60,7 +60,7 @@ if (Array.isArray(catalog)) {
   const counts = Object.fromEntries(
     ["available", "coming"].map((status) => [status, catalog.filter((app) => app.status === status).length])
   );
-  const expected = { available: 3, coming: 24 };
+  const expected = { available: 4, coming: 23 };
   for (const [status, count] of Object.entries(expected)) {
     if (counts[status] !== count) errors.push(`expected ${count} ${status} apps, found ${counts[status]}`);
   }
@@ -79,9 +79,9 @@ if (Array.isArray(catalog)) {
   if (renderedIds.length !== renderedSet.size) errors.push("rendered app order contains a duplicate id");
 
   const orderedCatalog = sandbox.window.orderAppCatalog(catalog, renderedIds);
-  const expectedLeadingIds = ["calcspace", "mortgage-calculator", "dream-journal", "deal-analyzer"];
+  const expectedLeadingIds = ["calcspace", "mortgage-calculator", "dream-journal", "real-or-ai"];
   if (orderedCatalog.slice(0, 4).map((app) => app.id).join(",") !== expectedLeadingIds.join(",")) {
-    errors.push("the catalog must begin with CalcSpace, Mortgage Calculator, Dream Journal, then Deal Analyzer");
+    errors.push("the catalog must begin with CalcSpace, Mortgage Calculator, Dream Journal, then Real or AI");
   }
   const firstComingIndex = orderedCatalog.findIndex((app) => app.status === "coming");
   if (firstComingIndex >= 0 && orderedCatalog.slice(firstComingIndex).some((app) => app.status === "available")) {
@@ -142,4 +142,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("Catalog verified: 27 unique apps, 27 icons, 27 authentic screenshots, 3 store releases, 24 release updates coming soon, no testing links.");
+console.log("Catalog verified: 27 unique apps, 27 icons, 27 authentic screenshots, 4 store releases, 23 release updates coming soon, no testing links.");

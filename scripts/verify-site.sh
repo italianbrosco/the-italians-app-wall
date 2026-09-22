@@ -7,7 +7,7 @@ TMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TMP_DIR"' EXIT HUP INT TERM
 
 curl -fsSL "$BASE_URL/" -o "$TMP_DIR/home.html"
-curl -fsSL "$BASE_URL/catalog.js?v=20260826.1" -o "$TMP_DIR/catalog.js"
+curl -fsSL "$BASE_URL/catalog.js?v=20260922.1" -o "$TMP_DIR/catalog.js"
 curl -fsSL "$BASE_URL/app.js" -o "$TMP_DIR/app.js"
 curl -fsSL "$BASE_URL/styles.css" -o "$TMP_DIR/styles.css"
 curl -fsSL "$BASE_URL/app-ads.txt" -o "$TMP_DIR/app-ads.txt"
@@ -65,7 +65,7 @@ grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/h
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
 grep -q 'styles.css?v=20260824.1' "$TMP_DIR/home.html"
 grep -q 'app.js?v=20260825.4' "$TMP_DIR/home.html"
-grep -q 'catalog.js?v=20260826.1' "$TMP_DIR/home.html"
+grep -q 'catalog.js?v=20260922.1' "$TMP_DIR/home.html"
 grep -q '<strong data-total-count>27</strong>' "$TMP_DIR/home.html"
 grep -q 'mailto:italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'Email us at italianbrosco@proton.me' "$TMP_DIR/app.js"
