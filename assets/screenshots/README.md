@@ -2,7 +2,7 @@
 
 The public showcase uses real product screens only. Do not replace these files with CSS mockups, generated UI, concept art, or screenshots from a different app.
 
-Imported and verified through September 22, 2026:
+Imported and verified through October 2, 2026:
 
 | Showcase asset | Authentic source |
 | --- | --- |
@@ -11,6 +11,7 @@ Imported and verified through September 22, 2026:
 | `yawtzee-best-scorecard.webp` | App Store Connect version 1.0.0 current iPhone 6.7-inch `01-game-night.png`, resized without cropping on September 22, 2026 |
 | `deal-analyzer.webp` | Current Deal Analyzer App Store preview source `premium-previews/source/01-home.png`, refreshed August 24, 2026 |
 | `dream-journal.webp` | Current Dream Journal App Store 1.0.2 preview source `premium-previews/source/01-summary.png`, refreshed August 24, 2026 |
+| `dicey-dice.webp` | Dicey Dice public App Store 1.0.0 current iPhone screenshot `02-d100-coin.png`, resized to 520×1128 from the verified App Store source on October 2, 2026 |
 | `easy-audio-notes.webp` | App Store Connect, Apple ID `6798798592`, en-US iPhone screenshot `build2-record-iphone.png` |
 | `echobeat.webp` | App Store Connect, Apple ID `6799536277`, en-US iPhone screenshot `07-you.png` |
 | `eyes-up.webp` | App Store Connect, Apple ID `6799536126`, en-US iPhone screenshot `01-home.png` |

@@ -19,7 +19,13 @@ if (!Array.isArray(catalog)) errors.push("catalog.js must define window.APP_CATA
 if (Array.isArray(catalog)) {
   const ids = new Set();
   const expectedStatuses = new Set(["available", "coming"]);
-  const refreshedScreens = new Set(["calcspace", "mortgage-calculator", "dream-journal", "deal-analyzer"]);
+  const refreshedScreens = new Map([
+    ["calcspace", "20260824.1"],
+    ["mortgage-calculator", "20260824.1"],
+    ["dream-journal", "20260824.1"],
+    ["deal-analyzer", "20260824.1"],
+    ["dice-and-dice", "20261002.1"]
+  ]);
 
   for (const app of catalog) {
     for (const key of ["id", "name", "category", "description", "icon", "screenshot", "screenshotAlt", "status", "statusLabel"]) {
@@ -28,8 +34,8 @@ if (Array.isArray(catalog)) {
     if (ids.has(app.id)) errors.push(`${app.id}: duplicate id`);
     ids.add(app.id);
     if (!expectedStatuses.has(app.status)) errors.push(`${app.id}: unsupported status ${app.status}`);
-    if (refreshedScreens.has(app.id) && app.screenshotVersion !== "20260824.1") {
-      errors.push(`${app.id}: current home screenshot must use the 20260824.1 cache key`);
+    if (refreshedScreens.has(app.id) && app.screenshotVersion !== refreshedScreens.get(app.id)) {
+      errors.push(`${app.id}: current home screenshot must use the ${refreshedScreens.get(app.id)} cache key`);
     }
 
     const iconPath = path.join(root, app.icon.replace(/^\//, ""));
@@ -60,7 +66,7 @@ if (Array.isArray(catalog)) {
   const counts = Object.fromEntries(
     ["available", "coming"].map((status) => [status, catalog.filter((app) => app.status === status).length])
   );
-  const expected = { available: 4, coming: 29 };
+  const expected = { available: 5, coming: 28 };
   for (const [status, count] of Object.entries(expected)) {
     if (counts[status] !== count) errors.push(`expected ${count} ${status} apps, found ${counts[status]}`);
   }
@@ -79,9 +85,9 @@ if (Array.isArray(catalog)) {
   if (renderedIds.length !== renderedSet.size) errors.push("rendered app order contains a duplicate id");
 
   const orderedCatalog = sandbox.window.orderAppCatalog(catalog, renderedIds);
-  const expectedLeadingIds = ["calcspace", "mortgage-calculator", "dream-journal", "real-or-ai"];
+  const expectedLeadingIds = ["calcspace", "mortgage-calculator", "dream-journal", "dice-and-dice"];
   if (orderedCatalog.slice(0, 4).map((app) => app.id).join(",") !== expectedLeadingIds.join(",")) {
-    errors.push("the catalog must begin with CalcSpace, Mortgage Calculator, Dream Journal, then Real or AI");
+    errors.push("the catalog must begin with CalcSpace, Mortgage Calculator, Dream Journal, then Dicey Dice");
   }
   const firstComingIndex = orderedCatalog.findIndex((app) => app.status === "coming");
   if (firstComingIndex >= 0 && orderedCatalog.slice(firstComingIndex).some((app) => app.status === "available")) {
@@ -142,4 +148,6 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("Catalog verified: 33 unique apps, 33 icons, 33 authentic screenshots, 4 store releases, 29 release updates coming soon, no testing links.");
+const availableCount = catalog.filter((app) => app.status === "available").length;
+const comingCount = catalog.filter((app) => app.status === "coming").length;
+console.log(`Catalog verified: ${catalog.length} unique apps, ${catalog.length} icons, ${catalog.length} authentic screenshots, ${availableCount} store releases, ${comingCount} release updates coming soon, no testing links.`);
