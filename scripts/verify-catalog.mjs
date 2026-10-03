@@ -31,6 +31,16 @@ if (Array.isArray(catalog)) {
     for (const key of ["id", "name", "category", "description", "icon", "screenshot", "screenshotAlt", "status", "statusLabel"]) {
       if (!app[key]) errors.push(`${app.id || "unknown app"}: missing ${key}`);
     }
+    if (app.cardDescription && (typeof app.cardDescription !== "string" || app.cardDescription.length > 110)) {
+      errors.push(`${app.id}: cardDescription must be a concise string of at most 110 characters`);
+    }
+    if (app.id === "dice-and-dice") {
+      if (app.supportUrl !== "/dice-and-dice/support/") errors.push("dice-and-dice: supportUrl must use the published support route");
+      if (app.privacyUrl !== "/dice-and-dice/privacy/") errors.push("dice-and-dice: privacyUrl must use the published privacy route");
+      if (!app.cardDescription) errors.push("dice-and-dice: cardDescription is required for the narrow showcase card");
+    } else if (app.supportUrl || app.privacyUrl) {
+      errors.push(`${app.id}: support and privacy links must remain app-specific`);
+    }
     if (ids.has(app.id)) errors.push(`${app.id}: duplicate id`);
     ids.add(app.id);
     if (!expectedStatuses.has(app.status)) errors.push(`${app.id}: unsupported status ${app.status}`);

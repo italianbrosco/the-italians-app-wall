@@ -7,8 +7,8 @@ TMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TMP_DIR"' EXIT HUP INT TERM
 
 curl -fsSL "$BASE_URL/" -o "$TMP_DIR/home.html"
-curl -fsSL "$BASE_URL/catalog.js?v=20261002.1" -o "$TMP_DIR/catalog.js"
-curl -fsSL "$BASE_URL/app.js?v=20260922.1" -o "$TMP_DIR/app.js"
+curl -fsSL "$BASE_URL/catalog.js?v=20261003.1" -o "$TMP_DIR/catalog.js"
+curl -fsSL "$BASE_URL/app.js?v=20261003.1" -o "$TMP_DIR/app.js"
 curl -fsSL "$BASE_URL/styles.css" -o "$TMP_DIR/styles.css"
 curl -fsSL "$BASE_URL/app-ads.txt" -o "$TMP_DIR/app-ads.txt"
 curl -fsSL "$BASE_URL/assets/favicon.svg" -o "$TMP_DIR/favicon.svg"
@@ -72,9 +72,9 @@ curl -fsSL "$BASE_URL/dont-touch-red/invite/?room=0123456789abcdef" -o "$TMP_DIR
 
 grep -q '<title>Italian Bros — Independent product studio</title>' "$TMP_DIR/home.html"
 grep -q 'rel="icon" href="/assets/favicon.svg"' "$TMP_DIR/home.html"
-grep -q 'styles.css?v=20260824.1' "$TMP_DIR/home.html"
-grep -q 'app.js?v=20260922.1' "$TMP_DIR/home.html"
-grep -q 'catalog.js?v=20261002.1' "$TMP_DIR/home.html"
+grep -q 'styles.css?v=20261003.1' "$TMP_DIR/home.html"
+grep -q 'app.js?v=20261003.1' "$TMP_DIR/home.html"
+grep -q 'catalog.js?v=20261003.1' "$TMP_DIR/home.html"
 grep -q '<strong data-total-count>33</strong>' "$TMP_DIR/home.html"
 grep -q 'mailto:italianbrosco@proton.me' "$TMP_DIR/app.js"
 grep -q 'Email us at italianbrosco@proton.me' "$TMP_DIR/app.js"
@@ -271,6 +271,8 @@ curl -fsSL "$BASE_URL/assets/screenshots/dicey-dice.webp?v=20261002.1" -o "$TMP_
 test -s "$TMP_DIR/dicey-dice-screen.webp"
 grep -q 'id: "dice-and-dice"' "$TMP_DIR/catalog.js"
 grep -q 'name: "Dicey Dice: 3D Dice Roller"' "$TMP_DIR/catalog.js"
+grep -q 'supportUrl: "/dice-and-dice/support/"' "$TMP_DIR/catalog.js"
+grep -q 'privacyUrl: "/dice-and-dice/privacy/"' "$TMP_DIR/catalog.js"
 grep -q 'status: "available"' "$TMP_DIR/catalog.js"
 grep -q '<title>Dicey Dice: 3D Dice Roller Privacy Policy — Italian Bros</title>' "$TMP_DIR/dice-and-dice-privacy.html"
 grep -q 'does not collect, transmit, sell, or share personal data' "$TMP_DIR/dice-and-dice-privacy.html"

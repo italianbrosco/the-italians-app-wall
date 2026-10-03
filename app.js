@@ -58,6 +58,14 @@
     return `<button class="card-arrow" type="button" data-app-details="${escapeHtml(app.id)}" aria-label="Learn more about ${escapeHtml(app.name)}"><span aria-hidden="true">→</span></button>`;
   };
 
+  const appInfoLinks = (app) => {
+    const links = [];
+    if (app.supportUrl) links.push(`<a href="${escapeHtml(app.supportUrl)}" aria-label="${escapeHtml(app.name)} support">Support</a>`);
+    if (app.privacyUrl) links.push(`<a href="${escapeHtml(app.privacyUrl)}" aria-label="${escapeHtml(app.name)} privacy policy">Privacy</a>`);
+    if (!links.length) return "";
+    return `<nav class="app-card-links" aria-label="${escapeHtml(app.name)} information">${links.join("")}</nav>`;
+  };
+
   const cardMarkup = (app) => {
     const status = app.status === "available" ? "Available on the App Store" : "Release updates coming soon";
     const imagePriority = priorityIds.has(app.id)
@@ -71,13 +79,14 @@
       : app.screenshot;
 
     return `
-      <article class="app-panel accent-${escapeHtml(app.accent)}${isLandscape ? " has-landscape-preview" : ""}">
+      <article class="app-panel accent-${escapeHtml(app.accent)}${isLandscape ? " has-landscape-preview" : ""}${app.supportUrl || app.privacyUrl ? " has-app-info-links" : ""}">
         <div class="app-summary">
           <img class="app-icon" src="${escapeHtml(app.icon)}" alt="${escapeHtml(app.name)} app icon" ${imagePriority} width="384" height="384" />
           <div class="app-copy">
             <span class="app-category">${escapeHtml(app.category)}</span>
             <h3>${escapeHtml(app.name)}</h3>
-            <p>${escapeHtml(app.description)}</p>
+            <p>${escapeHtml(app.cardDescription || app.description)}</p>
+            ${appInfoLinks(app)}
             <small><i aria-hidden="true"></i>${escapeHtml(status)}</small>
           </div>
         </div>

@@ -19,6 +19,7 @@ window.APP_CATALOG = [
     name: "Dicey Dice: 3D Dice Roller",
     category: "Dice roller",
     description: "Roll polyhedral dice, a true 100-face D100, and a sculpted coin in 3D or 2D. Customize your tray, save favorite sets, and revisit your last 50 rolls—offline, with no account or purchases.",
+    cardDescription: "Roll dice, D100s, and coins. Save sets and your last 50 rolls.",
     icon: "/assets/icons/dice-and-dice.webp",
     screenshot: "/assets/screenshots/dicey-dice.webp",
     screenshotVersion: "20261002.1",
@@ -26,6 +27,8 @@ window.APP_CATALOG = [
     status: "available",
     statusLabel: "Available now",
     accent: "amber",
+    supportUrl: "/dice-and-dice/support/",
+    privacyUrl: "/dice-and-dice/privacy/",
     platforms: [{ label: "iPhone & iPad", kind: "ios" }],
     actions: [
       { label: "View on the App Store", href: "https://apps.apple.com/us/app/dicey-dice-3d-dice-roller/id6805211632", primary: true }

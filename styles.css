@@ -512,6 +512,37 @@ button:focus-visible {
   -webkit-line-clamp: 3;
 }
 
+.has-app-info-links .app-copy p {
+  -webkit-line-clamp: 4;
+}
+
+.app-card-links {
+  margin: 3px -5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+}
+
+.app-card-links a {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 2px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 760;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.app-card-links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
 .app-copy small {
   margin-top: 8px;
   display: flex;
@@ -967,6 +998,10 @@ button:focus-visible {
     -webkit-line-clamp: 4;
   }
 
+  .has-app-info-links .app-copy p {
+    -webkit-line-clamp: 5;
+  }
+
   .app-copy small {
     font-size: 6.5px;
   }
@@ -1083,6 +1118,10 @@ button:focus-visible {
   .app-copy p {
     font-size: 9px;
     -webkit-line-clamp: 3;
+  }
+
+  .has-app-info-links .app-copy p {
+    -webkit-line-clamp: 5;
   }
 
   .app-copy small {
