@@ -17,4 +17,8 @@ This repository is the source for [ItalianBrosCo.com](https://italianbrosco.com/
 4. Commit and push the verified change to `main`.
 5. Run `scripts/deploy.sh`, then `scripts/verify-site.sh`.
 
+## Shared browser session cleanup
+
+Use a unique named `agent-browser` session for each QA task. Before cleanup, confirm that exact session is the one created for the task and that verification is complete; close only that named session. Never use `close --all`, an unnamed broad close, or a process-wide browser cleanup in a shared environment. Preserve task screenshots and deployment receipts.
+
 Never expose TestFlight, internal testing, closed testing, upload, or review links on the public website. Products without a verified production-store page must say `Release updates coming soon` and provide no installation link.
