@@ -36,6 +36,12 @@
           "/tin-wings/join",
           "/tin-wings/join/*"
         ]
+      },
+      {
+        "appID": "257M5TM5Z8.com.mustardseedchurch.mascoutah",
+        "paths": [
+          "/mustard-seed-app/auth/action"
+        ]
       }
     ]
   }
