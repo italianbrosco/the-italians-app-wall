@@ -29,11 +29,11 @@ esac
 
 rsync -az \
   index.html styles.css catalog.js app.js app-ads.txt \
-  .well-known assets debug abc-smash are-you-human blackwake-21 clay-scorecard dice-and-dice dont-touch-red draw-your-defense embrace-the-suck marbles one-more pt-airman mulligan-madness real-or-ai ricochet road-trip-arcade tin-wings underworld-21 dealanalyzer yawtzee food-glorious-food-demo \
+  .well-known assets debug abc-smash are-you-human blackwake-21 clay-scorecard dice-and-dice dont-touch-red draw-your-defense embrace-the-suck marbles one-more pt-airman mulligan-madness real-or-ai ricochet road-trip-arcade tin-wings underworld-21 dealanalyzer yawtzee family-catechism food-glorious-food-demo \
   "$REMOTE:$REMOTE_STAGE/"
 
 ssh "$REMOTE" "set -eu
-  sudo install -d -m 755 '$TARGET' '$TARGET/.well-known' '$TARGET/assets' '$TARGET/assets/icons' '$TARGET/debug' '$TARGET/debug/apps' '$TARGET/abc-smash' '$TARGET/are-you-human' '$TARGET/blackwake-21' '$TARGET/clay-scorecard' '$TARGET/dice-and-dice' '$TARGET/dont-touch-red' '$TARGET/draw-your-defense' '$TARGET/embrace-the-suck' '$TARGET/marbles' '$TARGET/one-more' '$TARGET/pt-airman' '$TARGET/mulligan-madness' '$TARGET/real-or-ai' '$TARGET/ricochet' '$TARGET/road-trip-arcade' '$TARGET/tin-wings' '$TARGET/underworld-21' '$TARGET/dealanalyzer' '$TARGET/yawtzee' '$BACKUP_ROOT/$STAMP'
+  sudo install -d -m 755 '$TARGET' '$TARGET/.well-known' '$TARGET/assets' '$TARGET/assets/icons' '$TARGET/debug' '$TARGET/debug/apps' '$TARGET/abc-smash' '$TARGET/are-you-human' '$TARGET/blackwake-21' '$TARGET/clay-scorecard' '$TARGET/dice-and-dice' '$TARGET/dont-touch-red' '$TARGET/draw-your-defense' '$TARGET/embrace-the-suck' '$TARGET/marbles' '$TARGET/one-more' '$TARGET/pt-airman' '$TARGET/mulligan-madness' '$TARGET/real-or-ai' '$TARGET/ricochet' '$TARGET/road-trip-arcade' '$TARGET/tin-wings' '$TARGET/underworld-21' '$TARGET/dealanalyzer' '$TARGET/yawtzee' '$TARGET/family-catechism' '$BACKUP_ROOT/$STAMP'
   sudo install -d -m 755 '$TARGET/food-glorious-food-demo'
   if [ ! -f '$TARGET/debug/apps/index.html' ]; then
     sudo install -m 644 '$TARGET/index.html' '$TARGET/debug/apps/index.html'
@@ -72,9 +72,10 @@ ssh "$REMOTE" "set -eu
   sudo cp -R '$REMOTE_STAGE/underworld-21/.' '$TARGET/underworld-21/'
   sudo cp -R '$REMOTE_STAGE/dealanalyzer/.' '$TARGET/dealanalyzer/'
   sudo cp -R '$REMOTE_STAGE/yawtzee/.' '$TARGET/yawtzee/'
+  sudo cp -R '$REMOTE_STAGE/family-catechism/.' '$TARGET/family-catechism/'
   if [ -d '$TARGET/food-glorious-food-demo' ]; then sudo cp -a '$TARGET/food-glorious-food-demo' '$BACKUP_ROOT/$STAMP/'; fi
   sudo rsync -a --delete '$REMOTE_STAGE/food-glorious-food-demo/' '$TARGET/food-glorious-food-demo/'
-  sudo chmod -R a+rX '$TARGET/.well-known' '$TARGET/assets' '$TARGET/debug' '$TARGET/abc-smash' '$TARGET/are-you-human' '$TARGET/blackwake-21' '$TARGET/clay-scorecard' '$TARGET/dice-and-dice' '$TARGET/dont-touch-red' '$TARGET/draw-your-defense' '$TARGET/embrace-the-suck' '$TARGET/marbles' '$TARGET/one-more' '$TARGET/pt-airman' '$TARGET/mulligan-madness' '$TARGET/real-or-ai' '$TARGET/ricochet' '$TARGET/road-trip-arcade' '$TARGET/tin-wings' '$TARGET/underworld-21' '$TARGET/dealanalyzer' '$TARGET/yawtzee'
+  sudo chmod -R a+rX '$TARGET/.well-known' '$TARGET/assets' '$TARGET/debug' '$TARGET/abc-smash' '$TARGET/are-you-human' '$TARGET/blackwake-21' '$TARGET/clay-scorecard' '$TARGET/dice-and-dice' '$TARGET/dont-touch-red' '$TARGET/draw-your-defense' '$TARGET/embrace-the-suck' '$TARGET/marbles' '$TARGET/one-more' '$TARGET/pt-airman' '$TARGET/mulligan-madness' '$TARGET/real-or-ai' '$TARGET/ricochet' '$TARGET/road-trip-arcade' '$TARGET/tin-wings' '$TARGET/underworld-21' '$TARGET/dealanalyzer' '$TARGET/yawtzee' '$TARGET/family-catechism'
   sudo chmod -R a+rX '$TARGET/food-glorious-food-demo'
 "
 
